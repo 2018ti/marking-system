@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoman.mapper.markingMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoman.dao.marking">
+    <constructor>
+      <idArg column="marking_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="text_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="event_type" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="trigger" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="holder" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="activity_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="activity_place" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="avtivity_time" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="constructor" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="building_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="starting_time" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="building_place" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="signatory" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="file" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="file_time" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="file_place" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="participant" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="meeting_time" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="meeting_place" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    marking_id, text_id, user_id, event_type, trigger, holder, activity_name, activity_place, 
+    avtivity_time, constructor, building_name, starting_time, building_place, signatory, 
+    file, file_time, file_place, participant, meeting_time, meeting_place
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from marking
+    where marking_id = #{markingId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from marking
+    where marking_id = #{markingId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoman.dao.marking">
+    insert into marking (marking_id, text_id, user_id, 
+      event_type, trigger, holder, 
+      activity_name, activity_place, avtivity_time, 
+      constructor, building_name, starting_time, 
+      building_place, signatory, file, 
+      file_time, file_place, participant, 
+      meeting_time, meeting_place)
+    values (#{markingId,jdbcType=INTEGER}, #{textId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{eventType,jdbcType=VARCHAR}, #{trigger,jdbcType=VARCHAR}, #{holder,jdbcType=VARCHAR}, 
+      #{activityName,jdbcType=VARCHAR}, #{activityPlace,jdbcType=VARCHAR}, #{avtivityTime,jdbcType=VARCHAR}, 
+      #{constructor,jdbcType=VARCHAR}, #{buildingName,jdbcType=VARCHAR}, #{startingTime,jdbcType=VARCHAR}, 
+      #{buildingPlace,jdbcType=VARCHAR}, #{signatory,jdbcType=VARCHAR}, #{file,jdbcType=VARCHAR}, 
+      #{fileTime,jdbcType=VARCHAR}, #{filePlace,jdbcType=VARCHAR}, #{participant,jdbcType=VARCHAR}, 
+      #{meetingTime,jdbcType=VARCHAR}, #{meetingPlace,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoman.dao.marking">
+    insert into marking
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="markingId != null">
+        marking_id,
+      </if>
+      <if test="textId != null">
+        text_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="trigger != null">
+        trigger,
+      </if>
+      <if test="holder != null">
+        holder,
+      </if>
+      <if test="activityName != null">
+        activity_name,
+      </if>
+      <if test="activityPlace != null">
+        activity_place,
+      </if>
+      <if test="avtivityTime != null">
+        avtivity_time,
+      </if>
+      <if test="constructor != null">
+        constructor,
+      </if>
+      <if test="buildingName != null">
+        building_name,
+      </if>
+      <if test="startingTime != null">
+        starting_time,
+      </if>
+      <if test="buildingPlace != null">
+        building_place,
+      </if>
+      <if test="signatory != null">
+        signatory,
+      </if>
+      <if test="file != null">
+        file,
+      </if>
+      <if test="fileTime != null">
+        file_time,
+      </if>
+      <if test="filePlace != null">
+        file_place,
+      </if>
+      <if test="participant != null">
+        participant,
+      </if>
+      <if test="meetingTime != null">
+        meeting_time,
+      </if>
+      <if test="meetingPlace != null">
+        meeting_place,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="markingId != null">
+        #{markingId,jdbcType=INTEGER},
+      </if>
+      <if test="textId != null">
+        #{textId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="trigger != null">
+        #{trigger,jdbcType=VARCHAR},
+      </if>
+      <if test="holder != null">
+        #{holder,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null">
+        #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="activityPlace != null">
+        #{activityPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="avtivityTime != null">
+        #{avtivityTime,jdbcType=VARCHAR},
+      </if>
+      <if test="constructor != null">
+        #{constructor,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingName != null">
+        #{buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="startingTime != null">
+        #{startingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingPlace != null">
+        #{buildingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="signatory != null">
+        #{signatory,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="fileTime != null">
+        #{fileTime,jdbcType=VARCHAR},
+      </if>
+      <if test="filePlace != null">
+        #{filePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="participant != null">
+        #{participant,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingTime != null">
+        #{meetingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingPlace != null">
+        #{meetingPlace,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoman.dao.marking">
+    update marking
+    <set>
+      <if test="textId != null">
+        text_id = #{textId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="eventType != null">
+        event_type = #{eventType,jdbcType=VARCHAR},
+      </if>
+      <if test="trigger != null">
+        trigger = #{trigger,jdbcType=VARCHAR},
+      </if>
+      <if test="holder != null">
+        holder = #{holder,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null">
+        activity_name = #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="activityPlace != null">
+        activity_place = #{activityPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="avtivityTime != null">
+        avtivity_time = #{avtivityTime,jdbcType=VARCHAR},
+      </if>
+      <if test="constructor != null">
+        constructor = #{constructor,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingName != null">
+        building_name = #{buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="startingTime != null">
+        starting_time = #{startingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingPlace != null">
+        building_place = #{buildingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="signatory != null">
+        signatory = #{signatory,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        file = #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="fileTime != null">
+        file_time = #{fileTime,jdbcType=VARCHAR},
+      </if>
+      <if test="filePlace != null">
+        file_place = #{filePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="participant != null">
+        participant = #{participant,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingTime != null">
+        meeting_time = #{meetingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="meetingPlace != null">
+        meeting_place = #{meetingPlace,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where marking_id = #{markingId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoman.dao.marking">
+    update marking
+    set text_id = #{textId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      event_type = #{eventType,jdbcType=VARCHAR},
+      trigger = #{trigger,jdbcType=VARCHAR},
+      holder = #{holder,jdbcType=VARCHAR},
+      activity_name = #{activityName,jdbcType=VARCHAR},
+      activity_place = #{activityPlace,jdbcType=VARCHAR},
+      avtivity_time = #{avtivityTime,jdbcType=VARCHAR},
+      constructor = #{constructor,jdbcType=VARCHAR},
+      building_name = #{buildingName,jdbcType=VARCHAR},
+      starting_time = #{startingTime,jdbcType=VARCHAR},
+      building_place = #{buildingPlace,jdbcType=VARCHAR},
+      signatory = #{signatory,jdbcType=VARCHAR},
+      file = #{file,jdbcType=VARCHAR},
+      file_time = #{fileTime,jdbcType=VARCHAR},
+      file_place = #{filePlace,jdbcType=VARCHAR},
+      participant = #{participant,jdbcType=VARCHAR},
+      meeting_time = #{meetingTime,jdbcType=VARCHAR},
+      meeting_place = #{meetingPlace,jdbcType=VARCHAR}
+    where marking_id = #{markingId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoman.mapper.textMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoman.dao.text">
+    <constructor>
+      <idArg column="text_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="content" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="marking" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="leader" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    text_id, content, marking, leader
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from text
+    where text_id = #{textId,jdbcType=INTEGER}
+  </select>
+  <select id="selectToDoMarking" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT text.content,text.text_id,text.marking,text.leader
+    FROM text LEFT JOIN marking ON text.text_id=marking.text_id
+    WHERE user_id not in(#{userId,jdbcType=INTEGER}) or user_id is null
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from text
+    where text_id = #{textId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoman.dao.text">
+    insert into text (text_id, content, marking, 
+      leader)
+    values (#{textId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{marking,jdbcType=VARCHAR}, 
+      #{leader,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoman.dao.text">
+    insert into text
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="textId != null">
+        text_id,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="marking != null">
+        marking,
+      </if>
+      <if test="leader != null">
+        leader,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="textId != null">
+        #{textId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="marking != null">
+        #{marking,jdbcType=VARCHAR},
+      </if>
+      <if test="leader != null">
+        #{leader,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoman.dao.text">
+    update text
+    <set>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="marking != null">
+        marking = #{marking,jdbcType=VARCHAR},
+      </if>
+      <if test="leader != null">
+        leader = #{leader,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where text_id = #{textId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoman.dao.text">
+    update text
+    set content = #{content,jdbcType=VARCHAR},
+      marking = #{marking,jdbcType=VARCHAR},
+      leader = #{leader,jdbcType=VARCHAR}
+    where text_id = #{textId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/JQuery/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <div class="row  justify-content-center">
+            <div class="col-lg-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    </div>
+                    <button type="button" class="btn btn-success" id="btn-rigist" style="margin-left: 400px;">注册</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                <form role="form">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-5">
+                <form role="form">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                col-lg-5
+            </div>
+            <div class="col-lg-7">
+                col-lg-7
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success" style="width:500px;">1</li>
+                <li class="list-group-item list-group-item-info" style="width:500px;">2</li>
+                <li class="list-group-item list-group-item-warning" style="width:500px;">3</li>
+                <li class="list-group-item list-group-item-danger" style="width:500px;">4</li>
+            </ul>
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-success" style="width:100px;">1</button>
+                <button type="button" class="list-group-item list-group-item-info" style="width:100px;">2</button>
+                <button type="button" class="list-group-item list-group-item-warning" style="width:100px;">3</button>
+                <button type="button" class="list-group-item list-group-item-danger" style="width:100px;">4</button>
+            </div>
+        </div> -->
+        <div class="container">
+            <div id="div1">
+                <img src="picture/bannerbg.png">
+            </div>
+            <div class="top">
+                <div class="top-left">
+                    <a href="/login.html" class="top-art">退出登陆</a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="operate">
+
+                </div>
+                <div class="txt">
+                    <textarea>
+        
+                    </textarea>
+                </div>
+                <div class="operate">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="button" value="上传" class="btn btn-primary btn-lg" style="margin-left:200px;" id="editmodify" />
+                <input type="reset" value="取消" class="btn btn-danger btn-lg" style="margin-left:600px;" id="consle" />
+            </div>
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success" style="width:500px;">1</li>
+                    <li class="list-group-item list-group-item-info" style="width:500px;">2</li>
+                    <li class="list-group-item list-group-item-warning" style="width:500px;">3</li>
+                    <li class="list-group-item list-group-item-danger" style="width:500px;">4</li>
+                </ul>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-success" style="width:100px;">1</button>
+                    <button type="button" class="list-group-item list-group-item-info" style="width:100px;">2</button>
+                    <button type="button" class="list-group-item list-group-item-warning" style="width:100px;">3</button>
+                    <button type="button" class="list-group-item list-group-item-danger" style="width:100px;">4</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $("#btn-rigist").click(function() {
+        $.ajax({
+            type: "POST",
+            url: "/regist",
+            data: {
+                name: $("#name").val(),
+                password: $("#password").val()
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data["msg"] == "0") {
+                    alert("注册失败，用户名已存在");
+                } else {
+                    alert("注册成功");
+                    window.location.href = "/login.html"
+                }
+            },
+            error: function(data) {
+                alert(data);
+            }
+        })
+    });
+</script>
+
+</html>
