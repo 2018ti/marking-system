@@ -1,14 +1,11 @@
 package com.xiaoman;
 
-import com.xiaoman.dao.User;
 import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.mapper.textMapper;
 import com.xiaoman.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -17,11 +14,10 @@ class DemoApplicationTests {
 	@Autowired
 	UserService userService;
 	@Autowired
-	textMapper textMapper;
+	com.xiaoman.mapper.textMapper textMapper;
 	@Test
 	void contextLoads() {
-		System.out.println(textMapper.selectToDoMarking(4));
-
+		System.out.println(userMapper.Login("非凡","123"));
 	}
 
 	@Test

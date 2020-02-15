@@ -2,6 +2,8 @@ package com.xiaoman.dao;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class text {
     private Integer textId;
@@ -12,11 +14,14 @@ public class text {
 
     private String leader;
 
-    public text(Integer textId, String content, String marking, String leader) {
+    private Date loadTime;
+
+    public text(Integer textId, String content, String marking, String leader, Date loadTime) {
         this.textId = textId;
         this.content = content;
         this.marking = marking;
         this.leader = leader;
+        this.loadTime = loadTime;
     }
 
     public text() {
@@ -53,5 +58,13 @@ public class text {
 
     public void setLeader(String leader) {
         this.leader = leader == null ? null : leader.trim();
+    }
+
+    public Date getLoadTime() {
+        return loadTime;
+    }
+
+    public void setLoadTime(Date loadTime) {
+        this.loadTime = loadTime;
     }
 }

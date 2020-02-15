@@ -4,20 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <script type="text/javascript" src="js/JQuery/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
 </head>
 
 <body>
+
     <div class="container">
-        <ul class="nav nav-pills">
-            ...
-            <li role="presentation" class="Clickable
-            "><a href="#">Disabled link</a></li>
-            ...
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#">个人中心</a></li>
+            <li role="presentation"><a href="javascript:void(0);" onclick="ToDoWorking()">待办事项</a></li>
+            <li role="presentation"><a href="javascript:void(0);" onclick="DoneWroking()">已办事项</a></li>
         </ul>
+        <div class="row">
+            <table id="mytab" class="table table-hover"></table>
+        </div>
     </div>
+
 </body>
+<script>
+    var ToDoWorking = function() {
+        // $.ajax({
+        //     type: "GET",
+        //     url: "/ToDoWork",
+        //     dataType: "Json",
+        //     success: function(data) {
+        //         if(data["msg"]=="0"){
+        //             alert("无待办事项！");
+        //         }
+        //         else{
+        //             var TodoWorks=data["msg"]
+        //         }
+
+        //     }
+        // })
+        $('#mytab').bootstrapTable({
+            url: "/todowork2",
+            queryParams: "queryParams",
+            toolbar: "#toolbar",
+            sidePagination: "true",
+            striped: true, // 是否显示行间隔色
+            //search : "true",
+            uniqueId: "ID",
+            pageSize: "2",
+            pagination: true, // 是否分页
+            sortable: true, // 是否启用排序
+            columns: [{
+                    field: 'leader',
+                    title: '组长名'
+                }, {
+                    field: 'loadTime',
+                    title: '上传日期'
+                }, {
+                    field: 'content',
+                    title: '文本内容',
+                }, {
+                    field: 'textId',
+                    title: '操作',
+                    width: 120,
+                    align: 'center',
+                    valign: 'middle',
+                    formatter: actionFormatter,
+                },
+
+            ]
+        });
+        //操作栏的格式化
+        function actionFormatter(value, row, index) {
+            var id = value;
+            var result = "";
+            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='操作'>标记</button>";
+            return result;
+
+        }
+
+    }
+
+    var EditViewById = function(id) {
+
+        window.location.href = "/marking.html?" + "textId=" + id;
+
+    }
+    var DoneWroking = function() {
+        $.ajax({
+            type: "GET",
+            url: "/ToDoWork",
+            dataType: "Json",
+            success: function(data) {
+                var TodoWorks = data
+
+            }
+        })
+    }
+</script>
 
 </html>

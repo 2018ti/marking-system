@@ -10,8 +10,8 @@ public class markingConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        String[] excludePath={"/login.html","/login","/regist","/css/**","/images/**","/js/**"};
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns(excludePath);
+//        String[] excludePath={"/login.html","/login","/regist","/css/**","/images/**","/js/**","/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**"};
+//        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns(excludePath);
     }
 
 }

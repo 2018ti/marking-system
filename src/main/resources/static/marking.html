@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文本上传页面</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/marking.css">
+
+    <script type="text/javascript" src="js/JQuery/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/article.css" />
+    <style>
+        .red {
+            color: red;
+        }
+        
+        .text {
+            width: 100%;
+            min-height: 120px;
+            max-height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            border: 1px solid #a0b3d6;
+            font-size: 20px;
+            line-height: 24px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-color: rgba(82, 168, 236, 0.8);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="div1">
+            <img src="picture/bannerbg.png">
+        </div>
+        <div class="top">
+            <div class="top-left">
+                <a href="/login.html" class="top-art">退出登陆</a>
+            </div>
+        </div>
+        <div class="main">
+            <!-- <div class="txt">
+                <div id="text">wegwegew围观的地点在哪里</textarea>
+                </div>
+                <div class="operate">
+
+                </div>
+            </div> -->
+            <div class="text" contenteditable="true" id="text">
+                wegwegew围观的地点在哪里
+            </div>
+            <div class="form-group">
+                <input type="button" value="保存" class="btn btn-primary btn-lg" style="margin-left:250px;" id="save" />
+                <input type="reset" value="修改" class="btn btn-warning btn-lg" style="margin-left:100px;" id="change" />
+                <input type="reset" value="删除" class="btn btn-danger btn-lg" style="margin-left:100px;" id="delete" />
+                <input type="reset" value="导出" class="btn btn-info btn-lg" style="margin-left:100px;" id="download" />
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="list-group">
+                        <div class="panel panel-default" style="width:500px;">
+                            <div class="panel-heading" id="t">触发词</div>
+                            <div class="panel-body" id="w">
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="width:500px;">
+                            <div class="panel-heading" id="t1">1</div>
+                            <div class="panel-body" id="w1">
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="width:500px;">
+                            <div class="panel-heading" id="t2">2</div>
+                            <div class="panel-body" id="w2">
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="width:500px;">
+                            <div class="panel-heading" id="t3">3</div>
+                            <div class="panel-body" id="w3">
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default" style="width:500px;">
+                            <div class="panel-heading" id="t4">4</div>
+                            <div class="panel-body" id="w4">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col=lg-6">
+                    <div class="list-group" style="margin-left:100px;">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" id="event1">会见会谈</button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="button" class="btn btn-default" id="event1_person1">参与方1</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-default" id="event1_person2">参与方2</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-default" id="event1_date">时间</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-default" id="event1_place">地点</button></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" id="event2">签署文件</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="button" class="btn btn-primary" id="event2_person">签署方</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-primary" id="event2_document">文件</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-primary" id="event2_date">签署时间</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-primary" id="event2_place">签署地点</button></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success" id="event3">设施启动</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="button" class="btn btn-success" id="event3_person">设施修建方</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-success" id="event3_name">设施名称</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-success" id="event3_date">启动时间</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-success" id="event3_place">设施地点</button></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" id="event4">举行活动</button>
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="button" class="btn btn-info" id="event4_person">举办方</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-info" id="event4_name">活动名称</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-info" id="event4_place">活动地点</button></li>
+                                <li role="separator" class="divider"></li>
+                                <li><button type="button" class="btn btn-info" id="event4_date">活动时间</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="text/javascript" src="js/marking.js">
+</script>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1) {
+            return "";
+        }
+        return result[1];
+    }
+
+    $(document).ready(function() {
+        var textId = getQueryString("textId");
+        console.log(textId);
+        $.ajax({
+            url: "/getTxtById",
+            method: "get",
+            dataType: "json",
+            data: {
+                textId: textId,
+            },
+            success: function(data) {
+                $("#text").text(data['content']);
+            }
+        })
+    });
+
+    $(".select").onclick = function() {
+        var fso, ts, s;
+        var ForReading = 1;
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        ts = fso.OpenTextFile("d:\\testfile.txt", ForReading);
+        s = ts.ReadLine();
+        $("#text").innerHTML = s;
+    }
+</script>
+
+</html>

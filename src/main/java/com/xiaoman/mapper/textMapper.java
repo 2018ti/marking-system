@@ -1,7 +1,6 @@
 package com.xiaoman.mapper;
 
 import com.xiaoman.dao.text;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,6 +17,5 @@ public interface textMapper {
 
     int updateByPrimaryKey(text record);
 
-    List<text> selectToDoMarking(@Param("userId") Integer userId);
-
+    List<text> selectToDoMarking(Integer userId);
 }

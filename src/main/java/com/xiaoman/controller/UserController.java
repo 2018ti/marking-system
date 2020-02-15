@@ -6,10 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.geom.FlatteningPathIterator;
 import java.util.HashMap;
@@ -26,12 +23,13 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/login")
-    public Map<String,String> Login(@Param("name")String name, @Param("password")String password, HttpServletRequest request){
+    public Map<String,String> Login(@RequestParam("name")String name, @RequestParam("password")String password, HttpServletRequest request){
         HashMap<String, String> result = new HashMap<>();
         User user = userService.Login(name, password);
         request.getSession().setAttribute("user",user);
-        if(userService.Login(name,password)!=null){
+        if(user!=null){
             if(user.getRole().equals("普通用户")){
+                System.out.println(user);
                 result.put("msg","普通用户");
                 return result;
             }else if(user.getRole().equals("用户组长")){
@@ -44,7 +42,7 @@ public class UserController {
     }
 
     @PostMapping("/regist")
-    public Map<String,String> regist(@Param("name")String name,@Param("password")String password){
+    public Map<String,String> regist(@RequestParam("name")String name, @RequestParam("password")String password){
         HashMap<String, String> result= new HashMap<>();
         if(userService.selectByname(name)!=null){
             result.put("msg","0");

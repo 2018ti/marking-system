@@ -7,11 +7,11 @@
       <arg column="content" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="marking" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="leader" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="load_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
-
   <sql id="Base_Column_List">
-    text_id, content, marking, leader
+    text_id, content, marking, leader, load_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -20,9 +20,9 @@
     where text_id = #{textId,jdbcType=INTEGER}
   </select>
   <select id="selectToDoMarking" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    SELECT text.content,text.text_id,text.marking,text.leader
-    FROM text LEFT JOIN marking ON text.text_id=marking.text_id
-    WHERE user_id not in(#{userId,jdbcType=INTEGER}) or user_id is null
+  SELECT text.content,text.text_id,text.marking,text.leader,text.load_time
+  FROM text LEFT JOIN marking ON text.text_id=marking.text_id
+  WHERE user_id not in(#{userId,jdbcType=INTEGER}) or user_id is null
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from text
@@ -30,9 +30,9 @@
   </delete>
   <insert id="insert" parameterType="com.xiaoman.dao.text">
     insert into text (text_id, content, marking, 
-      leader)
+      leader, load_time)
     values (#{textId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{marking,jdbcType=VARCHAR}, 
-      #{leader,jdbcType=VARCHAR})
+      #{leader,jdbcType=VARCHAR}, #{loadTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.xiaoman.dao.text">
     insert into text
@@ -49,6 +49,9 @@
       <if test="leader != null">
         leader,
       </if>
+      <if test="loadTime != null">
+        load_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="textId != null">
@@ -62,6 +65,9 @@
       </if>
       <if test="leader != null">
         #{leader,jdbcType=VARCHAR},
+      </if>
+      <if test="loadTime != null">
+        #{loadTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -77,6 +83,9 @@
       <if test="leader != null">
         leader = #{leader,jdbcType=VARCHAR},
       </if>
+      <if test="loadTime != null">
+        load_time = #{loadTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where text_id = #{textId,jdbcType=INTEGER}
   </update>
@@ -84,7 +93,8 @@
     update text
     set content = #{content,jdbcType=VARCHAR},
       marking = #{marking,jdbcType=VARCHAR},
-      leader = #{leader,jdbcType=VARCHAR}
+      leader = #{leader,jdbcType=VARCHAR},
+      load_time = #{loadTime,jdbcType=TIMESTAMP}
     where text_id = #{textId,jdbcType=INTEGER}
   </update>
 </mapper>
