@@ -11,6 +11,16 @@ var color = ["red", "blue", "yellow", "pink", "purple"];
 // $("#text").mouseup(function() {
 //     window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
 // })
+var textId = getQueryString("textId");
+
+function getQueryString(name) {
+    var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+    if (result == null || result.length < 1) {
+        return "";
+    }
+    return result[1];
+}
+
 var oContent = document.getElementById('text');
 oContent.onmouseup = function() {
     word = selectText();
@@ -205,4 +215,94 @@ $("#event4").click(function() {
         })
         word = '';
     })
+})
+$("#save").click(function() {
+    if ($("#t1").text() == "参与方1") {
+        var participant1 = $("#participant1").text();
+        var participant2 = $("#participant2").text();
+        var trigger = $("#trigger").text();
+        var time = $("#time").text();
+        var place = $("#place").text();
+        alert(participant1 + "," + participant2 + "," + trigger)
+        $.ajax({
+            url: "/marking/insertEventMarking",
+            method: "post",
+            datatype: "json",
+            data: {
+                trigger: trigger,
+                participant1: participant1,
+                participant2: participant2,
+                time: time,
+                place: place,
+                textId: textId,
+            },
+            success: function(data) {
+                if (data["msg"] == "标记成功")
+                    alert("保存成功");
+                else
+                    alert("上传失败，您已标记过该文章，只能对此文章进行修改");
+            }
+        })
+    } else if ($("#t1").text() == "签署方") {
+        $.ajax({
+            url: "/marking/insertFileMarking",
+            method: "post",
+            datatype: "json",
+            data: {
+                trigger: $("#trigger").text(),
+                signatory: $("#signatory").text(),
+                file: $("#file").text(),
+                time: $("#time").text(),
+                place: $("#place").text(),
+                textId: textId,
+            },
+            success: function(data) {
+                if (data["msg"] == "标记成功")
+                    alert("保存成功");
+                else
+                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
+            }
+        })
+    } else if ($("t1").text == "设施修建方") {
+        $.ajax({
+            url: "/marking/insertBuildMarking",
+            method: "post",
+            datatype: "json",
+            data: {
+                trigger: $("#trigger").text(),
+                constructor: $("#constructor").text(),
+                buildingName: $("#buildingName").text(),
+                time: $("#time").text(),
+                place: $("#place").text(),
+                textId: textId,
+            },
+            success: function(data) {
+                if (data["msg"] == "标记成功")
+                    alert("保存成功");
+                else
+                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
+            }
+        })
+    } else
+        $.ajax({
+            url: "/marking/insertActivityMarking",
+            method: "/post",
+            datatype: "json",
+            data: {
+                trigger: $("#trigger").text(),
+                holder: $("#holder").text(),
+                name: $("#name").text(),
+                time: $("#time").text(),
+                place: $("#place").text(),
+                textId: textId,
+            },
+            success: function(data) {
+                if (data["msg"] == "标记成功")
+                    alert("保存成功");
+                else
+                    alert("上传失败，您已标记过该文章，只能对此文章进行修改");
+            }
+        })
+
+
 })

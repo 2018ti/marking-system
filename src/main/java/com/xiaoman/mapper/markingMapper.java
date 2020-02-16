@@ -14,4 +14,6 @@ public interface markingMapper {
     int updateByPrimaryKeySelective(marking record);
 
     int updateByPrimaryKey(marking record);
+
+    marking selectByUserId(Integer userId);
 }

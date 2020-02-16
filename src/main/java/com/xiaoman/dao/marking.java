@@ -1,8 +1,5 @@
 package com.xiaoman.dao;
 
-import lombok.Data;
-
-@Data
 public class marking {
     private Integer markingId;
 
@@ -38,13 +35,15 @@ public class marking {
 
     private String filePlace;
 
-    private String participant;
+    private String participant1;
+
+    private String participant2;
 
     private String meetingTime;
 
     private String meetingPlace;
 
-    public marking(Integer markingId, Integer textId, Integer userId, String eventType, String trigger, String holder, String activityName, String activityPlace, String avtivityTime, String constructor, String buildingName, String startingTime, String buildingPlace, String signatory, String file, String fileTime, String filePlace, String participant, String meetingTime, String meetingPlace) {
+    public marking(Integer markingId, Integer textId, Integer userId, String eventType, String trigger, String holder, String activityName, String activityPlace, String avtivityTime, String constructor, String buildingName, String startingTime, String buildingPlace, String signatory, String file, String fileTime, String filePlace, String participant1, String participant2, String meetingTime, String meetingPlace) {
         this.markingId = markingId;
         this.textId = textId;
         this.userId = userId;
@@ -62,7 +61,8 @@ public class marking {
         this.file = file;
         this.fileTime = fileTime;
         this.filePlace = filePlace;
-        this.participant = participant;
+        this.participant1 = participant1;
+        this.participant2 = participant2;
         this.meetingTime = meetingTime;
         this.meetingPlace = meetingPlace;
     }
@@ -207,12 +207,20 @@ public class marking {
         this.filePlace = filePlace == null ? null : filePlace.trim();
     }
 
-    public String getParticipant() {
-        return participant;
+    public String getParticipant1() {
+        return participant1;
     }
 
-    public void setParticipant(String participant) {
-        this.participant = participant == null ? null : participant.trim();
+    public void setParticipant1(String participant1) {
+        this.participant1 = participant1 == null ? null : participant1.trim();
+    }
+
+    public String getParticipant2() {
+        return participant2;
+    }
+
+    public void setParticipant2(String participant2) {
+        this.participant2 = participant2 == null ? null : participant2.trim();
     }
 
     public String getMeetingTime() {
