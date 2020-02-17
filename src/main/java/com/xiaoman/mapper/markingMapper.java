@@ -1,6 +1,7 @@
 package com.xiaoman.mapper;
 
 import com.xiaoman.dao.marking;
+import org.apache.ibatis.annotations.Param;
 
 public interface markingMapper {
     int deleteByPrimaryKey(Integer markingId);
@@ -15,5 +16,6 @@ public interface markingMapper {
 
     int updateByPrimaryKey(marking record);
 
-    marking selectByUserId(Integer userId);
+    marking selectByUserIdAndText(@Param("userId") Integer userId, @Param("textId") Integer textId);
+
 }

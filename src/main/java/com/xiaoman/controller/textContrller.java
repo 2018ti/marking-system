@@ -2,6 +2,7 @@ package com.xiaoman.controller;
 
 import com.xiaoman.dao.User;
 import com.xiaoman.dao.text;
+import com.xiaoman.dto.DoneWorkResult;
 import com.xiaoman.dto.ToDoMarking;
 import com.xiaoman.service.textService;
 import org.apache.ibatis.annotations.Param;
@@ -45,6 +46,13 @@ public class textContrller {
         User user=(User)request.getSession().getAttribute("user");
         List<ToDoMarking> toDoMarkings = textService.searchToDoMarking(user.getId());
         return toDoMarkings;
+    }
+
+    @GetMapping("/donework")
+    public List<DoneWorkResult> getdonwork(HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        List<DoneWorkResult> results = textService.ListDoneWork(user.getId());
+        return results;
     }
 
     @GetMapping("/getTxtById")

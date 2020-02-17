@@ -24,7 +24,8 @@
             <li role="presentation"><a href="javascript:void(0);" onclick="DoneWroking()">已办事项</a></li>
         </ul>
         <div class="row">
-            <table id="mytab" class="table table-hover"></table>
+            <table id="todoworkTab" class="table table-hover"></table>
+            <table id="doneworkTab" class="table table-hover"></table>
         </div>
     </div>
 
@@ -45,7 +46,7 @@
 
         //     }
         // })
-        $('#mytab').bootstrapTable({
+        $('#todoworkTab').bootstrapTable({
             url: "/todowork2",
             queryParams: "queryParams",
             toolbar: "#toolbar",
@@ -53,7 +54,7 @@
             striped: true, // 是否显示行间隔色
             //search : "true",
             uniqueId: "ID",
-            pageSize: "2",
+            pageSize: "3",
             pagination: true, // 是否分页
             sortable: true, // 是否启用排序
             columns: [{
@@ -93,15 +94,75 @@
 
     }
     var DoneWroking = function() {
-        $.ajax({
-            type: "GET",
-            url: "/ToDoWork",
-            dataType: "Json",
-            success: function(data) {
-                var TodoWorks = data
+        alert("hah")
+        $('#doneworkTab').bootstrapTable({
+            url: "/donework",
+            queryParams: "queryParams",
+            toolbar: "#toolbar",
+            sidePagination: "true",
+            striped: true, // 是否显示行间隔色
+            //search : "true",
+            uniqueId: "ID",
+            pageSize: "3",
+            pagination: true, // 是否分页
+            sortable: true, // 是否启用排序
+            columns: [{
+                field: 'leader',
+                title: '组长名'
+            }, {
+                field: 'content',
+                title: '文本内容',
+                formatter: function(value, row, index) {
+                    var marking1 = row.marking1;
+                    var marking2 = row.marking2;
+                    var marking3 = row.marking3;
+                    var marking4 = row.marking4;
+                    var trigger = row.trigger;
+                    var eventType = row.eventType;
+                    if (eventType == '会见会谈') {
+                        value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                        return value;
+                    } else if (eventType == '签署文件') {
+                        value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                    } else if (eventType == '设施启用') {
+                        value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                        return value;
+                    } else {
+                        value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                        return value;
+                    }
+                }
+            }, {
+                field: 'eventType',
+                title: '事件类型',
+            }, {
+                field: 'textId',
+                title: '操作',
+                width: 120,
+                align: 'center',
+                valign: 'middle',
+                formatter: actionFormatter,
+            }, ]
+        });
 
-            }
-        })
+        function actionFormatter(value, row, index) {
+            var id = value;
+            var result = "";
+            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='操作'>标记</button>";
+            return result;
+        }
     }
 </script>
 

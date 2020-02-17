@@ -17,7 +17,7 @@ public class markingService {
     public Map<String,String> insertEventingRecord(String trigger, String participant1, String participant2, String time, String place, Integer userId, Integer textId){
         HashMap<String, String> result = new HashMap<>();
 
-        if(markingMapper.selectByUserId(userId)!=null){
+        if(markingMapper.selectByUserIdAndText(userId,textId)!=null){
             result.put("msg","该用户已经标记过该文章");
             return result;
         }
@@ -38,7 +38,7 @@ public class markingService {
     public Map<String,String> insertFileRecord(String trigger, String signatory,String file,String time,String place,Integer userId,Integer textId){
         HashMap<String, String> result = new HashMap<>();
 
-        if(markingMapper.selectByUserId(userId)!=null){
+        if(markingMapper.selectByUserIdAndText(userId,textId)!=null){
             result.put("msg","该用户已经标记过该文章");
             return result;
         }
@@ -57,7 +57,7 @@ public class markingService {
     public Map<String,String> insertBuildingRecord(String trigger, String constructor,String building_name,String starting_time,String building_place,Integer userId,Integer textId){
         HashMap<String, String> result = new HashMap<>();
 
-        if(markingMapper.selectByUserId(userId)!=null){
+        if(markingMapper.selectByUserIdAndText(userId,textId)!=null){
             result.put("msg","该用户已经标记过该文章");
             return result;
         }
@@ -76,7 +76,7 @@ public class markingService {
     public Map<String,String> insertActivityRecord(String trigger, String holder,String activity_name,String activity_time,String activity_place,Integer userId,Integer textId){
         HashMap<String, String> result = new HashMap<>();
 
-        if(markingMapper.selectByUserId(userId)!=null){
+        if(markingMapper.selectByUserIdAndText(userId,textId)!=null){
             result.put("msg","该用户已经标记过该文章");
             return result;
         }
@@ -93,13 +93,5 @@ public class markingService {
         result.put("msg","标记成功");
         return result;
     }
-
-
-
-
-
-
-
-
 
 }

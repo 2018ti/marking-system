@@ -60,8 +60,8 @@
       #{participant2,jdbcType=VARCHAR}, #{meetingTime,jdbcType=VARCHAR}, #{meetingPlace,jdbcType=VARCHAR}
       )
   </insert>
-  <select id="selectByUserId" parameterType="INTEGER" resultMap="BaseResultMap">
-    select * from marking where user_id = #{userId}
+  <select id="selectByUserIdAndText" parameterType="INTEGER" resultMap="BaseResultMap">
+    select * from marking where user_id = #{userId} and text_id=#{textId}
   </select>
   <insert id="insertSelective" parameterType="com.xiaoman.dao.marking">
     insert into marking

@@ -10,6 +10,14 @@
       <arg column="load_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
+  <resultMap id="DoneWork" type="com.xiaoman.dao.DoneWork">
+    <result column="text_id" property="textId"/>
+    <result column="content" property="content"/>
+    <result column="leader" property="leader"/>
+    <association property="marking" resultMap="com.xiaoman.mapper.markingMapper.BaseResultMap">
+    </association>
+  </resultMap>
+
   <sql id="Base_Column_List">
     text_id, content, marking, leader, load_time
   </sql>
@@ -23,6 +31,12 @@
   SELECT text.content,text.text_id,text.marking,text.leader,text.load_time
   FROM text LEFT JOIN marking ON text.text_id=marking.text_id
   WHERE user_id not in(#{userId,jdbcType=INTEGER}) or user_id is null
+  </select>
+  <select id="selectDoneWorkTextTable" parameterType="java.lang.Integer" resultMap="DoneWork">
+    select text.content,text.leader,marking.*
+    from text left join marking
+    on text.text_id = marking.text_id
+    where user_id = #{userId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from text

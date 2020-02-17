@@ -1,5 +1,4 @@
 var word = '';
-var color = ["red", "blue", "yellow", "pink", "purple"];
 //选择文本内容
 // $("#text").mouseup(function() {
 //     var txt = window.getSelection ? window.getSelection() : document.selection.createRange().text;
@@ -13,6 +12,7 @@ var color = ["red", "blue", "yellow", "pink", "purple"];
 // })
 var textId = getQueryString("textId");
 
+//获取从前一个界面传过来的文章id
 function getQueryString(name) {
     var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
     if (result == null || result.length < 1) {
@@ -23,7 +23,7 @@ function getQueryString(name) {
 
 var oContent = document.getElementById('text');
 oContent.onmouseup = function() {
-    word = selectText();
+    word = selectText(); //鼠标选中文字
 };
 
 function selectText() {
@@ -37,6 +37,9 @@ function selectText() {
 }
 
 $("#event1").click(function() { //点击“会见会谈”按钮，改变表格内容
+    $('#text').html(function(i, oldHTML) {
+            return oldHTML.replace($("#text").html(), $("#text").text());
+        }) //若用户此前点击了非会见会谈的事件，再次点击会见会谈时清除之前的标记.
     $("#w").html(word); //触发词
     $("#w1").html(''); //清空表格内容
     $("#w2").html('');
@@ -44,16 +47,19 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
     $("#w4").html('');
     $("#t1").html('参与方1');
     $('#text').html(function(i, oldHTML) {
-        return oldHTML.replace(word, '<span style="color: red;" id="trigger">' + word + '</span>');
-    })
+            return oldHTML.replace(word, '<span style="color: red;" id="trigger">' + word + '</span>');
+        }) //将选定文本内容添加上span标签修改样式
     word = '';
     //console.log($("#t1").html());
     $("#event1_person1").click(function() { //点击“参与方1”按钮
+        alert('这是点击参与方1后的word：' + word)
         $("#w1").html(word);
+        alert("这是填充后的word：" + word);
         //console.log($("#t1").html());
         $('#text').html(function(i, oldHTML) {
             return oldHTML.replace(word, '<span style="color: orange;" id="participant1">' + word + '</span>');
         })
+        alert('这是改变颜色后的word：' + word)
         word = '';
     })
     $("#t2").html('参与方2');
@@ -82,6 +88,9 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
     })
 })
 $("#event2").click(function() {
+    $('#text').html(function(i, oldHTML) {
+        return oldHTML.replace($("#text").html(), $("#text").text());
+    })
     $("#w").html(word);
     $("#w1").html('');
     $("#w2").html('');
@@ -127,6 +136,9 @@ $("#event2").click(function() {
     })
 })
 $("#event3").click(function() {
+    $('#text').html(function(i, oldHTML) {
+        return oldHTML.replace($("#text").html(), $("#text").text());
+    })
     $("#w").html(word);
     $("#w1").html('');
     $("#w2").html('');
@@ -172,6 +184,9 @@ $("#event3").click(function() {
     })
 })
 $("#event4").click(function() {
+    $('#text').html(function(i, oldHTML) {
+        return oldHTML.replace($("#text").html(), $("#text").text());
+    })
     $("#w").html(word);
     $("#w1").html('');
     $("#w2").html('');
@@ -216,14 +231,18 @@ $("#event4").click(function() {
         word = '';
     })
 })
+
+//点击保存按钮时发送数据到后台
 $("#save").click(function() {
-    if ($("#t1").text() == "参与方1") {
+
+    if ($("#t1").text() == "参与方1") { //根据之前生成的标签内容判断用户标记属于哪一种事件类型
+        //标记内容
         var participant1 = $("#participant1").text();
         var participant2 = $("#participant2").text();
         var trigger = $("#trigger").text();
         var time = $("#time").text();
         var place = $("#place").text();
-        alert(participant1 + "," + participant2 + "," + trigger)
+
         $.ajax({
             url: "/marking/insertEventMarking",
             method: "post",
@@ -303,6 +322,4 @@ $("#save").click(function() {
                     alert("上传失败，您已标记过该文章，只能对此文章进行修改");
             }
         })
-
-
 })

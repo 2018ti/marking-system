@@ -238,4 +238,31 @@ public class marking {
     public void setMeetingPlace(String meetingPlace) {
         this.meetingPlace = meetingPlace == null ? null : meetingPlace.trim();
     }
+
+    @Override
+    public String toString() {
+        return "marking{" +
+                "markingId=" + markingId +
+                ", textId=" + textId +
+                ", userId=" + userId +
+                ", eventType='" + eventType + '\'' +
+                ", trigger='" + trigger + '\'' +
+                ", holder='" + holder + '\'' +
+                ", activityName='" + activityName + '\'' +
+                ", activityPlace='" + activityPlace + '\'' +
+                ", avtivityTime='" + avtivityTime + '\'' +
+                ", constructor='" + constructor + '\'' +
+                ", buildingName='" + buildingName + '\'' +
+                ", startingTime='" + startingTime + '\'' +
+                ", buildingPlace='" + buildingPlace + '\'' +
+                ", signatory='" + signatory + '\'' +
+                ", file='" + file + '\'' +
+                ", fileTime='" + fileTime + '\'' +
+                ", filePlace='" + filePlace + '\'' +
+                ", participant1='" + participant1 + '\'' +
+                ", participant2='" + participant2 + '\'' +
+                ", meetingTime='" + meetingTime + '\'' +
+                ", meetingPlace='" + meetingPlace + '\'' +
+                '}';
+    }
 }
