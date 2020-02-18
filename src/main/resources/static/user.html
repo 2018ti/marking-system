@@ -24,8 +24,12 @@
             <li role="presentation"><a href="javascript:void(0);" onclick="DoneWroking()">已办事项</a></li>
         </ul>
         <div class="row">
-            <table id="todoworkTab" class="table table-hover"></table>
-            <table id="doneworkTab" class="table table-hover"></table>
+            <div id="workToDo">
+                <table id="todoworkTab" class="table table-hover"></table>
+            </div>
+            <div id="workDone">
+                <table id="doneworkTab" class="table table-hover"></table>
+            </div>
         </div>
     </div>
 
@@ -46,6 +50,8 @@
 
         //     }
         // })
+        $("#workDone").hide();
+        $("#workToDo").show();
         $('#todoworkTab').bootstrapTable({
             url: "/todowork2",
             queryParams: "queryParams",
@@ -94,7 +100,9 @@
 
     }
     var DoneWroking = function() {
-        alert("hah")
+
+        $("#workToDo").hide();
+        $("#workDone").show();
         $('#doneworkTab').bootstrapTable({
             url: "/donework",
             queryParams: "queryParams",
@@ -130,6 +138,7 @@
                         value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
                         value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
                         value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                        return value;
                     } else if (eventType == '设施启用') {
                         value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
                         value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
@@ -160,7 +169,7 @@
         function actionFormatter(value, row, index) {
             var id = value;
             var result = "";
-            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='操作'>标记</button>";
+            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='编辑'>标记</button>";
             return result;
         }
     }

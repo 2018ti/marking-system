@@ -20,9 +20,8 @@
         select * from user where name=#{name};
     </select>
     <insert id="regist">
-        insert into user values(default,#{name},#{password},"普通用户");
+        insert into user values(default,#{name},#{password},"普通用户",null);
     </insert>
-
 <!--    <insert id="insert">-->
 <!--        insert into users (id, name, funkyNumber, roundingMode) values (-->
 <!--        #{id}, #{name}, #{funkyNumber}, #{roundingMode}-->

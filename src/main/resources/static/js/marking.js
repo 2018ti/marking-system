@@ -282,7 +282,7 @@ $("#save").click(function() {
                     alert("上传失败，您已标记过该文章，只能对此文章进行修改")
             }
         })
-    } else if ($("t1").text == "设施修建方") {
+    } else if ($("t1").text() == "设施修建方") {
         $.ajax({
             url: "/marking/insertBuildMarking",
             method: "post",

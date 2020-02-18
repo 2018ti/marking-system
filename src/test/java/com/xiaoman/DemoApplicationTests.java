@@ -23,15 +23,18 @@ class DemoApplicationTests {
 	@Autowired
 	com.xiaoman.mapper.textMapper textMapper;
 
+	@Autowired
+	textService textService;
 
 
 	@Autowired
 	markingMapper markingMapper;
-	@Autowired
-	textService textService;
+
 	@Test
 	void contextLoads() {
-		System.out.println(markingMapper.selectByUserIdAndText(21,1));
+		List<DoneWorkResult> results = textService.ListDoneWork(21);
+
+		System.out.println(results);
 
 	}
 
