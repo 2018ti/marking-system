@@ -28,7 +28,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    marking_id, text_id, user_id, event_type, trigger, holder, activity_name, activity_place, 
+    marking_id, text_id, user_id, event_type, `trigger`, holder, activity_name, activity_place,
     avtivity_time, constructor, building_name, starting_time, building_place, signatory, 
     file, file_time, file_place, participant1, participant2, meeting_time, meeting_place
   </sql>

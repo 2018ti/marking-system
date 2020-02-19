@@ -1,14 +1,13 @@
 package com.xiaoman.controller;
 
 import com.xiaoman.dao.User;
+import com.xiaoman.dto.DoneWorkResult;
 import com.xiaoman.service.markingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -58,7 +57,5 @@ public class markingController {
         Map<String,String> result=markingService.insertActivityRecord(trigger,holder,name,time,place,user.getId(),textId);
         return result;
     }
-
-
 
 }

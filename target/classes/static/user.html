@@ -129,8 +129,8 @@
                     var eventType = row.eventType;
                     if (eventType == '会见会谈') {
                         value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
-                        value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
-                        value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
+                        value = value.replace(marking2, '<span style="color: green;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: purple;">' + marking3 + '</span>');
                         value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
                         return value;
                     } else if (eventType == '签署文件') {
@@ -167,11 +167,15 @@
         });
 
         function actionFormatter(value, row, index) {
-            var id = value;
+            var markingId = row.markingId;
             var result = "";
-            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='编辑'>标记</button>";
+            result += "<button class='btn btn-primary' onclick=\"EditText('" + markingId + "')\" title='操作'>修改</button>";
             return result;
         }
+
+    }
+    var EditText = function(markingId) {
+        window.location.href = '/edit.html?markingId=' + markingId + '';
     }
 </script>
 

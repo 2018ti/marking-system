@@ -1,10 +1,15 @@
 package com.xiaoman.dto;
 
+
+import lombok.Data;
+
 //已办数据结果集
+@Data
 public class DoneWorkResult {
     private String content;
     private String leader;
     private Integer textId;
+    private Integer markingId;
     private String eventType;
     private String trigger;
     private String marking1;
@@ -34,6 +39,14 @@ public class DoneWorkResult {
 
     public void setTextId(Integer textId) {
         this.textId = textId;
+    }
+
+    public Integer getMarkingId() {
+        return markingId;
+    }
+
+    public void setMarkingId(Integer markingId) {
+        this.markingId = markingId;
     }
 
     public String getEventType() {
@@ -82,21 +95,5 @@ public class DoneWorkResult {
 
     public void setMarking4(String marking4) {
         this.marking4 = marking4;
-    }
-
-
-    @Override
-    public String toString() {
-        return "DoneWorkResult{" +
-                "content='" + content + '\'' +
-                ", leader='" + leader + '\'' +
-                ", textId=" + textId +
-                ", eventType='" + eventType + '\'' +
-                ", trigger='" + trigger + '\'' +
-                ", marking1='" + marking1 + '\'' +
-                ", marking2='" + marking2 + '\'' +
-                ", marking3='" + marking3 + '\'' +
-                ", marking4='" + marking4 + '\'' +
-                '}';
     }
 }

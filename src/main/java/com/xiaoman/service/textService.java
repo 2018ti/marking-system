@@ -1,9 +1,11 @@
 package com.xiaoman.service;
 
 import com.xiaoman.dao.DoneWork;
+import com.xiaoman.dao.marking;
 import com.xiaoman.dao.text;
 import com.xiaoman.dto.DoneWorkResult;
 import com.xiaoman.dto.ToDoMarking;
+import com.xiaoman.mapper.markingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class textService {
 
     @Autowired
     com.xiaoman.mapper.textMapper textMapper;
+    
+    @Autowired
+    markingMapper markingMapper;
 
     public void insertText(String content,String leader){
         text text = new text();
@@ -54,6 +59,7 @@ public class textService {
             doneWorkResult.setContent(doneWork.getContent());
             doneWorkResult.setLeader(doneWork.getLeader());
             doneWorkResult.setTextId(doneWork.getTextId());
+            doneWorkResult.setMarkingId(doneWork.getMarking().getMarkingId());
             if(doneWork.getMarking().getEventType().equals("会见会谈")){
                 doneWorkResult.setMarking1(doneWork.getMarking().getParticipant1());
                 doneWorkResult.setMarking2(doneWork.getMarking().getParticipant2());
@@ -90,6 +96,37 @@ public class textService {
 
     public text getTxtById(int textId){
         return textMapper.selectByPrimaryKey(textId);
+    }
+    
+    public DoneWorkResult getTextByMarkingId(Integer markingId){
+        DoneWorkResult result = new DoneWorkResult();
+        marking marking = markingMapper.selectByPrimaryKey(markingId);
+        text text = textMapper.selectByPrimaryKey(marking.getTextId());
+        result.setContent(text.getContent());
+        result.setTrigger(marking.getTrigger());
+        result.setEventType(marking.getEventType());
+        if(marking.getEventType().equals("会见会谈")){
+            result.setMarking1(marking.getParticipant1());
+            result.setMarking2(marking.getParticipant2());
+            result.setMarking3(marking.getMeetingTime());
+            result.setMarking4(marking.getMeetingPlace());
+        }else if(marking.getEventType().equals("签署文件")){
+            result.setMarking1(marking.getSignatory());
+            result.setMarking2(marking.getFile());
+            result.setMarking3(marking.getFileTime());
+            result.setMarking4(marking.getFilePlace());
+        }else if(marking.getEventType().equals("设施启用")){
+            result.setMarking1(marking.getConstructor());
+            result.setMarking2(marking.getBuildingName());
+            result.setMarking3(marking.getStartingTime());
+            result.setMarking4(marking.getBuildingPlace());
+        }else {
+            result.setMarking1(marking.getHolder());
+            result.setMarking2(marking.getActivityName());
+            result.setMarking3(marking.getActivityPlace());
+            result.setMarking4(marking.getAvtivityTime());
+        }
+        return result;
     }
 
 

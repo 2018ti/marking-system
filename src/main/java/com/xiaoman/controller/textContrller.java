@@ -59,4 +59,11 @@ public class textContrller {
     public text gettext(@RequestParam("textId")Integer textId){
         return textService.getTxtById(textId);
     }
+
+    @GetMapping("/getTxtByMarkingId")
+    public DoneWorkResult getmarking(@RequestParam("markingId")Integer markingId){
+        return textService.getTextByMarkingId(markingId);
+    }
+
+
 }
