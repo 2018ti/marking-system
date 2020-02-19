@@ -58,7 +58,14 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
         if (word != '') {
             $("#w1").html(word);
             //console.log($("#t1").html());
+            if ($("#participant1").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    return oldHTML.replace($("#participant1").prop("outerHTML"), $("#participant1").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: orange;" id="participant1">' + word + '</span>');
             })
         }
@@ -68,7 +75,16 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
     $("#event1_person2").click(function() { //点击“参与方2”按钮
         if (word != '') {
             $("#w2").html(word);
+            if ($("#participant2").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#participant2").prop("outerHTML"), $("#participant2").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: green;" id="participant2">' + word + '</span>');
             })
         }
@@ -78,7 +94,14 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
     $("#event1_date").click(function() { //点击“时间”按钮
         if (word != '') {
             $("#w3").html(word);
+            if ($("#time").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    return oldHTML.replace($("#time").prop("outerHTML"), $("#time").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: purple;" id="time">' + word + '</span>');
             })
         }
@@ -89,7 +112,14 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
         if (word != '') {
             $("#w4").html(word);
 
+            if ($("#place").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    return oldHTML.replace($("#place").prop("outerHTML"), $("#place").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: blue;" id="place">' + word + '</span>');
             })
         }
@@ -116,8 +146,17 @@ $("#event2").click(function() {
     $("#event2_person").click(function() { //点击“参与方1”按钮
         if (word != '') {
             $("#w1").html(word);
+            if ($("#signatory").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#signatory").prop("outerHTML"), $("#signatory").text());
+                })
+            }
             //console.log($("#t1").html());
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: orange;" id="signatory">' + word + '</span>');
             })
         }
@@ -127,7 +166,16 @@ $("#event2").click(function() {
     $("#event2_document").click(function() { //点击“参与方2”按钮
         if (word != '') {
             $("#w2").html(word);
+            if ($("#file").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#file").prop("outerHTML"), $("#file").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: purple;" id="file">' + word + '</span>');
             })
         }
@@ -137,7 +185,16 @@ $("#event2").click(function() {
     $("#event2_date").click(function() { //点击“时间”按钮
         if (word != '') {
             $("#w3").html(word);
+            if ($("#time").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#time").prop("outerHTML"), $("#time").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: green;" id="time">' + word + '</span>');
             })
         }
@@ -147,7 +204,16 @@ $("#event2").click(function() {
     $("#event2_place").click(function() { //点击“地点”按钮
         if (word != '') {
             $("#w4").html(word);
+            if ($("#place").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#place").prop("outerHTML"), $("#place").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: blue;" id="place">' + word + '</span>');
             })
         }
@@ -176,7 +242,16 @@ $("#event3").click(function() {
         if (word != '') {
             $("#w1").html(word);
             //console.log($("#t1").html());
+            if ($("#constructor").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#constructor").prop("outerHTML"), $("#constructor").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: green;" id="constructor">' + word + '</span>');
             })
         }
@@ -187,7 +262,16 @@ $("#event3").click(function() {
     $("#event3_name").click(function() { //点击“参与方2”按钮
         if (word != '') {
             $("#w2").html(word);
+            if ($("#buildingName").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#buildingName").prop("outerHTML"), $("#buildingName").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: orange;" id="buildingName">' + word + '</span>');
             })
         }
@@ -197,7 +281,16 @@ $("#event3").click(function() {
     $("#event3_date").click(function() { //点击“时间”按钮
         if (word != '') {
             $("#w3").html(word);
+            if ($("#time").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#time").prop("outerHTML"), $("#time").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: blue;" id="time">' + word + '</span>');
             })
         }
@@ -207,7 +300,15 @@ $("#event3").click(function() {
     $("#event3_place").click(function() { //点击“地点”按钮
         if (word != '') {
             $("#w4").html(word);
+            if ($("#place").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+                    return oldHTML.replace($("#place").prop("outerHTML"), $("#place").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: purple;" id="place">' + word + '</span>');
             })
         }
@@ -236,7 +337,16 @@ $("#event4").click(function() {
         if (word != '') {
             $("#w1").html(word);
 
+            if ($("#holder").length > 0) {
+                //删除之前的标记
+
+                $('#text').html(function(i, oldHTML) {
+                    return oldHTML.replace($("#holder").prop("outerHTML"), $("#holder").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: green;" id="holder">' + word + '</span>');
             })
         }
@@ -247,7 +357,16 @@ $("#event4").click(function() {
     $("#event4_name").click(function() { //点击“活动名称”按钮
         if (word != '') {
             $("#w2").html(word);
+            if ($("#name").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+
+                    return oldHTML.replace($("#name").prop("outerHTML"), $("#name").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: orange;" id="name">' + word + '</span>');
             })
         }
@@ -257,7 +376,15 @@ $("#event4").click(function() {
     $("#event4_place").click(function() { //点击“活动地点”按钮
         if (word != '') {
             $("#w3").html(word);
+            if ($("#place").length > 0) {
+                $('#text').html(function(i, oldHTML) {
+                    //删除之前的标记
+                    return oldHTML.replace($("#place").prop("outerHTML"), $("#place").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: blue;" id="place">' + word + '</span>');
             })
         }
@@ -267,7 +394,16 @@ $("#event4").click(function() {
     $("#event4_date").click(function() { //点击“活动时间”按钮
         if (word != '') {
             $("#w4").html(word);
+            if ($("#time").length > 0) {
+                //删除之前的标记
+                $('#text').html(function(i, oldHTML) {
+                    return oldHTML.replace($("#time").prop("outerHTML"), $("#time").text());
+                })
+            }
             $('#text').html(function(i, oldHTML) {
+
+
+                //标记文本
                 return oldHTML.replace(word, '<span style="color: purple;" id="time">' + word + '</span>');
             })
         }

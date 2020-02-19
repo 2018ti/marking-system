@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="efd1f590-3e81-469c-9d89-2fd78cf605aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/markingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/markingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/textContrller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/textContrller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/DoneWorkResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/DoneWorkResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/markingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/markingMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/marking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/marking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/marking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/DoneWorkResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/DoneWorkResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/marking.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/marking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/marking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,46 +156,46 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1581996492403" />
-    <state width="1420" height="205" key="GridCell.Tab.0.bottom" timestamp="1582099265472">
+    <state width="1420" height="205" key="GridCell.Tab.0.bottom" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582099265472" />
-    <state width="1420" height="205" key="GridCell.Tab.0.center" timestamp="1582099265472">
+    <state width="1420" height="205" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
+    <state width="1420" height="205" key="GridCell.Tab.0.center" timestamp="1582113557137">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1582099265472" />
-    <state width="1420" height="205" key="GridCell.Tab.0.left" timestamp="1582099265472">
+    <state width="1420" height="205" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1582113557137" />
+    <state width="1420" height="205" key="GridCell.Tab.0.left" timestamp="1582113557137">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1582099265472" />
-    <state width="1420" height="205" key="GridCell.Tab.0.right" timestamp="1582099265472">
+    <state width="1420" height="205" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1582113557137" />
+    <state width="1420" height="205" key="GridCell.Tab.0.right" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1582099265472" />
-    <state width="1420" height="205" key="GridCell.Tab.1.bottom" timestamp="1582099265347">
+    <state width="1420" height="205" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
+    <state width="1420" height="205" key="GridCell.Tab.1.bottom" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582099265347" />
-    <state width="1420" height="205" key="GridCell.Tab.1.center" timestamp="1582099265347">
+    <state width="1420" height="205" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
+    <state width="1420" height="205" key="GridCell.Tab.1.center" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1582099265347" />
-    <state width="1420" height="205" key="GridCell.Tab.1.left" timestamp="1582099265347">
+    <state width="1420" height="205" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
+    <state width="1420" height="205" key="GridCell.Tab.1.left" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1582099265347" />
-    <state width="1420" height="205" key="GridCell.Tab.1.right" timestamp="1582099265347">
+    <state width="1420" height="205" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
+    <state width="1420" height="205" key="GridCell.Tab.1.right" timestamp="1582113557138">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="205" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1582099265347" />
+    <state width="1420" height="205" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1582113557138" />
     <state x="234" y="46" key="SettingsEditor" timestamp="1582083730294">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="234" y="46" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1582083730294" />
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1582083722231">
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1582126574583">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1582083722231" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1582126574583" />
     <state x="394" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1580619703189">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
