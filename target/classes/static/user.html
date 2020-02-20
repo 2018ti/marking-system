@@ -127,6 +127,7 @@
                     var marking4 = row.marking4;
                     var trigger = row.trigger;
                     var eventType = row.eventType;
+                    value = value.replace(trigger, '<span style="color: red;">' + trigger + '</span>');
                     if (eventType == '会见会谈') {
                         value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
                         value = value.replace(marking2, '<span style="color: green;">' + marking2 + '</span>');
@@ -169,13 +170,41 @@
         function actionFormatter(value, row, index) {
             var markingId = row.markingId;
             var result = "";
-            result += "<button class='btn btn-primary' onclick=\"EditText('" + markingId + "')\" title='操作'>修改</button>";
+            result += "<div class='btn-group btn-group-xs'>"
+            result += "<button class='btn btn-primary' style='margin-right: 20px;' onclick=\"EditText('" + markingId + "')\" title='操作'>修改</button>";
+            result += "<a class='btn btn-warning' href='/download?eventType=" + row.eventType + "&trigger=" + row.trigger + "&marking1=" + row.marking1 + "&marking2=" + row.marking2 + "&marking3=" + row.marking3 + "&marking4=" + row.marking4 + "&textId=" + row.textId + "&markingId=" + row.markingId + "&content=" + row.content + "'>导出</a>";
+            result += "</div>"
             return result;
         }
 
     }
     var EditText = function(markingId) {
         window.location.href = '/edit.html?markingId=' + markingId + '';
+    }
+    var download = function(trigger, textId, markingId, marking1, marking2, marking3, marking4, eventType, content) {
+        alert(content, trigger);
+        $.ajax({
+            url: "/download",
+            dataType: "json",
+            method: "get",
+            data: {
+                trigger: trigger,
+                textId: textId,
+                marking1: marking1,
+                marking2: marking2,
+                marking3: marking3,
+                marking4: marking4,
+                content: content,
+                markingId: markingId,
+                eventType: eventType,
+            },
+            success: function(data) {
+                alert("下载成功");
+            }
+
+
+        })
+
     }
 </script>
 
