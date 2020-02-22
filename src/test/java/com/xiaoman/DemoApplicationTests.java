@@ -7,6 +7,7 @@ import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.mapper.markingMapper;
 import com.xiaoman.mapper.textMapper;
 import com.xiaoman.service.UserService;
+import com.xiaoman.service.agreementService;
 import com.xiaoman.service.textService;
 import org.apache.ibatis.transaction.Transaction;
 import org.dom4j.Document;
@@ -40,35 +41,16 @@ class DemoApplicationTests {
 	@Autowired
 	textService textService;
 
+	@Autowired
+	agreementService  agreementService;
+
 
 	@Autowired
 	markingMapper markingMapper;
 
 	@Test
 	void contextLoads() throws IOException {
-		Date date = new Date();
-		String timestamp = String.valueOf(date.getTime());
-		System.out.println(timestamp);
-		String fileurl = timestamp;
-		Document dom = DocumentHelper.createDocument();//添加节点用addElement，添加节点属性用addAttribute,未节点赋值用setText
-		Element Document = dom.addElement("Document"); //ServiceTab
-		Document.addAttribute("ID",String.valueOf(1));
-		Element event=Document.addElement("event");
-		event.addAttribute("ID",String.valueOf(2));
-		event.addAttribute("TYPE","会见会谈");
-		Element event_trigger = event.addElement("event_Trigger");
-		event_trigger.addAttribute("START",String.valueOf(26));
-		event_trigger.addAttribute("END",String.valueOf(28));
-		event_trigger.setText("会谈");
-		OutputFormat format = OutputFormat.createPrettyPrint();//缩减型格式
-		format.setEncoding("UTF-8");//设置编码
-		format.setTrimText(false);
-		Writer fileWriter = new FileWriter(fileurl+".xml");
-		//dom4j提供了专门写入文件的对象XMLWriter
-		XMLWriter xmlWriter = new XMLWriter(fileWriter,format);
-		xmlWriter.write(dom);
-		xmlWriter.flush();
-		xmlWriter.close();
+		System.out.println(agreementService.calAgreement(7));
 	}
 
 	@Test

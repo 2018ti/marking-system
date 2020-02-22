@@ -63,6 +63,11 @@
   <select id="selectByUserIdAndText" parameterType="INTEGER" resultMap="BaseResultMap">
     select * from marking where user_id = #{userId} and text_id=#{textId}
   </select>
+  <select id="selectAllMarkingByTextId" parameterType="INTEGER" resultMap="BaseResultMap">
+    select * from marking where text_id=#{textId}
+  </select>
+
+
   <insert id="insertSelective" parameterType="com.xiaoman.dao.marking">
     insert into marking
     <trim prefix="(" suffix=")" suffixOverrides=",">
