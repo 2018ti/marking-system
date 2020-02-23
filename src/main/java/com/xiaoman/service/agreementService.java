@@ -15,7 +15,7 @@ public class agreementService {
     @Autowired
     markingMapper markingMapper;
 
-        //字符串比较时其中一个可能为null 进行处理
+        //字符串比较时其中一个可能为null的处理
         boolean compare(String str1, String str2) {
             return ((str1 == str2) || (str1 != null && str1.equals(str2)));
         }

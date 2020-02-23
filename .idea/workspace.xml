@@ -4,15 +4,7 @@
     <list default="true" id="efd1f590-3e81-469c-9d89-2fd78cf605aa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/agreementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/agreementMarking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/agreementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/markingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.factorypath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin" beforeDir="false" afterPath="$PROJECT_DIR$/bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.factorypath" beforeDir="false" />
@@ -77,18 +69,20 @@
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/regist.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/regist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/XmlFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/XmlFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/agreementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/agreementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/DoneWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/DoneWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/agreementMarking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/agreementMarking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/markingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/markingMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/textMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/textMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/agreementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/agreementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/markingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/markingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/XmlFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/XmlFileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/markingMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/markingMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/markingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/markingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +137,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
@@ -158,7 +153,7 @@
       <recent name="F:\project\marking\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DemoApplicationTests.contextLoads">
+  <component name="RunManager" selected="Application.DemoApplication">
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xiaoman.DemoApplication" />
       <module name="marking" />
@@ -219,9 +214,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DemoApplication" />
         <item itemvalue="JUnit.DemoApplicationTests.contextLoads" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.DemoApplication" />
         <item itemvalue="JUnit.DemoApplicationTests.testUser" />
       </list>
     </recent_temporary>
@@ -248,54 +243,58 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1463.874@0.0.1463.874" timestamp="1581915642997" />
-    <state x="462" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581829433856">
+    <state x="462" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582364635758">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="462" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1463.874@0.0.1463.874" timestamp="1581829433856" />
+    <state x="462" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1463.874@0.0.1463.874" timestamp="1582364635758" />
+    <state x="471" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1582445793705">
+      <screen x="0" y="0" width="1463" height="874" />
+    </state>
+    <state x="471" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1463.874@0.0.1463.874" timestamp="1582445793705" />
     <state x="946" y="145" key="FileChooserDialogImpl" timestamp="1581996492403">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1581996492403" />
-    <state width="1420" height="229" key="GridCell.Tab.0.bottom" timestamp="1582356908592">
+    <state width="1420" height="297" key="GridCell.Tab.0.bottom" timestamp="1582446754849">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="229" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582356908592" />
-    <state width="1420" height="229" key="GridCell.Tab.0.center" timestamp="1582356908592">
+    <state width="1420" height="297" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582446754849" />
+    <state width="1420" height="297" key="GridCell.Tab.0.center" timestamp="1582446754849">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="229" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1582356908592" />
-    <state width="1420" height="229" key="GridCell.Tab.0.left" timestamp="1582356908591">
+    <state width="1420" height="297" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1582446754849" />
+    <state width="1420" height="297" key="GridCell.Tab.0.left" timestamp="1582446754849">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="229" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1582356908591" />
-    <state width="1420" height="229" key="GridCell.Tab.0.right" timestamp="1582356908592">
+    <state width="1420" height="297" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1582446754849" />
+    <state width="1420" height="297" key="GridCell.Tab.0.right" timestamp="1582446754849">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="229" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1582356908592" />
-    <state width="1420" height="116" key="GridCell.Tab.1.bottom" timestamp="1582218845673">
+    <state width="1420" height="297" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1582446754849" />
+    <state width="1420" height="297" key="GridCell.Tab.1.bottom" timestamp="1582446754724">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="116" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582218845673" />
-    <state width="1420" height="116" key="GridCell.Tab.1.center" timestamp="1582218845673">
+    <state width="1420" height="297" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1582446754724" />
+    <state width="1420" height="297" key="GridCell.Tab.1.center" timestamp="1582446754724">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="116" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1582218845673" />
-    <state width="1420" height="116" key="GridCell.Tab.1.left" timestamp="1582218845673">
+    <state width="1420" height="297" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1582446754724" />
+    <state width="1420" height="297" key="GridCell.Tab.1.left" timestamp="1582446754724">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="116" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1582218845673" />
-    <state width="1420" height="116" key="GridCell.Tab.1.right" timestamp="1582218845673">
+    <state width="1420" height="297" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1582446754724" />
+    <state width="1420" height="297" key="GridCell.Tab.1.right" timestamp="1582446754724">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="116" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1582218845673" />
+    <state width="1420" height="297" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1582446754724" />
     <state x="307" y="133" key="SettingsEditor" timestamp="1582348903940">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="307" y="133" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1582348903940" />
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1582348929765">
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1582441671468">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1582348929765" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1582441671468" />
     <state x="75" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582275568116">
       <screen x="0" y="0" width="1463" height="874" />
     </state>

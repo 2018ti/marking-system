@@ -9,4 +9,6 @@ public class agreementMarking {
     private String marking2;
     private String marking3;
     private String marking4;
+    private double agreeRate;
+    private String content;
 }

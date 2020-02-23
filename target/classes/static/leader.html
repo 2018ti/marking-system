@@ -4,10 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/marking.css">
+    <script type="text/javascript" src="js/JQuery/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>用户组长</h1>
+
+    <div class="container">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" id="bar-1"><a href="bar-1">Bar 1</a></li>
+            <li role="presentation" id="bar-2">
+                <a href="#docCollapse" class="nav-header collapsed" data-toggle="collapse" id="collapseParent" onclick="chevron_toggle()">Bar 2<span class="pull-right glyphicon glyphicon-chevron-down"></span></a>
+                <ul id="docCollapse" class="nav nav-list collapse">
+                    <li><a href="#">Child Bar 1</a></li>
+                    <li><a href="#">Child Bar 2</a></li>
+                </ul>
+            </li>
+            <li role="presentation" id="bar-3"><a href="bar-3">Bar 3</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
 </body>
 
 </html>

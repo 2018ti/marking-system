@@ -19,6 +19,11 @@
     <select id="selectByname" resultMap="UserMap">
         select * from user where name=#{name};
     </select>
+    <select id="countGroupMember" resultType="INTEGER" parameterType="INTEGER">
+        select count(*) from user where group_id =(
+            select group_id from user where user_id=#(userId)
+        )
+    </select>
     <insert id="regist">
         insert into user values(default,#{name},#{password},"普通用户",null);
     </insert>

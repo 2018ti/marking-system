@@ -15,4 +15,6 @@ public interface UserMapper {
     public void regist(@Param("name")String name,@Param("password")String password);
 
     public User selectByname(@Param("name")String name);
+
+    public Integer countGroupMember(@Param("userId")Integer userId);
 }

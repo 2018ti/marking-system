@@ -1,7 +1,10 @@
 package com.xiaoman.service;
 
 import com.xiaoman.dao.marking;
+import com.xiaoman.dao.text;
+import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.mapper.markingMapper;
+import com.xiaoman.mapper.textMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,15 @@ import java.util.Map;
 public class markingService {
     @Autowired
     markingMapper markingMapper;
+
+    @Autowired
+    UserMapper userMapper;
+
+    @Autowired
+    textMapper textMapper;
+
+    @Autowired
+    agreementService agreementService;
 
 
     public Map<String,String> insertEventingRecord(String trigger, String participant1, String participant2, String time, String place, Integer userId, Integer textId){
@@ -30,8 +42,22 @@ public class markingService {
         marking.setTextId(textId);
         marking.setUserId(userId);
         marking.setEventType("会见会谈");
-        markingMapper.insertSelective(marking);
+        Integer markingId=markingMapper.insertSelective(marking);
         result.put("msg","标记成功");
+        //小组成员都完成标记时进行标注一致性判断
+        if(markingMapper.countMarkingRecordByTextId(textId)==userMapper.countGroupMember(userId)){
+            double agree = agreementService.calAgreement(textId);
+            text text = new text();
+            if(agree==1){
+                text.setAgreeRate(1.0);
+                text.setMarkingId(markingId);
+                textMapper.updateByPrimaryKey(text);
+            }else{
+                text.setAgreeRate(agree);
+                textMapper.updateByPrimaryKey(text);
+            }
+        }
+
         return result;
     }
 

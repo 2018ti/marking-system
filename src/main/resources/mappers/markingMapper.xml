@@ -66,9 +66,12 @@
   <select id="selectAllMarkingByTextId" parameterType="INTEGER" resultMap="BaseResultMap">
     select * from marking where text_id=#{textId}
   </select>
+  <select id="countMarkingRecordByTextId" parameterType="INTEGER" resultType="INTEGER">
+    select count(*) from marking where text_id = #{textId}
+  </select>
 
 
-  <insert id="insertSelective" parameterType="com.xiaoman.dao.marking">
+  <insert id="insertSelective" parameterType="com.xiaoman.dao.marking" useGeneratedKeys="true" keyProperty="markingId">
     insert into marking
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="markingId != null">

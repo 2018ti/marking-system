@@ -22,4 +22,5 @@ public interface markingMapper {
 
     List<marking> selectAllMarkingByTextId(@Param("textId")Integer textId);
 
+    Integer countMarkingRecordByTextId(@Param("textId")Integer textId);
 }

@@ -23,5 +23,6 @@ public interface textMapper {
 
     List<DoneWork> selectDoneWorkTextTable(Integer userId);
 
-
+    //查询该用户组长下一致性为100%的标记
+    List<DoneWork> selectMarkedText(String leaderName);
 }
