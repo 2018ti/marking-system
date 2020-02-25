@@ -9,6 +9,7 @@
       <arg column="leader" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="load_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="agree_rate" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <resultMap id="DoneWork" type="com.xiaoman.dao.DoneWork">
@@ -21,21 +22,21 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    text_id, content, marking_id, leader, load_time
+    text_id, content, marking_id, leader, load_time, agree_rate,title
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select
+    text_id, content, marking_id, leader, load_time, agree_rate,title
     from text
     where text_id = #{textId,jdbcType=INTEGER}
   </select>
   <select id="selectToDoMarking" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-  SELECT text.content,text.text_id,text.marking_id,text.leader,text.load_time
-  FROM text LEFT JOIN marking ON text.text_id=marking.text_id
-  WHERE user_id not in(#{userId,jdbcType=INTEGER}) or user_id is null
+    SELECT text.* FROM text WHERE text_id not in(SELECT text.text_id
+    FROM text LEFT JOIN marking ON text.text_id=marking.text_id
+    WHERE user_id = #{userId})
   </select>
   <select id="selectDoneWorkTextTable" parameterType="java.lang.Integer" resultMap="DoneWork">
-    select text.content,text.leader,marking.*
+    select text.content,text.leader,text.agree_rate,marking.*
     from text left join marking
     on text.text_id = marking.text_id
     where user_id = #{userId}
@@ -44,6 +45,12 @@
     SELECT text.text_id,text.content,text.leader,text.agree_rate,marking.*
     FROM text LEFT JOIN marking on text.text_id=marking.text_id
     WHERE text.agree_rate = 1.0 AND text.leader=#{leaderName} GROUP BY text.content
+  </select>
+  <select id="selectLeaderText" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from text where leader=#{leader}
+  </select>
+  <select id="selectByK" parameterType="java.lang.Double" resultMap="BaseResultMap">
+    select * from text where agree_rate >=#{K}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from text
@@ -74,7 +81,10 @@
         load_time,
       </if>
       <if test="agreeRate != null">
-        agree_rate,
+      agree_rate,
+    </if>
+      <if test="title != null">
+        title,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -96,6 +106,9 @@
       <if test="agreeRate != null">
         #{agreeRate,jdbcType=DOUBLE},
       </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoman.dao.text">
@@ -104,7 +117,7 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
-      <if test="marking_id != null">
+      <if test="markingId != null">
         marking_id = #{markingId,jdbcType=INTEGER},
       </if>
       <if test="leader != null">
@@ -115,6 +128,9 @@
       </if>
       <if test="agreeRate != null">
         agree_rate = #{agreeRate,jdbcType=DOUBLE},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
       </if>
     </set>
     where text_id = #{textId,jdbcType=INTEGER}

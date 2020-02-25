@@ -1,7 +1,9 @@
 package com.xiaoman.controller;
 
+import com.xiaoman.dao.text;
 import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.service.UserService;
+import com.xiaoman.service.textService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -22,6 +24,9 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    textService textService;
 
     @GetMapping("/login")
     public Map<String,String> Login(@RequestParam("name")String name, @RequestParam("password")String password, HttpServletRequest request){
@@ -55,7 +60,20 @@ public class UserController {
         }
     }
 
+    @GetMapping("/listMember")
+    public List<User> listMembers(@RequestParam("groupId")Integer groupId){
+        System.out.println(groupId);
+        return userService.listAllMember(Integer.valueOf(groupId));
+    }
+    @GetMapping("/getLeader")
+    public User getLeader(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        return user;
+    }
 
-
-
+    @GetMapping("/listText")
+    public List<text> getMyText(@RequestParam("leaderName")String leader){
+        System.out.println(leader);
+        return textService.selectLeaderText(leader);
+    }
 }

@@ -38,6 +38,7 @@ public class textService {
             String content=text.getContent();
             String leader=text.getLeader();
             Date loadTime=text.getLoadTime();
+            String title=text.getTitle();
             SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String formattime = format.format(loadTime);
             int textId=text.getTextId();
@@ -46,6 +47,7 @@ public class textService {
             toDoMarking.setLeader(leader);
             toDoMarking.setTextId(textId);
             toDoMarking.setLoadTime(formattime);
+            toDoMarking.setTitle(title);
             toDoMarkings.add(toDoMarking);
         }
         return toDoMarkings;
@@ -173,5 +175,14 @@ public class textService {
         }
         return results;
     }
+
+    public List<text> selectLeaderText(String leader){
+        return textMapper.selectLeaderText(leader);
     }
+
+    public  List<text> selectByK(Double K){
+        return  textMapper.selectByK(K);
+    }
+    }
+
 

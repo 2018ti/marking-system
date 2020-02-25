@@ -35,6 +35,9 @@
 
 </body>
 <script>
+    $(document).ready(function() {
+        ToDoWorking();
+    })
     var ToDoWorking = function() {
         // $.ajax({
         //     type: "GET",
@@ -66,6 +69,10 @@
             columns: [{
                     field: 'leader',
                     title: '组长名'
+                }, {
+                    field: 'title',
+                    title: '文件名',
+                    width: 100
                 }, {
                     field: 'loadTime',
                     title: '上传日期'

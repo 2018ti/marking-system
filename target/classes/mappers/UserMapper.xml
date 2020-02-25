@@ -9,6 +9,7 @@
         <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
         <result property="password" column="password" javaType="String" jdbcType="VARCHAR"/>
         <result property="role" column="role" javaType="String" jdbcType="VARCHAR"/>
+        <result property="groupId" column="group_id" javaType="INTEGER" jdbcType="INTEGER"/>
     </resultMap>
     <select id="Login" resultMap="UserMap">
         select * from user where name=#{name} and password=#{password};
@@ -19,9 +20,12 @@
     <select id="selectByname" resultMap="UserMap">
         select * from user where name=#{name};
     </select>
+    <select id="selectByGroup" parameterType="INTEGER" resultMap="UserMap">
+        select * from user where group_id=#{groupId} and role='普通用户'
+    </select>
     <select id="countGroupMember" resultType="INTEGER" parameterType="INTEGER">
         select count(*) from user where group_id =(
-            select group_id from user where user_id=#(userId)
+            select group_id from user where id=#{userId}
         )
     </select>
     <insert id="regist">

@@ -28,7 +28,6 @@ public class markingService {
 
     public Map<String,String> insertEventingRecord(String trigger, String participant1, String participant2, String time, String place, Integer userId, Integer textId){
         HashMap<String, String> result = new HashMap<>();
-
         if(markingMapper.selectByUserIdAndText(userId,textId)!=null){
             result.put("msg","该用户已经标记过该文章");
             return result;
@@ -44,17 +43,20 @@ public class markingService {
         marking.setEventType("会见会谈");
         Integer markingId=markingMapper.insertSelective(marking);
         result.put("msg","标记成功");
+
         //小组成员都完成标记时进行标注一致性判断
-        if(markingMapper.countMarkingRecordByTextId(textId)==userMapper.countGroupMember(userId)){
+        if(markingMapper.countMarkingRecordByTextId(textId)==userMapper.countGroupMember(userId)-1){
+            System.out.println("组成员都完成标记");
             double agree = agreementService.calAgreement(textId);
             text text = new text();
+            text.setTextId(textId);
             if(agree==1){
                 text.setAgreeRate(1.0);
                 text.setMarkingId(markingId);
-                textMapper.updateByPrimaryKey(text);
+                textMapper.updateByPrimaryKeySelective(text);
             }else{
                 text.setAgreeRate(agree);
-                textMapper.updateByPrimaryKey(text);
+                textMapper.updateByPrimaryKeySelective(text);
             }
         }
 
@@ -119,5 +121,4 @@ public class markingService {
         result.put("msg","标记成功");
         return result;
     }
-
 }

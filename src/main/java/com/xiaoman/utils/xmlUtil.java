@@ -14,6 +14,7 @@ import java.util.Date;
 
 public class xmlUtil {
     public static String TextToXml(String eventType,String trigger,String marking1,String marking2,String marking3,String marking4,Integer textId,Integer markingId,String content) throws IOException {
+        System.out.println(content);
         Date date = new Date();
         String fileurl = String.valueOf(date.getTime());
         String filename=fileurl+".xml";

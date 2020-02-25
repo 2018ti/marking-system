@@ -9,6 +9,9 @@ public class User {
     private String name;
     private String password;
     private String role;
+    private Integer groupId;
+
+
 
     public Integer getId() {
         return id;
@@ -40,5 +43,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
     }
 }

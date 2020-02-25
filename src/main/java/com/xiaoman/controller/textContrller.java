@@ -65,5 +65,11 @@ public class textContrller {
         return textService.getTextByMarkingId(markingId);
     }
 
+    @GetMapping("/getTextByK")
+    public List<text> getTextByK(@RequestParam("K")Double K){
+        System.out.println("筛选控制器");
+        return textService.selectByK(K);
+    }
+
 
 }

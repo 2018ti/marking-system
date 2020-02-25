@@ -1,13 +1,11 @@
 package com.xiaoman.controller;
 
 import com.xiaoman.dao.User;
-import com.xiaoman.dto.DoneWorkResult;
 import com.xiaoman.service.markingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,7 +20,6 @@ public class markingController {
                            @RequestParam("place")String place, @RequestParam("textId")Integer textId,
                            HttpServletRequest request)
     {
-        System.out.println("进入会见会谈controler");
         User user = (User)request.getSession().getAttribute("user");
         Map<String, String> result = markingService.insertEventingRecord(trigger, participant1, participant2, time, place, user.getId(), textId);
         return result;

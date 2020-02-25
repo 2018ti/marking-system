@@ -10,6 +10,7 @@ public class ToDoMarking {
     private Integer textId;
     private String leader;
     private String loadTime;
+    private String title;
 
     public String getContent() {
         return content;
@@ -41,5 +42,13 @@ public class ToDoMarking {
 
     public void setLoadTime(String loadTime) {
         this.loadTime = loadTime;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

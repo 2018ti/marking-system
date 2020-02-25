@@ -487,10 +487,11 @@ $("#save").click(function() {
                     alert("上传失败，您已标记过该文章，只能对此文章进行修改")
             }
         })
-    } else
+    } else {
+        alert("举办活动")
         $.ajax({
             url: "/marking/insertActivityMarking",
-            method: "/post",
+            method: "post",
             datatype: "json",
             data: {
                 trigger: $("#trigger").text(),
@@ -507,4 +508,8 @@ $("#save").click(function() {
                     alert("上传失败，您已标记过该文章，只能对此文章进行修改");
             }
         })
+    }
 })
+var test = function() {
+    alert("chenggong")
+}

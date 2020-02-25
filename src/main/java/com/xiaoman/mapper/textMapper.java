@@ -25,4 +25,8 @@ public interface textMapper {
 
     //查询该用户组长下一致性为100%的标记
     List<DoneWork> selectMarkedText(String leaderName);
+
+    List<text> selectLeaderText(String leader);
+
+    List<text> selectByK(Double K);
 }
