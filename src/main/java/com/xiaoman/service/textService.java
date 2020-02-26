@@ -23,10 +23,14 @@ public class textService {
     @Autowired
     markingMapper markingMapper;
 
-    public void insertText(String content,String leader){
+    public void insertText(String content,String leader,String title){
         text text = new text();
+        Date date = new Date();
+        date.getTime();
         text.setContent(content);
         text.setLeader(leader);
+        text.setTitle(title);
+        text.setLoadTime(date);
         textMapper.insertSelective(text);
     }
 
@@ -141,6 +145,7 @@ public class textService {
             doneWorkResult.setContent(doneWork.getContent());
             doneWorkResult.setLeader(doneWork.getLeader());
             doneWorkResult.setTextId(doneWork.getTextId());
+            doneWorkResult.setTitle(doneWork.getTitle());
             doneWorkResult.setMarkingId(doneWork.getMarking().getMarkingId());
             if(doneWork.getMarking().getEventType().equals("会见会谈")){
                 doneWorkResult.setMarking1(doneWork.getMarking().getParticipant1());

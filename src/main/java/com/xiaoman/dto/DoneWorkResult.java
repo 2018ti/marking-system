@@ -8,6 +8,7 @@ import lombok.Data;
 public class DoneWorkResult {
     private String content;
     private String leader;
+    private String title;
     private Integer textId;
     private Integer markingId;
     private String eventType;
@@ -95,5 +96,21 @@ public class DoneWorkResult {
 
     public void setMarking4(String marking4) {
         this.marking4 = marking4;
+    }
+
+    @Override
+    public String toString() {
+        return "DoneWorkResult{" +
+                "content='" + content + '\'' +
+                ", leader='" + leader + '\'' +
+                ", textId=" + textId +
+                ", markingId=" + markingId +
+                ", eventType='" + eventType + '\'' +
+                ", trigger='" + trigger + '\'' +
+                ", marking1='" + marking1 + '\'' +
+                ", marking2='" + marking2 + '\'' +
+                ", marking3='" + marking3 + '\'' +
+                ", marking4='" + marking4 + '\'' +
+                '}';
     }
 }

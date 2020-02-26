@@ -50,7 +50,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() throws IOException {
-		System.out.println(textMapper.selectToDoMarking(22));
+		System.out.println(textService.listAllMarkedText("小蛮"));
 	}
 
 	@Test

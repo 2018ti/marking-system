@@ -401,8 +401,6 @@ $("#event4").click(function() {
                 })
             }
             $('#text').html(function(i, oldHTML) {
-
-
                 //标记文本
                 return oldHTML.replace(word, '<span style="color: purple;" id="time">' + word + '</span>');
             })

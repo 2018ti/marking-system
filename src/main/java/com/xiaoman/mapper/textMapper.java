@@ -29,4 +29,5 @@ public interface textMapper {
     List<text> selectLeaderText(String leader);
 
     List<text> selectByK(Double K);
+
 }

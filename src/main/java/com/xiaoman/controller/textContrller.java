@@ -22,9 +22,9 @@ public class textContrller {
     textService textService;
 
     @RequestMapping("/loadText")
-    public String loadtext(@Param("content")String content, HttpServletRequest request){
+    public String loadtext(@RequestParam("content")String content, @RequestParam("title")String title, HttpServletRequest request){
         User user=(User)request.getSession().getAttribute("user");
-        textService.insertText(content,user.getName());
+        textService.insertText(content,user.getName(),title);
         return "上传成功";
     }
 
@@ -67,8 +67,14 @@ public class textContrller {
 
     @GetMapping("/getTextByK")
     public List<text> getTextByK(@RequestParam("K")Double K){
-        System.out.println("筛选控制器");
         return textService.selectByK(K);
+    }
+
+    @GetMapping("/listMarkedText")
+    public List<DoneWorkResult> listMarked(HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        String leadername=user.getName();
+        return textService.listAllMarkedText(leadername);
     }
 
 

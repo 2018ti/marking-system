@@ -31,6 +31,29 @@
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
     <!-- Latest compiled and minified Locales -->
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        
+        .text {
+            width: 100%;
+            min-height: 120px;
+            max-height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            border: 1px solid #a0b3d6;
+            font-size: 20px;
+            line-height: 24px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-color: rgba(82, 168, 236, 0.8);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+        }
+    </style>
 </head>
 
 <body>
@@ -61,10 +84,10 @@
                 <div class="sidebar-item sidebar-search">
                     <div>
                         <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="请在此处输入筛选条件K">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
                             <div class="input-group-append">
                                 <span class="input-group-text">
-                                    <button class="btn btn-primary"  aria-hidden="true">筛选</i>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
                                 </span>
                             </div>
                         </div>
@@ -106,7 +129,10 @@
                                         <a href="javascript:void(0);" onclick="ListMyText()">我上传的文本</a>
                                     </li>
                                     <li>
-                                        <a href="#">最终标注的文本</a>
+                                        <a href="javascript:void(0);" onclick="ListMarkedText()">最终标注的文本</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="loadnewtext()">上传新文本</a>
                                     </li>
 
                                 </ul>
@@ -120,188 +146,195 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">标注情况</a>
+                                        <a href="javascript:void(0);" onclick="selectByAgree()">设置筛选条件</a>
                                     </li>
-                                    <li><a href="javascript:void(0);" onclick="selectByAgree()">设置筛选条件</li>
                                 </ul>
                             </div>
                         </li>
-                        
-                        
-                        
-                        
-                     </ul>
-                    </div>   
-                            <!-- sidebar-menu  -->
+                    </ul>
                 </div>
-                <!-- sidebar-footer  -->
-                <div class="sidebar-footer">
-                    <div class="dropdown">
+            </div>
+            <!-- sidebar-footer  -->
+            <div class="sidebar-footer">
+                <div class="dropdown">
 
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="badge badge-pill badge-warning notification">3</span>
-                        </a>
-                                        <div class="dropdown-menu notifications" aria-labelledby="dropdownMenuMessage">
-                                            <div class="notifications-header">
-                                                <i class="fa fa-bell"></i> Notifications
-                                            </div>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">
-                                                <div class="notification-content">
-                                                    <div class="icon">
-                                                        <i class="fas fa-check text-success border border-success"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                                        <div class="notification-time">
-                                                            6 minutes ago
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <div class="notification-content">
-                                                    <div class="icon">
-                                                        <i class="fas fa-exclamation text-info border border-info"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                                        <div class="notification-time">
-                                                            Today
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <div class="notification-content">
-                                                    <div class="icon">
-                                                        <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                                        <div class="notification-time">
-                                                            Yesterday
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item text-center" href="#">View all notifications</a>
-                                        </div>
-                            </div>
-                            <div class="dropdown">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-envelope"></i>
-                                    <span class="badge badge-pill badge-success notification">7</span>
-                                </a>
-                                <div class="dropdown-menu messages" aria-labelledby="dropdownMenuMessage">
-                                    <div class="messages-header">
-                                        <i class="fa fa-envelope"></i> Messages
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge badge-pill badge-warning notification">3</span>
+                    </a>
+                    <div class="dropdown-menu notifications" aria-labelledby="dropdownMenuMessage">
+                        <div class="notifications-header">
+                            <i class="fa fa-bell"></i> Notifications
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-check text-success border border-success"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        6 minutes ago
                                     </div>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="message-content">
-                                            <div class="pic">
-                                                <img src="img/user.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <div class="message-title">
-                                                    <strong> Jhon doe</strong>
-                                                </div>
-                                                <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="message-content">
-                                            <div class="pic">
-                                                <img src="img/user.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <div class="message-title">
-                                                    <strong> Jhon doe</strong>
-                                                </div>
-                                                <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="message-content">
-                                            <div class="pic">
-                                                <img src="img/user.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <div class="message-title">
-                                                    <strong> Jhon doe</strong>
-                                                </div>
-                                                <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-center" href="#">View all messages</a>
-
                                 </div>
                             </div>
-                            <div class="dropdown">
-                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-cog"></i>
-                                    <span class="badge-sonar"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
-                                    <a class="dropdown-item" href="#">My profile</a>
-                                    <a class="dropdown-item" href="#">Help</a>
-                                    <a class="dropdown-item" href="#">Setting</a>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation text-info border border-info"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        Today
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <a href="#">
-                                    <i class="fa fa-power-off"></i>
-                                </a>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="notification-content">
+                                <div class="icon">
+                                    <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                    <div class="notification-time">
+                                        Yesterday
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pinned-footer">
-                                <a href="#">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </a>
-                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center" href="#">View all notifications</a>
+                    </div>
                 </div>
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope"></i>
+                        <span class="badge badge-pill badge-success notification">7</span>
+                    </a>
+                    <div class="dropdown-menu messages" aria-labelledby="dropdownMenuMessage">
+                        <div class="messages-header">
+                            <i class="fa fa-envelope"></i> Messages
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                </div>
+                            </div>
+
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                </div>
+                            </div>
+
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="message-content">
+                                <div class="pic">
+                                    <img src="img/user.jpg" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="message-title">
+                                        <strong> Jhon doe</strong>
+                                    </div>
+                                    <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center" href="#">View all messages</a>
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                        <span class="badge-sonar"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
+                        <a class="dropdown-item" href="#">My profile</a>
+                        <a class="dropdown-item" href="#">Help</a>
+                        <a class="dropdown-item" href="#">Setting</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa fa-power-off"></i>
+                    </a>
+                </div>
+                <div class="pinned-footer">
+                    <a href="#">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                </div>
+            </div>
         </nav>
         <!-- page-content  -->
         <main class="page-content pt-2">
             <div class="container">
-                <table id="tabGroup" class="table table-hover"></table>
-                <table id="tabText" class="table table-hover"></table>
                 <div class="input-group" id="select">
                     <input type="text" class="form-control search-menu" id="K" placeholder="请在此处输入筛选条件K">
                     <div class="input-group-append">
                         <button type="button" class="btn btn-primary" aria-hidden="true" id="selectByAgreeButton">筛选</button>
                     </div>
                 </div>
-                <table id="tabAgree" class="table table-hover"></table>
+                <div id="loadtext">
+                    <div class="text" contenteditable="true" id="text">
+                    </div>
+                    <div class="row justify-content-center">
+                        <input id='file' type="file" onchange="upload(this)" style="margin-left: 100px;" />
+                        <button type="button" class="btn btn-success" id="btn-submit" style="margin-left: 300px;">上传</button>
+                        <p class="d-none" id="filename"></p>
+                    </div>
+                </div>
+                <div class="tab-list">
+                    <table id="tabGroup" class="table table-hover"></table>
+                    <table id="tabText" class="table table-hover"></table>
+                    <table id="tabAgree" class="table table-hover"></table>
+                    <table id="markedText" class="table table-hover"></table>
+                </div>
+
             </div>
         </main>
         <!-- page-content" -->
-        </div>
-        <!-- page-wrapper -->
+    </div>
+    <!-- page-wrapper -->
 
-        <!-- using online scripts -->
+    <!-- using online scripts -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
 
-        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
 
-        <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

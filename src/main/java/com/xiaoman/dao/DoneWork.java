@@ -9,6 +9,7 @@ public class DoneWork {
     private Integer textId;
     private String leader;
     private Double agreeRate;
+    private String title;
     private marking marking;
 
     public String getContent() {

@@ -1,4 +1,11 @@
 var leader;
+
+window.onload = function() {
+    $("#select").hide();
+    $("#loadtext").hide();
+}
+
+
 jQuery(function($) {
 
     // Dropdown menu
@@ -104,6 +111,10 @@ var ListGroupMember = function() {
     $('#tabAgree').bootstrapTable('destroy');
     $('#tabGroup').bootstrapTable('destroy');
     $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+
+    $('#select').hide();
+    $('#loadtext').hide();
     $('#tabGroup').bootstrapTable({
         url: "/listMember",
         method: 'get',
@@ -150,6 +161,9 @@ var ListMyText = function() {
     $('#tabAgree').bootstrapTable('destroy');
     $('#tabGroup').bootstrapTable('destroy');
     $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+    $('#select').hide();
+    $('#loadtext').hide();
     $('#tabText').bootstrapTable({
         url: "/listText",
         method: 'get',
@@ -201,19 +215,38 @@ var ListMyText = function() {
         var textId = row.textId;
         var result = "";
         result += "<div class='btn-group btn-group-xs'>"
-        result += "<button class='btn btn-primary' style='margin-right: 20px;' onclick=\"DeleteMember('" + textId + "')\" title='操作'>下载</button>";
+        result += "<button class='btn btn-primary' style='margin-right: 20px;' onclick=\"download('" + row.title + "','" + row.content + "')\" title='操作'>下载</button>";
         result += "</div>"
         return result;
     }
 
 }
 
+function download(filename, text) {
+    filename += '.txt';
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    } else {
+        pom.click();
+    }
+}
+
 var selectByAgree = function() {
+    $('#tabAgree').bootstrapTable('destroy');
+    $('#tabGroup').bootstrapTable('destroy');
+    $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+    $('#select').show();
+    $('#loadtext').hide();
 
     $("#selectByAgreeButton").click(function() {
-        $('#tabAgree').bootstrapTable('destroy');
-        $('#tabGroup').bootstrapTable('destroy');
-        $('#tabText').bootstrapTable('destroy');
+
         $('#tabAgree').bootstrapTable({
             url: "/getTextByK",
             method: 'get',
@@ -254,6 +287,126 @@ var selectByAgree = function() {
         });
 
     })
+}
+var ListMarkedText = function() {
+    $('#tabAgree').bootstrapTable('destroy');
+    $('#tabGroup').bootstrapTable('destroy');
+    $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+    $('#select').hide();
+    $('#loadtext').hide();
+    $('#markedText').bootstrapTable({
+        url: "/listMarkedText",
+        queryParams: "queryParams",
+        toolbar: "#toolbar",
+        sidePagination: "true",
+        striped: true, // 是否显示行间隔色
+        //search : "true",
+        uniqueId: "ID",
+        pageSize: "3",
+        pagination: true, // 是否分页
+        sortable: true, // 是否启用排序
+        columns: [{
+            field: 'title',
+            title: '文件名'
+        }, {
+            field: 'content',
+            title: '文本内容',
+            formatter: function(value, row, index) {
+                var marking1 = row.marking1;
+                var marking2 = row.marking2;
+                var marking3 = row.marking3;
+                var marking4 = row.marking4;
+                var trigger = row.trigger;
+                var eventType = row.eventType;
+                value = value.replace(trigger, '<span style="color: red;">' + trigger + '</span>');
+                if (eventType == '会见会谈') {
+                    value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                    value = value.replace(marking2, '<span style="color: green;">' + marking2 + '</span>');
+                    value = value.replace(marking3, '<span style="color: purple;">' + marking3 + '</span>');
+                    value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                    return value;
+                } else if (eventType == '签署文件') {
+                    value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                    value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
+                    value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
+                    value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                    return value;
+                } else if (eventType == '设施启用') {
+                    value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                    value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                    value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                    value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                    return value;
+                } else {
+                    value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                    value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                    value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                    value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                    return value;
+                }
+            }
+        }, {
+            field: 'eventType',
+            title: '事件类型',
+        }, {
+            field: 'textId',
+            title: '操作',
+            width: 120,
+            align: 'center',
+            valign: 'middle',
+            formatter: actionFormatter,
+        }, ]
+    });
 
+    function actionFormatter(value, row, index) {
+        var markingId = row.markingId;
+        var result = "";
+        result += "<div class='btn-group btn-group-xs'>"
+        result += "<a class='btn btn-warning' href='/download?eventType=" + row.eventType + "&trigger=" + row.trigger + "&marking1=" + row.marking1 + "&marking2=" + row.marking2 + "&marking3=" + row.marking3 + "&marking4=" + row.marking4 + "&textId=" + row.textId + "&markingId=" + row.markingId + "&content=" + row.content + "'>导出</a>";
+        result += "</div>"
+        return result;
+    }
+}
+var loadnewtext = function() {
+    $('#tabAgree').bootstrapTable('destroy');
+    $('#tabGroup').bootstrapTable('destroy');
+    $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+    $('#select').hide();
+    $('#loadtext').show();
+    $("#btn-submit").click(function() {
+        if ($("#text").text() == '') {
+            alert("文本为空，请先选择文本文本")
+        } else {
+            $.ajax({
+                method: "POST",
+                url: "/loadText",
+                dataType: "text",
+                data: {
+                    content: $("#text").text(),
+                    title: $("#filename").text(),
+                },
+                success: function(data) {
+                    alert("上传成功");
+                },
+            })
 
+        }
+    })
+}
+
+function upload(input) {
+    //支持chrome IE10
+    if (window.FileReader) {
+        var file = input.files[0];
+        filename = file.name.split(".")[0];
+        var reader = new FileReader();
+        reader.onload = function() {
+                $("#text").text(this.result);
+                $("#filename").text(filename);
+            }
+            //      reader.readAsText(file,"UTF-8");
+        reader.readAsText(file, "UTF-8");
+    }
 }
