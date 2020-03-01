@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/JQuery/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#">个人中心</a></li>
+            <li role="presentation"><a href="javascript:void(0);" onclick="ToDoWorking()">待办事项</a></li>
+            <li role="presentation"><a href="javascript:void(0);" onclick="DoneWroking()">已办事项</a></li>
+        </ul>
+        <div class="row">
+            <div id="workToDo">
+                <table id="todoworkTab" class="table table-hover"></table>
+            </div>
+            <div id="workDone">
+                <table id="doneworkTab" class="table table-hover"></table>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function() {
+        ToDoWorking();
+    })
+    var ToDoWorking = function() {
+        // $.ajax({
+        //     type: "GET",
+        //     url: "/ToDoWork",
+        //     dataType: "Json",
+        //     success: function(data) {
+        //         if(data["msg"]=="0"){
+        //             alert("无待办事项！");
+        //         }
+        //         else{
+        //             var TodoWorks=data["msg"]
+        //         }
+
+        //     }
+        // })
+        $("#workDone").hide();
+        $("#workToDo").show();
+        $('#todoworkTab').bootstrapTable({
+            url: "/todowork2",
+            queryParams: "queryParams",
+            toolbar: "#toolbar",
+            sidePagination: "true",
+            striped: true, // 是否显示行间隔色
+            //search : "true",
+            uniqueId: "ID",
+            pageSize: "3",
+            pagination: true, // 是否分页
+            sortable: true, // 是否启用排序
+            columns: [{
+                    field: 'leader',
+                    title: '组长名'
+                }, {
+                    field: 'title',
+                    title: '文件名',
+                    width: 100
+                }, {
+                    field: 'loadTime',
+                    title: '上传日期'
+                }, {
+                    field: 'content',
+                    title: '文本内容',
+                }, {
+                    field: 'textId',
+                    title: '操作',
+                    width: 120,
+                    align: 'center',
+                    valign: 'middle',
+                    formatter: actionFormatter,
+                },
+
+            ]
+        });
+        //操作栏的格式化
+        function actionFormatter(value, row, index) {
+            var id = value;
+            var result = "";
+            result += "<button class='btn btn-primary' onclick=\"EditViewById('" + id + "')\" title='操作'>标记</button>";
+            return result;
+
+        }
+
+    }
+
+    var EditViewById = function(id) {
+
+        window.location.href = "/marking.html?" + "textId=" + id;
+
+    }
+    var DoneWroking = function() {
+
+        $("#workToDo").hide();
+        $("#workDone").show();
+        $('#doneworkTab').bootstrapTable({
+            url: "/donework",
+            queryParams: "queryParams",
+            toolbar: "#toolbar",
+            sidePagination: "true",
+            striped: true, // 是否显示行间隔色
+            //search : "true",
+            uniqueId: "ID",
+            pageSize: "3",
+            pagination: true, // 是否分页
+            sortable: true, // 是否启用排序
+            columns: [{
+                field: 'leader',
+                title: '组长名'
+            }, {
+                field: 'content',
+                title: '文本内容',
+                formatter: function(value, row, index) {
+                    var marking1 = row.marking1;
+                    var marking2 = row.marking2;
+                    var marking3 = row.marking3;
+                    var marking4 = row.marking4;
+                    var trigger = row.trigger;
+                    var eventType = row.eventType;
+                    value = value.replace(trigger, '<span style="color: red;">' + trigger + '</span>');
+                    if (eventType == '会见会谈') {
+                        value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: green;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: purple;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                        return value;
+                    } else if (eventType == '签署文件') {
+                        value = value.replace(marking1, '<span style="color: orange;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: purple;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: green;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: blue;">' + marking4 + '</span>');
+                        return value;
+                    } else if (eventType == '设施启用') {
+                        value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                        return value;
+                    } else {
+                        value = value.replace(marking1, '<span style="color: green;">' + marking1 + '</span>');
+                        value = value.replace(marking2, '<span style="color: orange;">' + marking2 + '</span>');
+                        value = value.replace(marking3, '<span style="color: blue;">' + marking3 + '</span>');
+                        value = value.replace(marking4, '<span style="color: purple;">' + marking4 + '</span>');
+                        return value;
+                    }
+                }
+            }, {
+                field: 'eventType',
+                title: '事件类型',
+            }, {
+                field: 'textId',
+                title: '操作',
+                width: 120,
+                align: 'center',
+                valign: 'middle',
+                formatter: actionFormatter,
+            }, ]
+        });
+
+        function actionFormatter(value, row, index) {
+            var markingId = row.markingId;
+            var result = "";
+            result += "<div class='btn-group btn-group-xs'>"
+            result += "<button class='btn btn-primary' style='margin-right: 20px;' onclick=\"EditText('" + markingId + "')\" title='操作'>修改</button>";
+            result += "<a class='btn btn-warning' href='/download?eventType=" + row.eventType + "&trigger=" + row.trigger + "&marking1=" + row.marking1 + "&marking2=" + row.marking2 + "&marking3=" + row.marking3 + "&marking4=" + row.marking4 + "&textId=" + row.textId + "&markingId=" + row.markingId + "&content=" + row.content + "'>导出</a>";
+            result += "</div>"
+            return result;
+        }
+
+    }
+    var EditText = function(markingId) {
+        window.location.href = '/edit.html?markingId=' + markingId + '';
+    }
+    var download = function(trigger, textId, markingId, marking1, marking2, marking3, marking4, eventType, content) {
+        alert(content, trigger);
+        $.ajax({
+            url: "/download",
+            dataType: "json",
+            method: "get",
+            data: {
+                trigger: trigger,
+                textId: textId,
+                marking1: marking1,
+                marking2: marking2,
+                marking3: marking3,
+                marking4: marking4,
+                content: content,
+                markingId: markingId,
+                eventType: eventType,
+            },
+            success: function(data) {
+                alert("下载成功");
+            }
+
+
+        })
+
+    }
+</script>
+
+</html>

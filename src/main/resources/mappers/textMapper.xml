@@ -53,6 +53,12 @@
   <select id="selectByK" parameterType="java.lang.Double" resultMap="BaseResultMap">
     select * from text where agree_rate >=#{K}
   </select>
+  <select id="selectByTextAndUser" parameterType="INTEGER" resultMap="DoneWork">
+    select text.content,marking.*
+    from text left join marking
+    on text.text_id = marking.text_id
+    where user_id = #{userId} and text.text_id=#{textId}
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from text

@@ -20,6 +20,9 @@
     <select id="selectByname" resultMap="UserMap">
         select * from user where name=#{name};
     </select>
+    <select id="selectUserId" resultType="INTEGER" parameterType="String">
+        select id from user where name=#{name}
+    </select>
     <select id="selectByGroup" parameterType="INTEGER" resultMap="UserMap">
         select * from user where group_id=#{groupId} and role='普通用户'
     </select>

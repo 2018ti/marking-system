@@ -1,0 +1,6 @@
+FROM centos_jdk11_maven:1.0
+VOLUME /tmp
+COPY target/marking-0.0.1-SNAPSHOT.jar marking-system.jar
+RUN bash -c "touch /marking-system.jar"
+EXPOSE 80
+ENTRYPOINT ["java","-jar","/marking-system.jar"]

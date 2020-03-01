@@ -50,7 +50,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() throws IOException {
-		System.out.println(textService.listAllMarkedText("小蛮"));
+		System.out.println(textService.selectByTextAndUser("非凡",6));
 	}
 
 	@Test

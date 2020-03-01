@@ -5,6 +5,7 @@ import com.xiaoman.dao.marking;
 import com.xiaoman.dao.text;
 import com.xiaoman.dto.DoneWorkResult;
 import com.xiaoman.dto.ToDoMarking;
+import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.mapper.markingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ public class textService {
     
     @Autowired
     markingMapper markingMapper;
+
+    @Autowired
+    UserMapper userMapper;
 
     public void insertText(String content,String leader,String title){
         text text = new text();
@@ -188,6 +192,48 @@ public class textService {
     public  List<text> selectByK(Double K){
         return  textMapper.selectByK(K);
     }
+
+    public DoneWorkResult selectByTextAndUser(String name,Integer textId){
+        Integer userId=userMapper.selectUserId(name);
+        DoneWork doneWork = textMapper.selectByTextAndUser(userId, textId);
+        DoneWorkResult doneWorkResult = new DoneWorkResult();
+        doneWorkResult.setContent(doneWork.getContent());
+        doneWorkResult.setTextId(doneWork.getTextId());
+        doneWorkResult.setTitle(doneWork.getTitle());
+        doneWorkResult.setMarkingId(doneWork.getMarking().getMarkingId());
+        if(doneWork.getMarking().getEventType().equals("会见会谈")){
+            doneWorkResult.setMarking1(doneWork.getMarking().getParticipant1());
+            doneWorkResult.setMarking2(doneWork.getMarking().getParticipant2());
+            doneWorkResult.setMarking3(doneWork.getMarking().getMeetingTime());
+            doneWorkResult.setMarking4(doneWork.getMarking().getMeetingPlace());
+            doneWorkResult.setTrigger(doneWork.getMarking().getTrigger());
+            doneWorkResult.setEventType("会见会谈");
+        }else if (doneWork.getMarking().getEventType().equals("签署文件")){
+            doneWorkResult.setMarking1(doneWork.getMarking().getSignatory());
+            doneWorkResult.setMarking2(doneWork.getMarking().getFile());
+            doneWorkResult.setMarking3(doneWork.getMarking().getFileTime());
+            doneWorkResult.setMarking4(doneWork.getMarking().getFilePlace());
+            doneWorkResult.setTrigger(doneWork.getMarking().getTrigger());
+            doneWorkResult.setEventType("签署文件");
+        }else if(doneWork.getMarking().getEventType().equals("设施启用")){
+            doneWorkResult.setMarking1(doneWork.getMarking().getConstructor());
+            doneWorkResult.setMarking2(doneWork.getMarking().getBuildingName());
+            doneWorkResult.setMarking3(doneWork.getMarking().getStartingTime());
+            doneWorkResult.setMarking4(doneWork.getMarking().getBuildingPlace());
+            doneWorkResult.setTrigger(doneWork.getMarking().getTrigger());
+            doneWorkResult.setEventType("设施启用");
+        }else {
+            doneWorkResult.setMarking1(doneWork.getMarking().getHolder());
+            doneWorkResult.setMarking2(doneWork.getMarking().getActivityName());
+            doneWorkResult.setMarking3(doneWork.getMarking().getActivityPlace());
+            doneWorkResult.setMarking4(doneWork.getMarking().getAvtivityTime());
+            doneWorkResult.setTrigger(doneWork.getMarking().getTrigger());
+            doneWorkResult.setEventType("举行活动");
+        }
+        return doneWorkResult;
+
     }
+
+}
 
 

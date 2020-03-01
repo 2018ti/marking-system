@@ -77,5 +77,12 @@ public class textContrller {
         return textService.listAllMarkedText(leadername);
     }
 
+    @GetMapping("/getByTextIdAndUser")
+    public DoneWorkResult getByTextIdAndUser(@RequestParam("name")String name,@RequestParam("textId")Integer textId){
+        System.out.println(name+textId);
+        return textService.selectByTextAndUser(name,textId);
+
+    }
+
 
 }

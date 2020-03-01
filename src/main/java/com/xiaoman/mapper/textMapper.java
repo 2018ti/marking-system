@@ -30,4 +30,5 @@ public interface textMapper {
 
     List<text> selectByK(Double K);
 
+    DoneWork selectByTextAndUser(@Param("userId") Integer userId,@Param("textId")Integer textId);
 }

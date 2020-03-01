@@ -51,4 +51,12 @@ public class DoneWork {
     public void setMarking(com.xiaoman.dao.marking marking) {
         this.marking = marking;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

@@ -19,4 +19,6 @@ public interface UserMapper {
     public Integer countGroupMember(@Param("userId")Integer userId);
 
     public List<User> selectByGroup(@Param("groupId")Integer groupId);
+
+    public Integer selectUserId(@Param("name")String name);
 }

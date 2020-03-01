@@ -118,7 +118,6 @@ $("#event1").click(function() { //点击“会见会谈”按钮，改变表格�
                 })
             }
             $('#text').html(function(i, oldHTML) {
-
                 //标记文本
                 return oldHTML.replace(word, '<span style="color: blue;" id="place">' + word + '</span>');
             })
@@ -508,6 +507,3 @@ $("#save").click(function() {
         })
     }
 })
-var test = function() {
-    alert("chenggong")
-}

@@ -102,7 +102,6 @@ $(document).ready(function() {
         method: "get",
         success: function(data) {
             leader = data;
-            alert(leader['groupId']);
         }
     })
 })
@@ -281,12 +280,22 @@ var selectByAgree = function() {
                     width: 120,
                     align: 'center',
                     valign: 'middle',
+                    formatter: function(value, row, index) {
+                        var result = "";
+                        result += "<div class='btn-group btn-group-xs'>"
+                        result += "<button class='btn btn-primary' onclick='edit(" + row.textId + ")'>编辑</button>";
+                        result += "</div>"
+                        return result;
+                    }
                 }
 
             ]
         });
 
     })
+}
+var edit = function(textId) {
+    window.location.href = "/leaderEdit.html?textId=" + textId;
 }
 var ListMarkedText = function() {
     $('#tabAgree').bootstrapTable('destroy');
