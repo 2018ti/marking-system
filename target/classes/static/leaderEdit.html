@@ -39,17 +39,19 @@
     <div class="container">
 
         <div class="top">
-            <div class="top-left">
-                <a href="/leader.html" class="top-art">个人中心</a>
-            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">个人中心</a>
+                </li>
+            </ul>
         </div>
         <div class="main">
 
-            <div class="row">
-                <div class="col-lg-3">
+            <div class="row text-center">
+                <div class="col-lg-6 ">
                     <p class="text-warning">文本：</p>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <p class="text-info">事件类型：</p>
                 </div>
             </div>
@@ -60,9 +62,10 @@
                         <div class="col-lg-3">
                             <p>查看标注</p>
                         </div>
+
                         <select id="select-left" onchange="select('left')">
                             
-                          </select>
+                        </select>
                     </div>
 
                     <div class="text" contenteditable="true" id="text-left">
@@ -83,15 +86,17 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="button" value="重置" class="btn btn-primary btn-lg" style="margin-left:350px;" id="save-left">
+                <input type="button" value="重置" class="btn btn-success btn-lg" style="margin-left:0px;" id="reset-left" onclick="resetmarking('left')">
+
                 <input type="button" value="保存" class="btn btn-primary btn-lg" style="margin-left:350px;" id="save-left">
-                <input type="button" value="保存" class="btn btn-warning btn-lg " style="margin-left:600px;" id="save-right" />
+                <input type="button" value="重置" class="btn btn-success btn-lg" style="margin-left:80px;" id="reset-left" onclick="resetmarking('right')">
+                <input type="button" value="保存" class="btn btn-warning btn-lg " style="margin-left:350px;" id="save-right" />
             </div>
             <div class="row">
-                <div class="col-lg-6" id="marking-left" style="display: inline-block;">
-                    <div class="row">
+                <div class="col-lg-6" id="marking-left">
+                    <div class="row" style="margin-left: 50px;">
                         <div class="dropdown" style="max-width: 20%;">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" onclick="event1()">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" onclick="init('会见会谈','left')">
                           会见会谈
                         </button>
                             <div class="dropdown-menu" style="max-width:50px">
@@ -103,7 +108,7 @@
                             </div>
                         </div>
                         <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" onclick="event2()">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" onclick="init('签署文件','left')">
                           签署文件
                         </button>
                             <div class="dropdown-menu" style="max-width:50px">
@@ -115,7 +120,7 @@
                             </div>
                         </div>
                         <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" onclick="event3()">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" onclick="init('设施启用','left')">
                           设施启用
                         </button>
                             <div class="dropdown-menu" style="max-width:50px">
@@ -127,7 +132,7 @@
                             </div>
                         </div>
                         <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" onclick="event4()">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" onclick="init('举行活动','left')">
                          举行活动
                         </button>
                             <div class="dropdown-menu" style="max-width:50px">
@@ -143,70 +148,54 @@
 
 
                 <div class="col-lg-6" id="marking-right">
-                    <div class="list-group">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="event1-right">会见会谈</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-default" id="event1_person1-right">参与方1</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_person2-right">参与方2</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_date-right">时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_place-right">地点</button></li>
-                            </ul>
+                    <div class="row" style="margin-left: 30px;">
+                        <div class="dropdown" style="max-width: 20%;">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" onclick="init('会见会谈','right')">
+                          会见会谈
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w-right','trigger-right','red')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w1-right','participant1-right','orange')">参与方1</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w2-right','participant2-right','green')">参与方2</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w3-right','time-right','purple')">时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w4-right','place-right','blue')">地点</a>
+                            </div>
                         </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary" id="event2-right">签署文件</button>
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-primary" id="event2_person-right">签署方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_document-right">文件</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_date-right">签署时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_place-right">签署地点</button></li>
-                            </ul>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" onclick="init('签署文件','right')">
+                          签署文件
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w-right','trigger-right','red')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w1-right','signatory-right','orange')">签署方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w2-right','file-right','purple')">文件</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w3-right','time-right','green')">签署时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w4-right','place-right','blue')">签署地点</a>
+                            </div>
                         </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success" id="event3-right">设施启动</button>
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-success" id="event3_person-right">设施修建方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_name-right">设施名称</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_date-right">启动时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_place-right">设施地点</button></li>
-                            </ul>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" onclick="init('设施启用','right')">
+                          设施启用
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w-right','trigger-right','red')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w1-right','constructor-right','green')">设施修建方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w2-right','buildingName-right','orange')">设施名称</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w3-right','time-right','blue')">启动时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w4-right','place-right','purple')">设施地点</a>
+                            </div>
                         </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-info" id="event4-right">举行活动</button>
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-info" id="event4_person-right">举办方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_name-right">活动名称</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_place-right">活动地点</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_date-right">活动时间</button></li>
-                            </ul>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" onclick="init('签署文件','right')">
+                         举行活动
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w-right','trigger-right','red')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w1-right','holder-right','green')">举办方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w2-right','name-right','orange')">活动名称</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w3-right','place-right','blue')">活动地点</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-right','w4-right','time-right','purple')">活动时间</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,34 +217,18 @@
                 </ul>
             </div>
             <div class="col-lg-6">
-                <div class="list-group">
-                    <div class="panel panel-default" style="width:500px;">
-                        <div class="panel-heading" id="t-right">触发词</div>
-                        <div class="panel-body" id="w-right">
-                        </div>
-                    </div>
-                    <div class="panel panel-default" style="width:500px;">
-                        <div class="panel-heading" id="t1-right">1</div>
-                        <div class="panel-body" id="w1-right">
-
-                        </div>
-                    </div>
-                    <div class="panel panel-default" style="width:500px;">
-                        <div class="panel-heading" id="t2-right">2</div>
-                        <div class="panel-body" id="w2-right">
-                        </div>
-                    </div>
-                    <div class="panel panel-default" style="width:500px;">
-                        <div class="panel-heading" id="t3-right">3</div>
-                        <div class="panel-body" id="w3-right">
-                        </div>
-                    </div>
-                    <div class="panel panel-default" style="width:500px;">
-                        <div class="panel-heading" id="t4-right">4</div>
-                        <div class="panel-body" id="w4-right">
-                        </div>
-                    </div>
-                </div>
+                <ul class="list-group" style="margin-top: 5px;">
+                    <li class="list-group-item list-group-item-success" id="t-right">触发词</li>
+                    <li class="list-group-item list-group-item-dark" id="w-right"></li>
+                    <li class="list-group-item list-group-item-info" id="t1-right">1</li>
+                    <li class="list-group-item list-group-item-dark" id="w1-right"></li>
+                    <li class="list-group-item list-group-item-danger" id="t2-right">2</li>
+                    <li class="list-group-item list-group-item-dark" id="w2-right"></li>
+                    <li class="list-group-item list-group-item-warning" id="t3-right">3</li>
+                    <li class="list-group-item list-group-item-dark" id="w3-right"></li>
+                    <li class="list-group-item list-group-item-secondary" id="t4-right">4</li>
+                    <li class="list-group-item list-group-item-dark" id="w4-right"></li>
+                </ul>
             </div>
         </div>
 

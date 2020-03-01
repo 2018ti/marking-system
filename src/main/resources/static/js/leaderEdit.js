@@ -46,6 +46,11 @@ $(document).ready(function() {
                         $("#select-left").append('<option value =' + data[member].name + '>' + data[member].name + '</option>')
                         $("#select-right").append('<option value =' + data[member].name + '>' + data[member].name + '</option>')
                     }
+                    $("#select-left option:first").prop("selected", 'selected');
+                    $("#select-right option:first").prop("selected", 'selected');
+                    //默认选中第一个并发送请求
+                    select('left');
+                    select('right');
                 }
             })
         },
@@ -170,19 +175,72 @@ var select = function(flag) {
     })
 }
 
+
 function marking(text, index, flag, color) {
-    if (wordleft != '') {
-        $("#" + index + "").html(wordleft);
-        if ($("#" + flag + "").length > 0) {
+
+    if (text == 'text-left') {
+        if (wordleft != '') {
+            $("#" + index + "").html(wordleft);
+            if ($("#" + flag + "").length > 0) {
+                $('#' + text + '').html(function(i, oldHTML) {
+                    //删除之前的标记
+                    return oldHTML.replace($("#" + flag + "").prop("outerHTML"), $("#" + flag + "").text());
+                })
+            }
             $('#' + text + '').html(function(i, oldHTML) {
-                //删除之前的标记
-                return oldHTML.replace($("#" + flag + "").prop("outerHTML"), $("#" + flag + "").text());
+                //标记文本
+                return oldHTML.replace(wordleft, '<span style="color: ' + color + ';" id="' + flag + '">' + wordleft + '</span>');
             })
         }
-        $('#' + text + '').html(function(i, oldHTML) {
-            //标记文本
-            return oldHTML.replace(wordleft, '<span style="color: ' + color + ';" id="' + flag + '">' + wordleft + '</span>');
-        })
+        wordleft = '';
+    } else {
+        if (wordright != '') {
+            $("#" + index + "").html(wordleft);
+            if ($("#" + flag + "").length > 0) {
+                $('#' + text + '').html(function(i, oldHTML) {
+                    //删除之前的标记
+                    return oldHTML.replace($("#" + flag + "").prop("outerHTML"), $("#" + flag + "").text());
+                })
+            }
+            $('#' + text + '').html(function(i, oldHTML) {
+                //标记文本
+                return oldHTML.replace(wordleft, '<span style="color: ' + color + ';" id="' + flag + '">' + wordleft + '</span>');
+            })
+        }
+        wordright = '';
     }
-    wordleft = '';
+}
+
+function resetmarking(index) {
+    $('#text-' + index + '').html(function(i, oldHTML) {
+        return oldHTML.replace($('#text-' + index + '').html(), $('#text-' + index + '').text());
+    })
+}
+
+function init(event, index) {
+    alert($("#t1-" + index + "").text() == '1');
+    if ($("#t1-" + index + "").text() == '1') {
+        if (event == '会见会谈') {
+            $("#t1-" + index + "").html("参与方1");
+            $("#t2-" + index + "").html("参与方2");
+            $("#t3-" + index + "").html("时间");
+            $("#t4-" + index + "").html("地点");
+        } else if (event == '签署文件') {
+            $("#t1-" + index + "").html("签署方");
+            $("#t2-" + index + "").html("文件");
+            $("#t3-" + index + "").html("时间");
+            $("#t4-" + index + "").html("地点");
+        } else if (event == '设施启用') {
+            $("#t1-" + index + "").html("设施修建方");
+            $("#t2-" + index + "").html("设施名称");
+            $("#t3-" + index + "").html("启动时间");
+            $("#t4-" + index + "").html("设施地点");
+        } else {
+            $("#t1-" + index + "").html("举办方");
+            $("#t2-" + index + "").html("活动名称");
+            $("#t3-" + index + "").html("活动地点");
+            $("#t4-" + index + "").html("活动时间");
+        }
+    }
+
 }
