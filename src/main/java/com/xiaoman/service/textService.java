@@ -231,8 +231,15 @@ public class textService {
             doneWorkResult.setEventType("举行活动");
         }
         return doneWorkResult;
-
     }
+    
+    public void updateText(Integer textId){
+        text text = new text();
+        text.setTextId(textId);
+        text.setAgreeRate(1.0);
+        textMapper.updateByPrimaryKeySelective(text);
+    }
+    
 
 }
 

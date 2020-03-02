@@ -283,7 +283,7 @@ var selectByAgree = function() {
                     formatter: function(value, row, index) {
                         var result = "";
                         result += "<div class='btn-group btn-group-xs'>"
-                        result += "<button class='btn btn-primary' onclick='edit(" + row.textId + ")'>编辑</button>";
+                        result += "<button class='btn btn-primary' onclick=\"edit('" + row.textId + "','" + row.title + "')\" >编辑</button>";
                         result += "</div>"
                         return result;
                     }
@@ -294,8 +294,8 @@ var selectByAgree = function() {
 
     })
 }
-var edit = function(textId) {
-    window.location.href = "/leaderEdit.html?textId=" + textId;
+var edit = function(textId, title) {
+    window.location.href = "/leaderEdit.html?textId=" + textId + "&title=" + title + "";
 }
 var ListMarkedText = function() {
     $('#tabAgree').bootstrapTable('destroy');

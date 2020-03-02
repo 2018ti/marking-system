@@ -61,10 +61,11 @@ public class UserController {
     }
 
     @GetMapping("/listMember")
-    public List<User> listMembers(@RequestParam("groupId")Integer groupId){
-        System.out.println(groupId);
-        return userService.listAllMember(Integer.valueOf(groupId));
+    public List<User> listMembers(HttpServletRequest request){
+        User user =(User) request.getSession().getAttribute("user");
+        return userService.listAllMember(Integer.valueOf(user.getGroupId()));
     }
+
     @GetMapping("/getLeader")
     public User getLeader(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");

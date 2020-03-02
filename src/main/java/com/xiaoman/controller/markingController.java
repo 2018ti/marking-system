@@ -2,6 +2,7 @@ package com.xiaoman.controller;
 
 import com.xiaoman.dao.User;
 import com.xiaoman.service.markingService;
+import com.xiaoman.service.textService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,8 @@ import java.util.Map;
 public class markingController {
     @Autowired
     markingService markingService;
+    @Autowired
+    textService textService;
 
     @PostMapping("/insertEventMarking")
     public Map<String,String> insertEvent(@RequestParam("trigger")String trigger, @RequestParam("participant1")String participant1,
@@ -21,7 +24,8 @@ public class markingController {
                            HttpServletRequest request)
     {
         User user = (User)request.getSession().getAttribute("user");
-        Map<String, String> result = markingService.insertEventingRecord(trigger, participant1, participant2, time, place, user.getId(), textId);
+        Map<String, String> result = markingService.insertEventingRecord(trigger, participant1, participant2, time, place, user.getId(), textId,user.getRole());
+
         return result;
     }
 
@@ -31,7 +35,8 @@ public class markingController {
                                          @RequestParam("textId")Integer textId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertFileRecord(trigger,signatory,file,time,place,user.getId(),textId);
+        Map<String,String> result=markingService.insertFileRecord(trigger,signatory,file,time,place,user.getId(),textId,user.getRole());
+
         return result;
     }
 
@@ -41,7 +46,8 @@ public class markingController {
                                          @RequestParam("textId")Integer textId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertBuildingRecord(trigger,constructor,buildingName,time,place,user.getId(),textId);
+        Map<String,String> result=markingService.insertBuildingRecord(trigger,constructor,buildingName,time,place,user.getId(),textId,user.getRole());
+
         return result;
     }
 
@@ -51,8 +57,7 @@ public class markingController {
                                              @RequestParam("textId")Integer textId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertActivityRecord(trigger,holder,name,time,place,user.getId(),textId);
+        Map<String,String> result=markingService.insertActivityRecord(trigger,holder,name,time,place,user.getId(),textId,user.getRole());
         return result;
     }
-
 }
