@@ -19,7 +19,6 @@ public class agreementController {
 
     @GetMapping("/searchMarked")
     public List<DoneWorkResult> list(HttpServletRequest httpServletRequest){
-        System.out.println("-----");
         User user = (User)httpServletRequest.getSession().getAttribute("user");
         return textService.listAllMarkedText(user.getName());
     }

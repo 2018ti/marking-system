@@ -11,8 +11,6 @@ public class User {
     private String role;
     private Integer groupId;
 
-
-
     public Integer getId() {
         return id;
     }

@@ -1,8 +1,11 @@
 package com.xiaoman.controller;
 
+import com.xiaoman.dao.apply;
+import com.xiaoman.dao.group;
 import com.xiaoman.dao.text;
 import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.service.UserService;
+import com.xiaoman.service.groupService;
 import com.xiaoman.service.textService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,13 @@ public class UserController {
     @Autowired
     textService textService;
 
+    @Autowired
+    groupService groupService;
+
+
+    @Autowired
+    UserMapper userMapper;
+
     @GetMapping("/login")
     public Map<String,String> Login(@RequestParam("name")String name, @RequestParam("password")String password, HttpServletRequest request){
         HashMap<String, String> result = new HashMap<>();
@@ -41,6 +51,9 @@ public class UserController {
             }else if(user.getRole().equals("用户组长")){
                 result.put("msg","用户组长");
                 return result;
+            }else {
+                result.put("msg","系统管理员");
+                return  result;
             }
         }else
             result.put("msg","登录失败");
@@ -76,5 +89,50 @@ public class UserController {
     public List<text> getMyText(@RequestParam("leaderName")String leader){
         System.out.println(leader);
         return textService.selectLeaderText(leader);
+    }
+
+    @GetMapping("/getsysmember")
+    public List<User> listallUser(){
+        return userService.listAllSysMember();
+    }
+
+    @PostMapping("/applyToLeader")
+    public Map<String,String> applyToLeader(HttpServletRequest request){
+       User user = (User)request.getSession().getAttribute("user");
+       return userService.applytoleader(user.getName(),user.getRole());
+    }
+
+    @GetMapping("/getapplyList")
+    public List<apply> applyList(){
+        System.out.println("进入applylist");
+        return userService.listallApply();
+    }
+
+    @PostMapping("/applyByadmin")
+    public String applyit(@RequestParam("applyId")Integer applyId,@RequestParam("username")String username){
+        userService.applyByadmin(applyId,username);
+        return "批准成功";
+    }
+
+    @PostMapping("/joingroup")
+    public String joingroup(@RequestParam("groupId") Integer groupId,HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("user");
+        userService.joingroup(groupId,user.getName());
+        User newUser = userMapper.selectById(user.getId());
+        request.getSession().removeAttribute("user");
+        request.getSession().setAttribute("user",newUser);
+        return "加入成功";
+    }
+
+    @PostMapping("/createGroup")
+    public String creategroup(@RequestParam("groupName")String groupName,HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        System.out.println(groupName);
+        int groupId = groupService.creatGroup(groupName, user.getName());
+        userMapper.joingroup(user.getName(),groupId);
+        User newUser = userMapper.selectById(user.getId());
+        request.getSession().removeAttribute("user");
+        request.getSession().setAttribute("user",newUser);
+        return "创建成功";
     }
 }

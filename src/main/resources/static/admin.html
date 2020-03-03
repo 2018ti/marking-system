@@ -102,18 +102,13 @@
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fa fa-book"></i>
-                                <span class="menu-text">我的小组</span>
+                                <span class="menu-text">查看</span>
                                 <span class="badge badge-pill badge-warning">view</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li id="havingGroup">
-                                        <a href="javascript:void(0);" onclick="ListGroupMember()">小组成员
-                                            <span class="badge badge-pill badge-success">Pro</span>
-                                        </a>
-                                    </li>
-                                    <li id="noGroup">
-                                        <a href="javascript:void(0);" onclick="createGroup()">您还未创建小组,点此创建
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ListSysMember()">系统成员
                                             <span class="badge badge-pill badge-success">Pro</span>
                                         </a>
                                     </li>
@@ -123,37 +118,18 @@
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fa fa-calendar"></i>
-                                <span class="menu-text">查看</span>
+                                <span class="menu-text">权限申请</span>
                                 <span class="badge badge-pill badge-danger">3</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0);" onclick="ListMyText()">我上传的文本</a>
+                                        <a href="javascript:void(0);" onclick="Leaderapply()">用户组长申请</a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0);" onclick="ListMarkedText()">最终标注的文本</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" onclick="loadnewtext()">上传新文本</a>
-                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-folder"></i>
-                                <span class="menu-text">一致性筛选</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0);" onclick="selectByAgree()">设置筛选条件</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -295,41 +271,12 @@
         <!-- page-content  -->
         <main class="page-content pt-2">
             <div class="container">
-                <div class="input-group" id="select">
-                    <input type="text" class="form-control search-menu" id="K" placeholder="请在此处输入筛选条件K">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-primary" aria-hidden="true" id="selectByAgreeButton">筛选</button>
-                    </div>
-                </div>
-                <div id="loadtext">
-                    <div class="text" contenteditable="true" id="text">
-                    </div>
-                    <div class="row justify-content-center">
-                        <input id='file' type="file" onchange="upload(this)" style="margin-left: 100px;" />
-                        <button type="button" class="btn btn-success" id="btn-submit" style="margin-left: 300px;">上传</button>
-                        <p class="d-none" id="filename"></p>
-                    </div>
-                </div>
                 <div class="tab-list">
-                    <table id="tabGroup" class="table table-hover"></table>
-                    <table id="tabText" class="table table-hover"></table>
-                    <table id="tabAgree" class="table table-hover"></table>
-                    <table id="markedText" class="table table-hover"></table>
-                </div>
-                <div id="createGroup">
-                    <div class="row">
-                        <div class="col-lg-6 m-auto">
-                            <form>
-                                <div class="form-group">
-                                    <label for="groupName">组名:</label>
-                                    <input class="form-control" id="groupName" placeholder="请输入小组名称">
-                                </div>
-                                <button type="button" class="btn btn-primary float-right" id="create">创建</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                    <table id="applyList" class="table table-hover"></table>
+                    <table id="sysMember" class="table table-hover"></table>
 
+
+                </div>
             </div>
         </main>
         <!-- page-content" -->
@@ -350,7 +297,7 @@
     <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
 
-    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
 
 </body>
 

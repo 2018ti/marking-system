@@ -8,6 +8,7 @@ import com.xiaoman.mapper.markingMapper;
 import com.xiaoman.mapper.textMapper;
 import com.xiaoman.service.UserService;
 import com.xiaoman.service.agreementService;
+import com.xiaoman.service.groupService;
 import com.xiaoman.service.textService;
 import org.apache.ibatis.transaction.Transaction;
 import org.dom4j.Document;
@@ -44,13 +45,15 @@ class DemoApplicationTests {
 	@Autowired
 	agreementService  agreementService;
 
+	@Autowired
+	groupService groupService;
 
 	@Autowired
 	markingMapper markingMapper;
 
 	@Test
 	void contextLoads() throws IOException {
-		System.out.println(textService.selectByTextAndUser("非凡",6));
+		System.out.println(groupService.getGroupById(1));
 	}
 
 	@Test

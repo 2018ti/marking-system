@@ -26,10 +26,20 @@
     <select id="selectByGroup" parameterType="INTEGER" resultMap="UserMap">
         select * from user where group_id=#{groupId} and role='普通用户'
     </select>
+    <update id="updateToLeaderByname" parameterType="STRING">
+        update user set role='用户组长' where name=#{name}
+    </update>
+    <update id="joingroup">
+        update user set group_id=#{groupId} where name=#{name}
+    </update>
+
     <select id="countGroupMember" resultType="INTEGER" parameterType="INTEGER">
         select count(*) from user where group_id =(
             select group_id from user where id=#{userId}
         )
+    </select>
+    <select id="selectById" parameterType="INTEGER" resultMap="UserMap">
+        select * from user where id = #{userId}
     </select>
     <insert id="regist">
         insert into user values(default,#{name},#{password},"普通用户",null);

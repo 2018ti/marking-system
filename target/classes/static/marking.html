@@ -2,202 +2,175 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>文本上传页面</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/marking.css">
+    <title>组长编辑页面</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
 
-    <script type="text/javascript" src="js/JQuery/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/article.css" />
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         .red {
             color: red;
         }
         
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url("./images/08.jpg");
+            /* background-position: center center; */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
         .text {
             width: 100%;
+            height: 300px;
             min-height: 120px;
-            max-height: 300px;
+            max-height: 500px;
             margin-left: auto;
             margin-right: auto;
             padding: 3px;
             outline: 0;
-            border: 1px solid #a0b3d6;
+            border: 1px solid #101111;
             font-size: 20px;
-            line-height: 24px;
+            line-height: 25px;
             word-wrap: break-word;
             overflow-x: hidden;
             overflow-y: auto;
-            border-color: rgba(82, 168, 236, 0.8);
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+            border-color: rgba(13, 13, 14, 0.8);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(67, 74, 80, 0.6);
+        }
+        
+        .tippy-box[data-theme~='tomato'] {
+            background-color: tomato;
+            color: yellow;
+        }
+        
+        .select {
+            opacity: 0.3;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div id="div1">
-            <img src="picture/bannerbg.png">
-        </div>
+
         <div class="top">
-            <div class="top-left">
-                <a href="/user.html" class="top-art">个人中心</a>
-            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user.html">个人中心</a>
+                </li>
+            </ul>
         </div>
         <div class="main">
-            <!-- <div class="txt">
-                <div id="text">wegwegew围观的地点在哪里</textarea>
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <p class="text-warning" id="text-title">文本：</p>
                 </div>
-                <div class="operate">
-                </div>
-            </div> -->
-            <div class="text" contenteditable="true" id="text">
-                6月12日上午，国务院总理李克强在北京会见出席第二届世界华侨华人工商大会的全体代表， 指出中国将推动新一轮高水平对外开放，进一步放宽外资市场准入， 创造更加公平便利的营商环境，对外开放的大门会越开越大。希望华商充分发挥联通中外 、汇聚资源的独特优势，积极参与“一带一路”建设和中国同世界各国的经贸合作，拓展三方合作， 更好实现互利共赢。
             </div>
-            <div class="form-group">
-                <input type="button" value="保存" class="btn btn-primary btn-lg" style="margin-left:250px;" id="save">
-                <input type="reset" value="修改" class="btn btn-warning btn-lg " style="margin-left:400px;" id="change" />
+
+            <div class="row">
+                <div class="col-lg-7 m-auto">
+                    <div class="text" contenteditable="true" id="text-left">
+                    </div>
+                </div>
+
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="list-group">
-                        <div class="panel panel-default" style="width:500px;">
-                            <div class="panel-heading" id="t">触发词</div>
-                            <div class="panel-body" id="w">
-                            </div>
-                        </div>
-                        <div class="panel panel-default" style="width:500px;">
-                            <div class="panel-heading" id="t1">1</div>
-                            <div class="panel-body" id="w1">
+                <div class="form-group m-auto">
+                    <input type="button" value="重置" class="btn btn-outline-dark" style="margin-left:0px;" id="reset-left" onclick="resetmarking('left')">
 
-                            </div>
-                        </div>
-                        <div class="panel panel-default" style="width:500px;">
-                            <div class="panel-heading" id="t2">2</div>
-                            <div class="panel-body" id="w2">
-                            </div>
-                        </div>
-                        <div class="panel panel-default" style="width:500px;">
-                            <div class="panel-heading" id="t3">3</div>
-                            <div class="panel-body" id="w3">
-                            </div>
-                        </div>
-                        <div class="panel panel-default" style="width:500px;">
-                            <div class="panel-heading" id="t4">4</div>
-                            <div class="panel-body" id="w4">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col=lg-6">
-                    <div class="list-group" style="margin-left:100px;">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default" id="event1">会见会谈</button>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-default" id="event1_person1">参与方1</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_person2">参与方2</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_date">时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-default" id="event1_place">地点</button></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary" id="event2">签署文件</button>
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-primary" id="event2_person">签署方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_document">文件</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_date">签署时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-primary" id="event2_place">签署地点</button></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success" id="event3">设施启动</button>
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-success" id="event3_person">设施修建方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_name">设施名称</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_date">启动时间</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-success" id="event3_place">设施地点</button></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-info" id="event4">举行活动</button>
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="button" class="btn btn-info" id="event4_person">举办方</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_name">活动名称</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_place">活动地点</button></li>
-                                <li role="separator" class="divider"></li>
-                                <li><button type="button" class="btn btn-info" id="event4_date">活动时间</button></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <input type="button" value="保存" class="btn btn-outline-primary" style="margin-left:350px;" id="save-left" onclick="save('left')">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6 m-auto" id="marking-left">
+                    <div class="row" style="margin-left: 50px;">
+                        <div class="dropdown" style="max-width: 20%;">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" onclick="init('会见会谈','left')">
+                          会见会谈
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w-left','trigger-left','red','触发词')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w1-left','participant1-left','orange','参与方1')">参与方1</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w2-left','participant2-left','green','参与方2')">参与方2</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w3-left','time-left','purple','时间')">时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w4-left','place-left','blue','地点')">地点</a>
+                            </div>
+                        </div>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" onclick="init('签署文件','left')">
+                          签署文件
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w-left','trigger-left','red','触发词')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w1-left','signatory-left','orange','签署方')">签署方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w2-left','file-left','purple','文件')">文件</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w3-left','time-left','green','签署时间')">签署时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w4-left','place-left','blue','签署地点')">签署地点</a>
+                            </div>
+                        </div>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" onclick="init('设施启用','left')">
+                          设施启用
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w-left','trigger-left','red','触发词')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w1-left','constructor-left','green','设施修建方')">设施修建方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w2-left','buildingName-left','orange','设施名称')">设施名称</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w3-left','time-left','blue','启动时间')">启动时间</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w4-left','place-left','purple','设施地点')">设施地点</a>
+                            </div>
+                        </div>
+                        <div class="dropdown" style="max-width: 20%; margin-left: 10px;">
+                            <button type="button" class="btn btn-outline-warning dropdown-toggle" data-toggle="dropdown" onclick="init('举行活动','left')">
+                         举行活动
+                        </button>
+                            <div class="dropdown-menu" style="max-width:50px">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w-left','trigger-left','red','触发词')">触发词</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w1-left','holder-left','green','举办方')">举办方</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w2-left','name-left','orange','活动名称')">活动名称</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w3-left','place-left','blue','活动地点')">活动地点</a>
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="marking('text-left','w4-left','time-left','purple','活动时间')">活动时间</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row d-none">
+                <div class="col-lg-6">
+                    <ul class="list-group" style="margin-top: 5px;">
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item-success">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </div>
+                        <li class="list-group-item list-group-item-success" id="t-left">触发词</li>
+                        <li class="list-group-item list-group-item-dark" id="w-left"></li>
+                        <li class="list-group-item list-group-item-info" id="t1-left">1</li>
+                        <li class="list-group-item list-group-item-dark" id="w1-left"></li>
+                        <li class="list-group-item list-group-item-danger" id="t2-left">2</li>
+                        <li class="list-group-item list-group-item-dark" id="w2-left"></li>
+                        <li class="list-group-item list-group-item-warning" id="t3-left">3</li>
+                        <li class="list-group-item list-group-item-dark" id="w3-left"></li>
+                        <li class="list-group-item list-group-item-secondary" id="t4-left">4</li>
+                        <li class="list-group-item list-group-item-dark" id="w4-left"></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
         </div>
+    </div>
 </body>
-<script type="text/javascript" src="js/marking.js">
-</script>
-<script type="text/javascript">
-    var textId = getQueryString("textId");
+<script src="js/marking.js"></script>
 
-    function getQueryString(name) {
-        var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
-        if (result == null || result.length < 1) {
-            return "";
-        }
-        return result[1];
-    }
-
-    $(document).ready(function() {
-
-        $.ajax({
-            url: "/getTxtById",
-            method: "get",
-            dataType: "json",
-            data: {
-                textId: textId,
-            },
-            success: function(data) {
-                $("#text").text(data['content']);
-            }
-        })
-    });
-
-    $(".select").onclick = function() {
-        var fso, ts, s;
-        var ForReading = 1;
-        fso = new ActiveXObject("Scripting.FileSystemObject");
-        ts = fso.OpenTextFile("d:\\testfile.txt", ForReading);
-        s = ts.ReadLine();
-        $("#text").innerHTML = s;
-    }
-</script>
 
 </html>

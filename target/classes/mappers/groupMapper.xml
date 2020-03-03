@@ -5,33 +5,40 @@
     <constructor>
       <idArg column="group_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="leader" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="group_name" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    group_id, leader
+    group_id, leader,group_name
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from group
+    from `group`
     where group_id = #{groupId,jdbcType=INTEGER}
   </select>
+  <select id="listall" resultMap="BaseResultMap">
+    select * from `group`
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from group
+    delete from `group`
     where group_id = #{groupId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.xiaoman.dao.group">
-    insert into group (group_id, leader)
+    insert into `group` (group_id, leader)
     values (#{groupId,jdbcType=INTEGER}, #{leader,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaoman.dao.group">
-    insert into group
+  <insert id="insertSelective" parameterType="com.xiaoman.dao.group" useGeneratedKeys="true" keyProperty="groupId">
+    insert into `group`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="groupId != null">
         group_id,
       </if>
       <if test="leader != null">
         leader,
+      </if>
+      <if test="groupName != null">
+        group_name,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -41,10 +48,13 @@
       <if test="leader != null">
         #{leader,jdbcType=VARCHAR},
       </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoman.dao.group">
-    update group
+    update `group`
     <set>
       <if test="leader != null">
         leader = #{leader,jdbcType=VARCHAR},
@@ -53,8 +63,9 @@
     where group_id = #{groupId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xiaoman.dao.group">
-    update group
+    update `group`
     set leader = #{leader,jdbcType=VARCHAR}
     where group_id = #{groupId,jdbcType=INTEGER}
   </update>
+
 </mapper>

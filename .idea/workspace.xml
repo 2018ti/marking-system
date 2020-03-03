@@ -4,6 +4,8 @@
     <list default="true" id="efd1f590-3e81-469c-9d89-2fd78cf605aa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/apply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/groupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin" beforeDir="false" afterPath="$PROJECT_DIR$/bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
@@ -70,25 +72,55 @@
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/markingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/markingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/agreementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/agreementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/textContrller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/textContrller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/agreementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/agreementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dao/group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/groupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/groupMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/textMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/textMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/groupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/groupMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bg4.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/leaderEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/leaderEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/marking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/marking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/leader.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/leader.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/leaderEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/leaderEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/marking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/markingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/markingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/textContrller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/textContrller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/agreementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/agreementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/markingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/markingService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/textMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/textMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/background1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/bg4.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/leaderEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/leaderEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/marking.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/marking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/leaderEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/leaderEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/marking.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/marking.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,18 +314,18 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="324" y="96" key="#Docker/0.0.1463.874@0.0.1463.874" timestamp="1582865268501" />
-    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582859754668">
+    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583247660066">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1463.874@0.0.1463.874" timestamp="1582859754668" />
+    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1463.874@0.0.1463.874" timestamp="1583247660066" />
     <state x="467" y="227" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582820001071">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="467" y="227" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1463.874@0.0.1463.874" timestamp="1582820001071" />
-    <state x="537" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1582782631753">
+    <state x="537" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1583253944460">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="537" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1463.874@0.0.1463.874" timestamp="1582782631753" />
+    <state x="537" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1463.874@0.0.1463.874" timestamp="1583253944460" />
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581915642997">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
@@ -310,46 +342,46 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1582820292151" />
-    <state width="1420" height="191" key="GridCell.Tab.0.bottom" timestamp="1583167334920">
+    <state width="1420" height="285" key="GridCell.Tab.0.bottom" timestamp="1583258379173">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583167334920" />
-    <state width="1420" height="191" key="GridCell.Tab.0.center" timestamp="1583167334920">
+    <state width="1420" height="285" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583258379173" />
+    <state width="1420" height="285" key="GridCell.Tab.0.center" timestamp="1583258379172">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1583167334920" />
-    <state width="1420" height="191" key="GridCell.Tab.0.left" timestamp="1583167334920">
+    <state width="1420" height="285" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1583258379172" />
+    <state width="1420" height="285" key="GridCell.Tab.0.left" timestamp="1583258379171">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1583167334920" />
-    <state width="1420" height="191" key="GridCell.Tab.0.right" timestamp="1583167334920">
+    <state width="1420" height="285" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1583258379171" />
+    <state width="1420" height="285" key="GridCell.Tab.0.right" timestamp="1583258379172">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1583167334920" />
-    <state width="1420" height="191" key="GridCell.Tab.1.bottom" timestamp="1583167334688">
+    <state width="1420" height="285" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1583258379172" />
+    <state width="1420" height="285" key="GridCell.Tab.1.bottom" timestamp="1583258378931">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583167334688" />
-    <state width="1420" height="191" key="GridCell.Tab.1.center" timestamp="1583167334688">
+    <state width="1420" height="285" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583258378931" />
+    <state width="1420" height="285" key="GridCell.Tab.1.center" timestamp="1583258378929">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1583167334688" />
-    <state width="1420" height="191" key="GridCell.Tab.1.left" timestamp="1583167334687">
+    <state width="1420" height="285" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1583258378929" />
+    <state width="1420" height="285" key="GridCell.Tab.1.left" timestamp="1583258378929">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1583167334687" />
-    <state width="1420" height="191" key="GridCell.Tab.1.right" timestamp="1583167334688">
+    <state width="1420" height="285" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1583258378929" />
+    <state width="1420" height="285" key="GridCell.Tab.1.right" timestamp="1583258378930">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="191" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1583167334688" />
+    <state width="1420" height="285" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1583258378930" />
     <state x="307" y="24" key="SettingsEditor" timestamp="1582862933648">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="307" y="24" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1582862933648" />
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1583164756763">
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1583208380653">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1583164756763" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1583208380653" />
     <state x="75" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582275568116">
       <screen x="0" y="0" width="1463" height="874" />
     </state>

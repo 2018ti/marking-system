@@ -22,7 +22,6 @@ function selectText() {
     }
 }
 
-
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);
@@ -217,6 +216,10 @@ function resetmarking(index) {
     $('#text-' + index + '').html(function(i, oldHTML) {
         return oldHTML.replace($('#text-' + index + '').html(), $('#text-' + index + '').text());
     })
+    $("#t1-" + index + "").html("1")
+    $("#t2-" + index + "left").html("2")
+    $("#t3-" + index + "left").html("3")
+    $("#t4-" + index + "left").html("4")
 }
 
 //点击事件按钮时初始化列表组
@@ -296,7 +299,7 @@ function save(index) {
                     alert("上传失败，您已标记过该文章，只能对此文章进行修改")
             }
         })
-    } else if ($("t1-" + index + "").text() == "设施修建方") {
+    } else if ($("#t1-" + index + "").text() == "设施修建方") {
         $.ajax({
             url: "/marking/insertBuildMarking",
             method: "post",

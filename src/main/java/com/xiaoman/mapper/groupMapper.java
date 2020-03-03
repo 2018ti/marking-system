@@ -2,6 +2,8 @@ package com.xiaoman.mapper;
 
 import com.xiaoman.dao.group;
 
+import java.util.List;
+
 public interface groupMapper {
     int deleteByPrimaryKey(Integer groupId);
 
@@ -14,4 +16,6 @@ public interface groupMapper {
     int updateByPrimaryKeySelective(group record);
 
     int updateByPrimaryKey(group record);
+
+    List<group> listall();
 }

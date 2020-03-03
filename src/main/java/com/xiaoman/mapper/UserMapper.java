@@ -10,6 +10,7 @@ public interface UserMapper {
 
     public List<User> ListAll();
 
+
     public User Login(@Param("name") String name, @Param("password") String password);
 
     public void regist(@Param("name")String name,@Param("password")String password);
@@ -21,4 +22,10 @@ public interface UserMapper {
     public List<User> selectByGroup(@Param("groupId")Integer groupId);
 
     public Integer selectUserId(@Param("name")String name);
+
+    public void updateToLeaderByname(@Param("name")String name);
+
+    public void joingroup(@Param("name")String name,@Param("groupId")Integer groupId);
+
+    public User selectById(Integer userId);
 }

@@ -55,6 +55,7 @@
         // })
         $("#workDone").hide();
         $("#workToDo").show();
+
         $('#todoworkTab').bootstrapTable({
             url: "/todowork2",
             queryParams: "queryParams",
@@ -66,6 +67,7 @@
             pageSize: "3",
             pagination: true, // 是否分页
             sortable: true, // 是否启用排序
+
             columns: [{
                     field: 'leader',
                     title: '组长名'

@@ -38,13 +38,13 @@ public class textService {
         textMapper.insertSelective(text);
     }
 
-    public List<ToDoMarking> searchToDoMarking(Integer userId){
-        List<text> texts = textMapper.selectToDoMarking(userId);
+    public List<ToDoMarking> searchToDoMarking(Integer userId,String leader){
+        List<text> texts = textMapper.selectToDoMarking(userId,leader);
         List<ToDoMarking> toDoMarkings = new ArrayList<ToDoMarking>();
         long time1 = 1527767665;
         for(text text:texts){
             String content=text.getContent();
-            String leader=text.getLeader();
+            String tleader=text.getLeader();
             Date loadTime=text.getLoadTime();
             String title=text.getTitle();
             SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
