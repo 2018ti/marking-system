@@ -25,7 +25,7 @@ public class markingService {
     agreementService agreementService;
 
 
-    public Map<String, String> insertEventingRecord(String trigger, String participant1, String participant2, String time, String place, Integer userId, Integer textId, String role) {
+    public Map<String, String> insertEventingRecord(String trigger, String participant1, String participant2, String time, String place, Integer userId, Integer textId, String role,Integer markingId) {
         HashMap<String, String> result = new HashMap<>();
         text text = new text();
         text.setTextId(textId);
@@ -50,10 +50,6 @@ public class markingService {
             result.put("msg", "标记成功");
             return result;
         } else {
-            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
-                result.put("msg", "该用户已经标记过该文章");
-                return result;
-            }
             marking marking = new marking();
             marking.setTrigger(trigger);
             marking.setParticipant1(participant1);
@@ -63,10 +59,17 @@ public class markingService {
             marking.setTextId(textId);
             marking.setUserId(userId);
             marking.setEventType("会见会谈");
-             markingMapper.insertSelective(marking);
-            result.put("msg", "标记成功");
-
-            //小组成员都完成标记时进行标注一致性判断
+            //若用户已标记该文章 则进行更新操作
+            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
+                System.out.println("更新会见会谈");
+                marking.setMarkingId(markingId);
+                markingMapper.updateByPrimaryKeySelective(marking);
+                result.put("msg","更新成功");
+            }else {
+                markingMapper.insertSelective(marking);
+                result.put("msg", "标记成功");
+            }
+            //小组成员都完成标记时进行标注一致性判断(更新或者插入都需要判断)
             if (markingMapper.countMarkingRecordByTextId(textId) == userMapper.countGroupMember(userId) - 1) {
                 System.out.println("组成员都完成标记");
                 double agree = agreementService.calAgreement(textId);
@@ -84,7 +87,7 @@ public class markingService {
     }
 
 
-    public Map<String, String> insertFileRecord(String trigger, String signatory, String file, String time, String place, Integer userId, Integer textId, String role) {
+    public Map<String, String> insertFileRecord(String trigger, String signatory, String file, String time, String place, Integer userId, Integer textId, String role,Integer markingId) {
         HashMap<String, String> result = new HashMap<>();
         text text = new text();
         text.setTextId(textId);
@@ -108,10 +111,6 @@ public class markingService {
             result.put("msg", "标记成功");
             return result;
         } else {
-            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
-                result.put("msg", "该用户已经标记过该文章");
-                return result;
-            }
             marking marking = new marking();
             marking.setTrigger(trigger);
             marking.setFile(file);
@@ -120,8 +119,14 @@ public class markingService {
             marking.setTextId(textId);
             marking.setUserId(userId);
             marking.setEventType("签署文件");
-            markingMapper.insertSelective(marking);
-            result.put("msg", "标记成功");
+            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
+                marking.setMarkingId(markingId);
+                markingMapper.updateByPrimaryKeySelective(marking);
+                result.put("msg","更新成功");
+            }else {
+                markingMapper.insertSelective(marking);
+                result.put("msg", "标记成功");
+            }
 
             if (markingMapper.countMarkingRecordByTextId(textId) == userMapper.countGroupMember(userId) - 1) {
                 System.out.println("组成员都完成标记");
@@ -139,7 +144,7 @@ public class markingService {
         }
     }
 
-    public Map<String, String> insertBuildingRecord(String trigger, String constructor, String building_name, String starting_time, String building_place, Integer userId, Integer textId, String role) {
+    public Map<String, String> insertBuildingRecord(String trigger, String constructor, String building_name, String starting_time, String building_place, Integer userId, Integer textId, String role,Integer markingId) {
         HashMap<String, String> result = new HashMap<>();
         text text = new text();
         text.setTextId(textId);
@@ -163,10 +168,7 @@ public class markingService {
             result.put("msg", "标记成功");
             return result;
         } else {
-            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
-                result.put("msg", "该用户已经标记过该文章");
-                return result;
-            }
+
             marking marking = new marking();
             marking.setTrigger(trigger);
             marking.setConstructor(constructor);
@@ -175,8 +177,14 @@ public class markingService {
             marking.setTextId(textId);
             marking.setUserId(userId);
             marking.setEventType("设施启用");
-             markingMapper.insertSelective(marking);
-            result.put("msg", "标记成功");
+            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
+                marking.setMarkingId(markingId);
+                markingMapper.updateByPrimaryKeySelective(marking);
+                result.put("msg","更新成功");
+            }else {
+                markingMapper.insertSelective(marking);
+                result.put("msg", "标记成功");
+            }
 
             if (markingMapper.countMarkingRecordByTextId(textId) == userMapper.countGroupMember(userId) - 1) {
                 System.out.println("组成员都完成标记");
@@ -194,7 +202,7 @@ public class markingService {
         }
     }
 
-    public Map<String, String> insertActivityRecord(String trigger, String holder, String activity_name, String activity_time, String activity_place, Integer userId, Integer textId, String role) {
+    public Map<String, String> insertActivityRecord(String trigger, String holder, String activity_name, String activity_time, String activity_place, Integer userId, Integer textId, String role,Integer markingId) {
         HashMap<String, String> result = new HashMap<>();
         text text = new text();
         text.setTextId(textId);
@@ -219,10 +227,7 @@ public class markingService {
             result.put("msg", "标记成功");
             return result;
         } else {
-            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
-                result.put("msg", "该用户已经标记过该文章");
-                return result;
-            }
+
             marking marking = new marking();
             marking.setTrigger(trigger);
             marking.setActivityName(activity_name);
@@ -232,8 +237,14 @@ public class markingService {
             marking.setTextId(textId);
             marking.setUserId(userId);
             marking.setEventType("举行活动");
-             markingMapper.insertSelective(marking);
-            result.put("msg", "标记成功");
+            if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
+                marking.setMarkingId(markingId);
+                markingMapper.updateByPrimaryKeySelective(marking);
+                result.put("msg","更新成功");
+            }else {
+                markingMapper.insertSelective(marking);
+                result.put("msg", "标记成功");
+            }
 
             if (markingMapper.countMarkingRecordByTextId(textId) == userMapper.countGroupMember(userId) - 1) {
                 System.out.println("组成员都完成标记");

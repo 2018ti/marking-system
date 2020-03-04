@@ -217,7 +217,7 @@
         event_type = #{eventType,jdbcType=VARCHAR},
       </if>
       <if test="trigger != null">
-        trigger = #{trigger,jdbcType=VARCHAR},
+        `trigger` = #{trigger,jdbcType=VARCHAR},
       </if>
       <if test="holder != null">
         holder = #{holder,jdbcType=VARCHAR},

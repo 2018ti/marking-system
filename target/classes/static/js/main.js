@@ -95,6 +95,7 @@ jQuery(function($) {
 
     }
 });
+
 $(document).ready(function() {
 
     $("#createGroup").hide();
@@ -104,6 +105,7 @@ $(document).ready(function() {
         method: "get",
         success: function(data) {
             leader = data;
+            $("#Leadername").text(leader['name'])
             if (leader['groupId'] == null) {
                 $("#havingGroup").hide();
             } else {
@@ -122,6 +124,7 @@ var ListGroupMember = function() {
 
     $('#select').hide();
     $('#loadtext').hide();
+    $("#createGroup").hide();
     $('#tabGroup').bootstrapTable({
         url: "/listMember",
         method: 'get',
@@ -171,6 +174,7 @@ var ListMyText = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').hide();
     $('#loadtext').hide();
+    $("#createGroup").hide();
     $('#tabText').bootstrapTable({
         url: "/listText",
         method: 'get',
@@ -251,7 +255,7 @@ var selectByAgree = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').show();
     $('#loadtext').hide();
-    $("#createGroup").show();
+    $("#createGroup").hide();
 
     $("#selectByAgreeButton").click(function() {
 
@@ -313,7 +317,7 @@ var ListMarkedText = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').hide();
     $('#loadtext').hide();
-    $("#createGroup").show();
+    $("#createGroup").hide();
     $('#markedText').bootstrapTable({
         url: "/listMarkedText",
         queryParams: "queryParams",
@@ -394,7 +398,7 @@ var loadnewtext = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').hide();
     $('#loadtext').show();
-    $("#createGroup").show();
+    $("#createGroup").hide();
     $("#btn-submit").click(function() {
         if ($("#text").text() == '') {
             alert("文本为空，请先选择文本文本")
@@ -437,21 +441,20 @@ function createGroup() {
     $('#tabText').bootstrapTable('destroy');
     $('#markedText').bootstrapTable('destroy');
     $("#createGroup").show();
-}
 
-$("#create").click(function() {
-    $.ajax({
-        url: "/createGroup",
-        dataType: 'text',
-        method: 'post',
-        data: {
-            groupName: $("#groupName").val()
-        },
-        success: function(data) {
-            alert("创建成功");
-            window.location.reload();
-        }
+
+    $("#create").click(function() {
+        $.ajax({
+            url: "/createGroup",
+            dataType: 'text',
+            method: 'post',
+            data: {
+                groupName: $("#groupName").val()
+            },
+            success: function(data) {
+                alert("创建成功");
+                window.location.reload();
+            }
+        })
     })
-
-
-})
+}

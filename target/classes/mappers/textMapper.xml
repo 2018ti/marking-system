@@ -51,7 +51,7 @@
     select * from text where leader=#{leader}
   </select>
   <select id="selectByK" parameterType="java.lang.Double" resultMap="BaseResultMap">
-    select * from text where agree_rate >=#{K}
+    select * from text where agree_rate >= #{K} and agree_rate &lt; 1
   </select>
 
   <select id="selectByTextAndUser" parameterType="INTEGER" resultMap="DoneWork">

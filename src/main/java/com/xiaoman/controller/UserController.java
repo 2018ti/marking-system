@@ -111,6 +111,7 @@ public class UserController {
     @PostMapping("/applyByadmin")
     public String applyit(@RequestParam("applyId")Integer applyId,@RequestParam("username")String username){
         userService.applyByadmin(applyId,username);
+        userMapper.joingroup(username,null);
         return "批准成功";
     }
 
@@ -124,7 +125,7 @@ public class UserController {
         return "加入成功";
     }
 
-    @PostMapping("/createGroup")
+    @GetMapping("/createGroup")
     public String creategroup(@RequestParam("groupName")String groupName,HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
         System.out.println(groupName);

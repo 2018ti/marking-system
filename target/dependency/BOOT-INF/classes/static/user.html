@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
     <!-- Latest compiled and minified Locales -->
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -38,6 +39,7 @@
     $(document).ready(function() {
         ToDoWorking();
     })
+
     var ToDoWorking = function() {
         // $.ajax({
         //     type: "GET",
@@ -55,6 +57,7 @@
         // })
         $("#workDone").hide();
         $("#workToDo").show();
+
         $('#todoworkTab').bootstrapTable({
             url: "/todowork2",
             queryParams: "queryParams",
@@ -66,6 +69,7 @@
             pageSize: "3",
             pagination: true, // 是否分页
             sortable: true, // 是否启用排序
+
             columns: [{
                     field: 'leader',
                     title: '组长名'
@@ -186,32 +190,14 @@
 
     }
     var EditText = function(markingId) {
-        window.location.href = '/edit.html?markingId=' + markingId + '';
-    }
-    var download = function(trigger, textId, markingId, marking1, marking2, marking3, marking4, eventType, content) {
-        alert(content, trigger);
-        $.ajax({
-            url: "/download",
-            dataType: "json",
-            method: "get",
-            data: {
-                trigger: trigger,
-                textId: textId,
-                marking1: marking1,
-                marking2: marking2,
-                marking3: marking3,
-                marking4: marking4,
-                content: content,
-                markingId: markingId,
-                eventType: eventType,
-            },
-            success: function(data) {
-                alert("下载成功");
-            }
-
-
+        Swal.fire({
+            icon: "success",
+            title: '转至编辑页面',
+            text: "转至编辑页面",
+            timer: 1000
+        }).then(function() {
+            window.location.href = '/edit.html?markingId=' + markingId + '';
         })
-
     }
 </script>
 

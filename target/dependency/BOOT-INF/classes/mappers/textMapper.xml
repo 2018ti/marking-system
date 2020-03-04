@@ -31,11 +31,12 @@
     from text
     where text_id = #{textId,jdbcType=INTEGER}
   </select>
-  <select id="selectToDoMarking" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectToDoMarking"  resultMap="BaseResultMap">
     SELECT text.* FROM text WHERE text_id not in(SELECT text.text_id
     FROM text LEFT JOIN marking ON text.text_id=marking.text_id
-    WHERE user_id = #{userId})
+    WHERE user_id = #{userId}) and leader=#{leader}
   </select>
+
   <select id="selectDoneWorkTextTable" parameterType="java.lang.Integer" resultMap="DoneWork">
     select text.content,text.leader,text.agree_rate,marking.*
     from text left join marking
@@ -44,15 +45,15 @@
   </select>
   <select id="selectMarkedText" parameterType="java.lang.String" resultMap="DoneWork">
     SELECT text.text_id,text.content,text.leader,text.agree_rate,text.title,marking.*
-    FROM text LEFT JOIN marking on text.text_id=marking.text_id
-    WHERE text.agree_rate = 1.0 AND text.leader=#{leaderName} GROUP BY text.content
+    FROM text LEFT JOIN marking on text.text_id=marking.text_id where text.marking_id=marking.marking_id
   </select>
   <select id="selectLeaderText" parameterType="java.lang.String" resultMap="BaseResultMap">
     select * from text where leader=#{leader}
   </select>
   <select id="selectByK" parameterType="java.lang.Double" resultMap="BaseResultMap">
-    select * from text where agree_rate >=#{K}
+    select * from text where agree_rate >= #{K} and agree_rate &lt; 1
   </select>
+
   <select id="selectByTextAndUser" parameterType="INTEGER" resultMap="DoneWork">
     select text.content,marking.*
     from text left join marking

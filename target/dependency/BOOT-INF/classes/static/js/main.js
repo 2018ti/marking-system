@@ -96,14 +96,22 @@ jQuery(function($) {
     }
 });
 $(document).ready(function() {
+
+    $("#createGroup").hide();
     $.ajax({
         url: "/getLeader",
         dataType: "JSON",
         method: "get",
         success: function(data) {
             leader = data;
+            if (leader['groupId'] == null) {
+                $("#havingGroup").hide();
+            } else {
+                $("#noGroup").hide();
+            }
         }
     })
+
 })
 var ListGroupMember = function() {
 
@@ -243,6 +251,7 @@ var selectByAgree = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').show();
     $('#loadtext').hide();
+    $("#createGroup").show();
 
     $("#selectByAgreeButton").click(function() {
 
@@ -283,7 +292,7 @@ var selectByAgree = function() {
                     formatter: function(value, row, index) {
                         var result = "";
                         result += "<div class='btn-group btn-group-xs'>"
-                        result += "<button class='btn btn-primary' onclick='edit(" + row.textId + ")'>编辑</button>";
+                        result += "<button class='btn btn-primary' onclick=\"edit('" + row.textId + "','" + row.title + "')\" >编辑</button>";
                         result += "</div>"
                         return result;
                     }
@@ -294,8 +303,8 @@ var selectByAgree = function() {
 
     })
 }
-var edit = function(textId) {
-    window.location.href = "/leaderEdit.html?textId=" + textId;
+var edit = function(textId, title) {
+    window.location.href = "/leaderEdit.html?textId=" + textId + "&title=" + title + "";
 }
 var ListMarkedText = function() {
     $('#tabAgree').bootstrapTable('destroy');
@@ -304,6 +313,7 @@ var ListMarkedText = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').hide();
     $('#loadtext').hide();
+    $("#createGroup").show();
     $('#markedText').bootstrapTable({
         url: "/listMarkedText",
         queryParams: "queryParams",
@@ -384,6 +394,7 @@ var loadnewtext = function() {
     $('#markedText').bootstrapTable('destroy');
     $('#select').hide();
     $('#loadtext').show();
+    $("#createGroup").show();
     $("#btn-submit").click(function() {
         if ($("#text").text() == '') {
             alert("文本为空，请先选择文本文本")
@@ -418,4 +429,30 @@ function upload(input) {
             //      reader.readAsText(file,"UTF-8");
         reader.readAsText(file, "UTF-8");
     }
+}
+
+function createGroup() {
+    $('#tabAgree').bootstrapTable('destroy');
+    $('#tabGroup').bootstrapTable('destroy');
+    $('#tabText').bootstrapTable('destroy');
+    $('#markedText').bootstrapTable('destroy');
+    $("#createGroup").show();
+
+
+    $("#create").click(function() {
+        $.ajax({
+            url: "/createGroup",
+            dataType: 'text',
+            method: 'post',
+            data: {
+                groupName: $("#groupName").val()
+            },
+            success: function(data) {
+                alert("创建成功");
+                window.location.reload();
+            }
+        })
+
+
+    })
 }

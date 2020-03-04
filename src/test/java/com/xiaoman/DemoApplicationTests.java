@@ -53,7 +53,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() throws IOException {
-		System.out.println(groupService.getGroupById(1));
+		userMapper.joingroup("非凡",null);
 	}
 
 	@Test

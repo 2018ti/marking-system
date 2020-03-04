@@ -115,6 +115,7 @@ public class textService {
         result.setContent(text.getContent());
         result.setTrigger(marking.getTrigger());
         result.setEventType(marking.getEventType());
+        result.setTextId(text.getTextId());
         if(marking.getEventType().equals("会见会谈")){
             result.setMarking1(marking.getParticipant1());
             result.setMarking2(marking.getParticipant2());

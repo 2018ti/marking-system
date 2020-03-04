@@ -82,7 +82,7 @@
                 success: function(data) {
                     if (data['groupId'] == null) {
                         $("#outGroup").show();
-                        $("#inGroup").hide();
+                        $("#inGroup").show();
                     } else {
                         $("#outGroup").hide();
                         $("#inGroup").show();
@@ -240,7 +240,7 @@
 
         }
         var EditText = function(markingId) {
-            window.location.href = '/edit.html?markingId=' + markingId + '';
+            window.location.href = '/newEdit.html?markingId=' + markingId + '';
         }
         var download = function(trigger, textId, markingId, marking1, marking2, marking3, marking4, eventType, content) {
             alert(content, trigger);

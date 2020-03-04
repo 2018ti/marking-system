@@ -130,13 +130,12 @@ function ListSysMember() {
 }
 
 function Leaderapply() {
+
     $('#sysMember').bootstrapTable('destroy');
     $('#applyList').bootstrapTable('destroy');
-
     $("#applyList").bootstrapTable({
         url: "/getapplyList",
         method: 'get',
-
         toolbar: "#toolbar",
         sidePagination: "true",
         striped: true, // 是否显示行间隔色
@@ -177,18 +176,34 @@ function Leaderapply() {
 }
 
 function apply(applyId, username) {
-    $.ajax({
-        url: "/applyByadmin",
-        data: {
-            applyId: applyId,
-            username: username
-        },
-        dataType: 'text',
-        method: "post",
-        success: function(data) {
-            alert("批准成功");
-            $('#applyList').bootstrapTable('refresh');
+    Swal.fire({
+        icon: "question",
+        title: '确认批准吗',
+        showCancelButton: true,
+        confirmButtonText: '确认',
+        closeOnConfirm: false
+    }).then(
+        function(isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/applyByadmin",
+                    data: {
+                        applyId: applyId,
+                        username: username
+                    },
+                    dataType: 'text',
+                    method: "post",
+                    success: function(data) {
+                        Swal.fire({
+                            title: "YES",
+                            text: "操作成功",
+                            type: "success",
+                        }.then(function() {
+                            $('#applyList').bootstrapTable('refresh');
+                        }));
+                    }
+                })
+            }
         }
-
-    })
+    )
 }
