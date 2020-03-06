@@ -10,6 +10,7 @@ import com.xiaoman.mapper.markingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -113,6 +114,7 @@ public class textService {
         marking marking = markingMapper.selectByPrimaryKey(markingId);
         text text = textMapper.selectByPrimaryKey(marking.getTextId());
         result.setContent(text.getContent());
+        result.setTitle(text.getTitle());
         result.setTrigger(marking.getTrigger());
         result.setEventType(marking.getEventType());
         result.setTextId(text.getTextId());

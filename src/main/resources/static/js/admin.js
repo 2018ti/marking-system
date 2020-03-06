@@ -1,3 +1,5 @@
+var leader;
+
 jQuery(function($) {
 
     // Dropdown menu
@@ -87,6 +89,18 @@ jQuery(function($) {
 
     }
 });
+
+$(document).ready(function() {
+    $.ajax({
+        url: "/getLeader",
+        dataType: "JSON",
+        method: "get",
+        success: function(data) {
+            leader = data;
+            $("#user-name").text(leader['name'])
+        }
+    })
+})
 
 function ListSysMember() {
     $('#sysMember').bootstrapTable('destroy');
@@ -182,28 +196,26 @@ function apply(applyId, username) {
         showCancelButton: true,
         confirmButtonText: '确认',
         closeOnConfirm: false
-    }).then(
-        function(isConfirm) {
-            if (isConfirm) {
-                $.ajax({
-                    url: "/applyByadmin",
-                    data: {
-                        applyId: applyId,
-                        username: username
-                    },
-                    dataType: 'text',
-                    method: "post",
-                    success: function(data) {
-                        Swal.fire({
-                            title: "YES",
-                            text: "操作成功",
-                            type: "success",
-                        }.then(function() {
-                            $('#applyList').bootstrapTable('refresh');
-                        }));
-                    }
-                })
-            }
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: "/applyByadmin",
+                data: {
+                    applyId: applyId,
+                    username: username
+                },
+                dataType: 'text',
+                method: "post",
+                success: function(data) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "批准成功",
+                        type: "success",
+                    }).then(function() {
+                        $('#applyList').bootstrapTable('refresh');
+                    });
+                }
+            })
         }
-    )
+    })
 }

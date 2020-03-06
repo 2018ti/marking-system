@@ -20,6 +20,7 @@
   <select id="listall" resultMap="BaseResultMap">
     select * from `group`
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from `group`
     where group_id = #{groupId,jdbcType=INTEGER}

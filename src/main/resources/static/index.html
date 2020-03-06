@@ -16,7 +16,17 @@
     <script type="text/javascript" src="js/JQuery/jquery.js"></script>
 
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url("./images/5.jpg");
+            /* background-position: center center; */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,6 +47,7 @@
                         <li><a href="#"><span class="fa fa-fw fa-user text-primary"></span> 我的主页</a></li>
                         <li id='outGroup'><a href="javascript:void(0);" onclick="joinGroup()"><span class="fa fa-fw fa-cog text-primary"></span> 加入小组</a></li>
                         <li id='inGroup'><a href="javascript:void(0);" onclick="apply()"><span class="fa fa-fw fa-cog text-primary"></span> 申请成为用户组长</a></li>
+                        <li><a href="javascript:void(0);" onclick="quit()"><span class="fa fa-fw fa-cog text-danger"></span>退出登录</a></li>
 
                     </ul>
                 </li>
@@ -45,13 +56,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div id="workToDo">
+            <div class="m-auto" id="workToDo">
                 <table id="todoworkTab" class="table table-hover"></table>
             </div>
-            <div id="workDone">
+            <div class="m-auto" id="workDone">
                 <table id="doneworkTab" class="table table-hover"></table>
             </div>
-            <div class="grouplist">
+            <div class="m-auto" class="grouplist">
                 <table id="grouplist" class="table table-hover"></table>
             </div>
         </div>
@@ -59,20 +70,43 @@
     <script src="https://code.bdstatic.com/npm/netnrnav@1.1.0/src/netnrnav.js">
     </script>
     <script>
-        function apply() {
+        function quit() {
+            window.location.href = '/login.html'
+        }
 
-            $.ajax({
-                url: "/applyToLeader",
-                dataType: 'json',
-                method: "post",
-                success: function(data) {
-                    if (data['msg'] == '成功提交申请') {
-                        alert("已成功提交申请，请等待管理员批准");
-                    } else
-                        alert("您已申请过了，请等待批准");
+        function apply() {
+            Swal.fire({
+                icon: "question",
+                title: '确认申请吗',
+                showCancelButton: true,
+                confirmButtonText: '确认',
+                closeOnConfirm: false
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        url: "/applyToLeader",
+                        dataType: 'json',
+                        method: "post",
+                        success: function(data) {
+                            if (data['msg'] == '成功提交申请') {
+                                Swal.fire({
+                                    icon: "success",
+                                    text: "已提交请耐心等待管理员批准",
+                                    type: "success",
+                                })
+                            } else
+                                Swal.fire({
+                                    icon: "error",
+                                    text: "您已经申请过了请耐心等待批准",
+                                    type: "error",
+                                })
+                        }
+                    })
                 }
             })
         }
+
+
         $(document).ready(function() {
             ToDoWorking();
             $.ajax({
@@ -318,9 +352,15 @@
                 dataType: 'text',
 
                 success: function(data) {
-                    alert("加入成功");
-                    $("#todoworkTab").bootstrapTable('refresh');
-                    ToDoWorking();
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: "加入成功"
+                    }).then(function() {
+                        $("#todoworkTab").bootstrapTable('refresh');
+                        ToDoWorking();
+                    })
+
                 }
 
             })

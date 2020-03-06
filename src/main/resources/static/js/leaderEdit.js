@@ -251,93 +251,138 @@ function init(event, index) {
 
 //保存提交
 function save(index) {
+    Swal.fire({
+        icon: 'question',
+        text: '确认将此标注作为最终标注吗',
+        showCancelButton: true,
+        confirmButtonText: '确认',
+        closeOnConfirm: false
+    }).then((result) => {
+        if (result.value) {
+            if ($("#t1-" + index + "").text() == "参与方1") { //根据之前生成的标签内容判断用户标记属于哪一种事件类型
+                //标记内容
+                var participant1 = $("#participant1-" + index + "").text();
+                var participant2 = $("#participant2-" + index + "").text();
+                var trigger = $("#trigger-" + index + "").text();
+                var time = $("#time-" + index + "").text();
+                var place = $("#place-" + index + "").text();
 
-    if ($("#t1-" + index + "").text() == "参与方1") { //根据之前生成的标签内容判断用户标记属于哪一种事件类型
-        //标记内容
-        var participant1 = $("#participant1-" + index + "").text();
-        var participant2 = $("#participant2-" + index + "").text();
-        var trigger = $("#trigger-" + index + "").text();
-        var time = $("#time-" + index + "").text();
-        var place = $("#place-" + index + "").text();
-
-        $.ajax({
-            url: "/marking/insertEventMarking",
-            method: "post",
-            datatype: "json",
-            data: {
-                trigger: trigger,
-                participant1: participant1,
-                participant2: participant2,
-                time: time,
-                place: place,
-                textId: textId,
-            },
-            success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("请勿重复提交");
+                $.ajax({
+                    url: "/marking/insertEventMarking",
+                    method: "post",
+                    datatype: "json",
+                    data: {
+                        trigger: trigger,
+                        participant1: participant1,
+                        participant2: participant2,
+                        time: time,
+                        place: place,
+                        textId: textId,
+                    },
+                    success: function(data) {
+                        if (data["msg"] == "标记成功") {
+                            Swal.fire({
+                                icon: 'success',
+                                text: '保存成功',
+                            }).then(function() {
+                                window.location.href = '/leader.html'
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: '请勿重复提交',
+                            })
+                        }
+                    }
+                })
+            } else if ($("#t1-" + index + "").text() == "签署方") {
+                $.ajax({
+                    url: "/marking/insertFileMarking",
+                    method: "post",
+                    datatype: "json",
+                    data: {
+                        trigger: $("#trigger-" + index + "").text(),
+                        signatory: $("#signatory-" + index + "").text(),
+                        file: $("#file-" + index + "").text(),
+                        time: $("#time-" + index + "").text(),
+                        place: $("#place-" + index + "").text(),
+                        textId: textId,
+                    },
+                    success: function(data) {
+                        if (data["msg"] == "标记成功") {
+                            Swal.fire({
+                                icon: 'success',
+                                text: '保存成功',
+                            }).then(function() {
+                                window.location.href = '/leader.html'
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: '请勿重复提交',
+                            })
+                        }
+                    }
+                })
+            } else if ($("#t1-" + index + "").text() == "设施修建方") {
+                $.ajax({
+                    url: "/marking/insertBuildMarking",
+                    method: "post",
+                    datatype: "json",
+                    data: {
+                        trigger: $("#trigger-" + index + "").text(),
+                        constructor: $("#constructor-" + index + "").text(),
+                        buildingName: $("#buildingName-" + index + "").text(),
+                        time: $("#time-" + index + "").text(),
+                        place: $("#place-" + index + "").text(),
+                        textId: textId,
+                    },
+                    success: function(data) {
+                        if (data["msg"] == "标记成功") {
+                            Swal.fire({
+                                icon: 'success',
+                                text: '保存成功',
+                            }).then(function() {
+                                window.location.href = '/leader.html'
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: '请勿重复提交',
+                            })
+                        }
+                    }
+                })
+            } else {
+                $.ajax({
+                    url: "/marking/insertActivityMarking",
+                    method: "post",
+                    datatype: "json",
+                    data: {
+                        trigger: $("#trigger-" + index + "").text(),
+                        holder: $("#holder-" + index + "").text(),
+                        name: $("#name-" + index + "").text(),
+                        time: $("#time-" + index + "").text(),
+                        place: $("#place-" + index + "").text(),
+                        textId: textId,
+                    },
+                    success: function(data) {
+                        if (data["msg"] == "标记成功") {
+                            Swal.fire({
+                                icon: 'success',
+                                text: '保存成功',
+                            }).then(function() {
+                                window.location.href = '/leader.html'
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: '请勿重复提交',
+                            })
+                        }
+                    }
+                })
             }
-        })
-    } else if ($("#t1-" + index + "").text() == "签署方") {
-        $.ajax({
-            url: "/marking/insertFileMarking",
-            method: "post",
-            datatype: "json",
-            data: {
-                trigger: $("#trigger-" + index + "").text(),
-                signatory: $("#signatory-" + index + "").text(),
-                file: $("#file-" + index + "").text(),
-                time: $("#time-" + index + "").text(),
-                place: $("#place-" + index + "").text(),
-                textId: textId,
-            },
-            success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
-            }
-        })
-    } else if ($("#t1-" + index + "").text() == "设施修建方") {
-        $.ajax({
-            url: "/marking/insertBuildMarking",
-            method: "post",
-            datatype: "json",
-            data: {
-                trigger: $("#trigger-" + index + "").text(),
-                constructor: $("#constructor-" + index + "").text(),
-                buildingName: $("#buildingName-" + index + "").text(),
-                time: $("#time-" + index + "").text(),
-                place: $("#place-" + index + "").text(),
-                textId: textId,
-            },
-            success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
-            }
-        })
-    } else {
-        $.ajax({
-            url: "/marking/insertActivityMarking",
-            method: "post",
-            datatype: "json",
-            data: {
-                trigger: $("#trigger-" + index + "").text(),
-                holder: $("#holder-" + index + "").text(),
-                name: $("#name-" + index + "").text(),
-                time: $("#time-" + index + "").text(),
-                place: $("#place-" + index + "").text(),
-                textId: textId,
-            },
-            success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改");
-            }
-        })
-    }
+        }
+    })
 }

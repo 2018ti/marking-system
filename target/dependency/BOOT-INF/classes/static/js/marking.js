@@ -115,10 +115,17 @@ function save(index) {
                 textId: textId,
             },
             success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("请勿重复提交");
+                if (data["msg"] == "标记成功" || data['msg'] == '更新成功') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: '保存成功',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: '请勿重复提交',
+                    })
+                }
             }
         })
     } else if ($("#t1-" + index + "").text() == "签署方") {
@@ -135,10 +142,17 @@ function save(index) {
                 textId: textId,
             },
             success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
+                if (data["msg"] == "标记成功" || data['msg'] == '更新成功') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: '保存成功',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: '请勿重复提交',
+                    })
+                }
             }
         })
     } else if ($("#t1-" + index + "").text() == "设施修建方") {
@@ -155,10 +169,17 @@ function save(index) {
                 textId: textId,
             },
             success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改")
+                if (data["msg"] == "标记成功" || data['msg'] == '更新成功') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: '保存成功',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: '请勿重复提交',
+                    })
+                }
             }
         })
     } else {
@@ -175,10 +196,17 @@ function save(index) {
                 textId: textId,
             },
             success: function(data) {
-                if (data["msg"] == "标记成功")
-                    alert("保存成功");
-                else
-                    alert("上传失败，您已标记过该文章，只能对此文章进行修改");
+                if (data["msg"] == "标记成功" || data['msg'] == '更新成功') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: '保存成功',
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: '请勿重复提交',
+                    })
+                }
             }
         })
     }

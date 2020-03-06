@@ -86,4 +86,17 @@ public class text {
 
     public text() {
     }
+
+    @Override
+    public String toString() {
+        return "text{" +
+                "textId=" + textId +
+                ", content='" + content + '\'' +
+                ", markingId=" + markingId +
+                ", leader='" + leader + '\'' +
+                ", loadTime=" + loadTime +
+                ", agreeRate=" + agreeRate +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }

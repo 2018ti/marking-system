@@ -63,6 +63,9 @@
   <select id="selectByUserIdAndText" parameterType="INTEGER" resultMap="BaseResultMap">
     select * from marking where user_id = #{userId} and text_id=#{textId}
   </select>
+  <select id="selectByUserId" parameterType="INTEGER" resultMap="BaseResultMap">
+    select * from marking where user_id = #{userId}
+  </select>
   <select id="selectAllMarkingByTextId" parameterType="INTEGER" resultMap="BaseResultMap">
     select * from marking where text_id=#{textId}
   </select>

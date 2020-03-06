@@ -28,4 +28,5 @@ public interface UserMapper {
     public void joingroup(@Param("name")String name,@Param("groupId")Integer groupId);
 
     public User selectById(Integer userId);
+
 }

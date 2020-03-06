@@ -87,7 +87,6 @@ public class UserController {
 
     @GetMapping("/listText")
     public List<text> getMyText(@RequestParam("leaderName")String leader){
-        System.out.println(leader);
         return textService.selectLeaderText(leader);
     }
 
@@ -125,7 +124,7 @@ public class UserController {
         return "加入成功";
     }
 
-    @GetMapping("/createGroup")
+    @PostMapping("/createGroup")
     public String creategroup(@RequestParam("groupName")String groupName,HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
         System.out.println(groupName);

@@ -26,6 +26,9 @@
     <select id="selectByGroup" parameterType="INTEGER" resultMap="UserMap">
         select * from user where group_id=#{groupId} and role='普通用户'
     </select>
+    <select id="selectLeaderByGroupId" resultType="String">
+        select leader from group where group_id=#{groupId}
+    </select>
     <update id="updateToLeaderByname" parameterType="STRING">
         update user set role='用户组长' where name=#{name}
     </update>
@@ -38,8 +41,8 @@
             select group_id from user where id=#{userId}
         )
     </select>
-    <select id="selectById" parameterType="INTEGER" resultMap="UserMap">
-        select * from user where id = #{userId}
+    <select id="selectUserIdByname" parameterType="string" resultType="INTEGER">
+        select id from user where name = {name}
     </select>
     <insert id="regist">
         insert into user values(default,#{name},#{password},"普通用户",null);

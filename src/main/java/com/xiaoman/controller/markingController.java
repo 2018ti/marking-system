@@ -23,9 +23,8 @@ public class markingController {
                            @RequestParam("place")String place, @RequestParam("textId")Integer textId,@RequestParam(value = "markingId",required = false)Integer markingId,
                            HttpServletRequest request)
     {
-        System.out.println("进入");
         User user = (User)request.getSession().getAttribute("user");
-        Map<String, String> result = markingService.insertEventingRecord(trigger, participant1, participant2, time, place, user.getId(), textId,user.getRole(),markingId);
+        Map<String, String> result = markingService.insertEventingRecord(trigger, participant1, participant2, time, place, user.getId(), textId,user.getRole(),markingId,user.getGroupId());
         return result;
     }
 
@@ -35,7 +34,8 @@ public class markingController {
                                          @RequestParam("textId")Integer textId,@RequestParam(value = "markingId",required = false)Integer markingId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertFileRecord(trigger,signatory,file,time,place,user.getId(),textId,user.getRole(),markingId);
+        System.out.println("签署方:"+signatory);
+        Map<String,String> result=markingService.insertFileRecord(trigger,signatory,file,time,place,user.getId(),textId,user.getRole(),markingId,user.getGroupId());
         return result;
     }
 
@@ -45,7 +45,7 @@ public class markingController {
                                          @RequestParam("textId")Integer textId,@RequestParam(value = "markingId",required = false)Integer markingId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertBuildingRecord(trigger,constructor,buildingName,time,place,user.getId(),textId,user.getRole(),markingId);
+        Map<String,String> result=markingService.insertBuildingRecord(trigger,constructor,buildingName,time,place,user.getId(),textId,user.getRole(),markingId,user.getGroupId());
 
         return result;
     }
@@ -56,7 +56,7 @@ public class markingController {
                                              @RequestParam("textId")Integer textId,@RequestParam(value = "markingId",required = false)Integer markingId,HttpServletRequest request)
     {
         User user=(User)request.getSession().getAttribute("user");
-        Map<String,String> result=markingService.insertActivityRecord(trigger,holder,name,time,place,user.getId(),textId,user.getRole(),markingId);
+        Map<String,String> result=markingService.insertActivityRecord(trigger,holder,name,time,place,user.getId(),textId,user.getRole(),markingId,user.getGroupId());
         return result;
     }
 }

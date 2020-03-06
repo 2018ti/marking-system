@@ -31,6 +31,7 @@
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
     <!-- Latest compiled and minified Locales -->
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>
         .red {
             color: red;
@@ -70,8 +71,8 @@
                         <img class="img-responsive img-rounded" src="images/user.jpg" alt="User picture">
                     </div>
                     <div class="user-info">
-                        <span class="user-name">
-                           小蛮
+                        <span class="user-name" id="Leadername">
+                           
                         </span>
                         <span class="user-role">用户组长</span>
                         <span class="user-status">
@@ -260,7 +261,6 @@
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-center" href="#">View all messages</a>
-
                     </div>
                 </div>
                 <div class="dropdown">
@@ -284,6 +284,41 @@
         <!-- page-content  -->
         <main class="page-content pt-2">
             <div class="container">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <h3>Themes</h3>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <a href="#" data-theme="default-theme" class="theme default-theme selected"></a>
+                        <a href="#" data-theme="chiller-theme" class="theme chiller-theme"></a>
+                        <a href="#" data-theme="legacy-theme" class="theme legacy-theme"></a>
+                        <a href="#" data-theme="ice-theme" class="theme ice-theme"></a>
+                        <a href="#" data-theme="cool-theme" class="theme cool-theme"></a>
+                        <a href="#" data-theme="light-theme" class="theme light-theme"></a>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <p>您可以选择以下的背景图</p>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <a href="#" data-bg="bg1" class="theme theme-bg selected"></a>
+                        <a href="#" data-bg="bg2" class="theme theme-bg"></a>
+                        <a href="#" data-bg="bg3" class="theme theme-bg"></a>
+                        <a href="#" data-bg="bg4" class="theme theme-bg"></a>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="toggle-bg" checked>
+                            <label class="custom-control-label" for="toggle-bg">Background image</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="toggle-border-radius">
+                            <label class="custom-control-label" for="toggle-border-radius">Border radius</label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <div class="input-group" id="select">
                     <input type="text" class="form-control search-menu" id="K" placeholder="请在此处输入筛选条件K">
                     <div class="input-group-append">
@@ -337,8 +372,6 @@
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
-
     <script src="js/main.js"></script>
 
 </body>

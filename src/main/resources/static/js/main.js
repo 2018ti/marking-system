@@ -401,7 +401,11 @@ var loadnewtext = function() {
     $("#createGroup").hide();
     $("#btn-submit").click(function() {
         if ($("#text").text() == '') {
-            alert("文本为空，请先选择文本文本")
+            Swal.fire({
+                icon: 'error',
+                text: '文本为空请先选择文本',
+            })
+
         } else {
             $.ajax({
                 method: "POST",
@@ -412,7 +416,10 @@ var loadnewtext = function() {
                     title: $("#filename").text(),
                 },
                 success: function(data) {
-                    alert("上传成功");
+                    Swal.fire({
+                        icon: 'success',
+                        text: '上传成功',
+                    })
                 },
             })
 
@@ -452,8 +459,12 @@ function createGroup() {
                 groupName: $("#groupName").val()
             },
             success: function(data) {
-                alert("创建成功");
-                window.location.reload();
+                Swal.fire({
+                    icon: 'success',
+                    text: '创建成功',
+                }).then(function() {
+                    window.location.reload();
+                })
             }
         })
     })

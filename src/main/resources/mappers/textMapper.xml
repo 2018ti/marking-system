@@ -45,10 +45,10 @@
   </select>
   <select id="selectMarkedText" parameterType="java.lang.String" resultMap="DoneWork">
     SELECT text.text_id,text.content,text.leader,text.agree_rate,text.title,marking.*
-    FROM text LEFT JOIN marking on text.text_id=marking.text_id where text.marking_id=marking.marking_id
+    FROM text LEFT JOIN marking on text.text_id=marking.text_id where text.marking_id=marking.marking_id and text.leader=#{leaderName}
   </select>
   <select id="selectLeaderText" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select * from text where leader=#{leader}
+    select DATE_FORMAT(load_time, '%Y-%m-%d %H:%i:%S') as load_time,text_id, content, marking_id, leader, agree_rate,title from text where leader=#{leader}
   </select>
   <select id="selectByK" parameterType="java.lang.Double" resultMap="BaseResultMap">
     select * from text where agree_rate >= #{K} and agree_rate &lt; 1

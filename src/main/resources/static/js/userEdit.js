@@ -40,6 +40,7 @@ $(document).ready(function() {
             var content = data['content']
             textId = data['textId']
             $text.text(content)
+            $("#text-title").append(data['title'] + ".txt")
             if (data["eventType"] == '会见会谈') {
                 $text.html(function(i, oldHTML) {
                     return oldHTML.replace(data['trigger'], '<span data-tippy-content="触发词" style="color: red;" id="trigger-' + flag + '">' + data['trigger'] + '</span>');
@@ -229,6 +230,8 @@ function save(index) {
                                 icon: "success",
                                 title: '修改成功',
                                 confirmButtonText: '确定',
+                            }).then(function() {
+                                window.location.href = '/index.html'
                             })
                         }
                     })
@@ -251,6 +254,8 @@ function save(index) {
                                 icon: "success",
                                 title: '修改成功',
                                 confirmButtonText: '确定',
+                            }).then(function() {
+                                window.location.href = '/index.html'
                             })
                         }
                     })
@@ -273,6 +278,8 @@ function save(index) {
                                 icon: "success",
                                 title: '修改成功',
                                 confirmButtonText: '确定',
+                            }).then(function() {
+                                window.location.href = '/index.html'
                             })
                         }
                     })
@@ -295,6 +302,8 @@ function save(index) {
                                 icon: "success",
                                 title: '修改成功',
                                 confirmButtonText: '确定',
+                            }).then(function() {
+                                window.location.href = '/index.html'
                             })
                         }
                     })
