@@ -4,7 +4,6 @@
     <list default="true" id="efd1f590-3e81-469c-9d89-2fd78cf605aa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/dto/ResultText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin" beforeDir="false" afterPath="$PROJECT_DIR$/bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
@@ -70,292 +69,6 @@
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/regist.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/regist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/XmlFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/controller/XmlFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/markingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/service/textService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/xmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/xmlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/textMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/DemoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/config/SwaggerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/config/markingConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/config/markingConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/XmlFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/XmlFileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/agreementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/agreementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/markingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/controller/markingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/DoneWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/DoneWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/apply.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/apply.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/marking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/marking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/text.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/text.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/type.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dao/type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/DoneWorkResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/DoneWorkResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/ToDoMarking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/ToDoMarking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/agreementMarking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/dto/agreementMarking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/interceptor/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/applyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/applyMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/textMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/typeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/typeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/agreementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/agreementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/groupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/groupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/markingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/markingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/service/textService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/markingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/markingUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/xmlUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/xmlUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/textMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/textMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency-maven-plugin-markers/com.xiaoman-marking-jar-0.0.1-SNAPSHOT.marker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/DemoApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/config/markingConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/controller/XmlFileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/controller/agreementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/controller/markingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/controller/textContrller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/DoneWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/apply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/marking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dao/type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dto/DoneWorkResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dto/ToDoMarking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/dto/agreementMarking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/interceptor/LoginInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/applyMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/groupMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/markingMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/textMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/mapper/typeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/service/agreementService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/service/groupService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/service/markingService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/service/textService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/utils/markingUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/utils/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/com/xiaoman/utils/xmlUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/applyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/groupMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/markingMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/textMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/mappers/typeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/article.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/jquery.mCustomScrollbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/marking.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/regist.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/css/sidebar-themes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/images/user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/img/bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/img/bg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/img/bg3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/img/bg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/JQuery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/JQuery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/bootstrap/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/bootstrap/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/bootstrap/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/jquery.mCustomScrollbar.concat.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/leaderEdit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/marking.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/js/userEdit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/leader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/leaderEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/marking.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/newEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/regist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_animation.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_mixin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-brand.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-menu.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-search.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_sidebar-wrapper.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/main.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/classes/static/sass/sidebar-themes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/HikariCP-3.4.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/byte-buddy-1.10.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/classmate-1.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/dom4j-1.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/druid-1.1.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/druid-spring-boot-starter-1.1.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/guava-20.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/hibernate-validator-6.0.18.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-annotations-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-core-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-databind-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-datatype-jdk8-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-datatype-jsr310-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jackson-module-parameter-names-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jakarta.annotation-api-1.3.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jakarta.validation-api-2.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jboss-logging-3.4.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jsqlparser-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/jul-to-slf4j-1.7.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/log4j-api-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/log4j-to-slf4j-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/lombok-1.18.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mapstruct-1.2.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mybatis-3.5.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mybatis-spring-2.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mybatis-spring-boot-autoconfigure-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mybatis-spring-boot-starter-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/pagehelper-5.1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/pagehelper-spring-boot-autoconfigure-1.2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/pagehelper-spring-boot-starter-1.2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/slf4j-api-1.7.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/snakeyaml-1.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-aop-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-beans-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-autoconfigure-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-data-jdbc-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-jdbc-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-json-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-logging-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-tomcat-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-validation-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-boot-starter-web-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-context-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-core-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-data-commons-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-data-jdbc-1.1.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-data-relational-1.1.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-expression-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-jcl-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-jdbc-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-plugin-metadata-1.2.0.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-tx-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-web-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/spring-webmvc-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-core-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-schema-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-spi-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-spring-web-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-swagger-common-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-swagger-ui-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/springfox-swagger2-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/swagger-annotations-1.5.20.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/swagger-models-1.5.20.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/tomcat-embed-core-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/tomcat-embed-el-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/tomcat-embed-websocket-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/BOOT-INF/lib/xml-apis-1.0.b2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/META-INF/maven/com.xiaoman/marking/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/META-INF/maven/com.xiaoman/marking/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/ExecutableArchiveLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/JarLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/LaunchedURLClassLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/MainMethodRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/PropertiesLauncher$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/PropertiesLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/WarLauncher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/Archive$Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/Archive$EntryFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/Archive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/ExplodedArchive$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/ExplodedArchive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/archive/JarFileArchive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/data/RandomAccessData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/data/RandomAccessDataFile$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/data/RandomAccessDataFile$FileAccess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/data/RandomAccessDataFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/AsciiBytes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/Bytes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryEndRecord$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64End.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryEndRecord$Zip64Locator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/FileHeader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/Handler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarEntryFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFile$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFile$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFile$JarFileType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFileEntries$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarFileEntries.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarURLConnection$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarURLConnection$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarURLConnection$CloseAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/JarURLConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/StringSequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/jar/ZipInflaterInputStream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dependency/org/springframework/boot/loader/util/SystemPropertyUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/marking-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/marking-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -577,46 +290,46 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1582820292151" />
-    <state width="1420" height="237" key="GridCell.Tab.0.bottom" timestamp="1583496518776">
+    <state width="1420" height="141" key="GridCell.Tab.0.bottom" timestamp="1583505437684">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="237" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583496518776" />
-    <state width="1420" height="237" key="GridCell.Tab.0.center" timestamp="1583496518776">
+    <state width="1420" height="141" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583505437684" />
+    <state width="1420" height="141" key="GridCell.Tab.0.center" timestamp="1583505437683">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="237" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1583496518776" />
-    <state width="1420" height="237" key="GridCell.Tab.0.left" timestamp="1583496518776">
+    <state width="1420" height="141" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1583505437683" />
+    <state width="1420" height="141" key="GridCell.Tab.0.left" timestamp="1583505437683">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="237" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1583496518776" />
-    <state width="1420" height="237" key="GridCell.Tab.0.right" timestamp="1583496518776">
+    <state width="1420" height="141" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1583505437683" />
+    <state width="1420" height="141" key="GridCell.Tab.0.right" timestamp="1583505437683">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="237" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1583496518776" />
-    <state width="1420" height="141" key="GridCell.Tab.1.bottom" timestamp="1583495944508">
+    <state width="1420" height="141" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1583505437683" />
+    <state width="1420" height="141" key="GridCell.Tab.1.bottom" timestamp="1583498112663">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583495944508" />
-    <state width="1420" height="141" key="GridCell.Tab.1.center" timestamp="1583495944508">
+    <state width="1420" height="141" key="GridCell.Tab.1.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583498112663" />
+    <state width="1420" height="141" key="GridCell.Tab.1.center" timestamp="1583498112662">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1583495944508" />
-    <state width="1420" height="141" key="GridCell.Tab.1.left" timestamp="1583495944508">
+    <state width="1420" height="141" key="GridCell.Tab.1.center/0.0.1463.874@0.0.1463.874" timestamp="1583498112662" />
+    <state width="1420" height="141" key="GridCell.Tab.1.left" timestamp="1583498112662">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1583495944508" />
-    <state width="1420" height="141" key="GridCell.Tab.1.right" timestamp="1583495944508">
+    <state width="1420" height="141" key="GridCell.Tab.1.left/0.0.1463.874@0.0.1463.874" timestamp="1583498112662" />
+    <state width="1420" height="141" key="GridCell.Tab.1.right" timestamp="1583498112662">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="141" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1583495944508" />
+    <state width="1420" height="141" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1583498112662" />
     <state x="299" y="24" key="SettingsEditor" timestamp="1583409250916">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="299" y="24" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1583409250916" />
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1583466358576">
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1583505235595">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1583466358576" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1583505235595" />
     <state x="75" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582275568116">
       <screen x="0" y="0" width="1463" height="874" />
     </state>

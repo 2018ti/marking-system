@@ -386,7 +386,7 @@ var ListMarkedText = function() {
         var markingId = row.markingId;
         var result = "";
         result += "<div class='btn-group btn-group-xs'>"
-        result += "<a class='btn btn-warning' href='/download?eventType=" + row.eventType + "&trigger=" + row.trigger + "&marking1=" + row.marking1 + "&marking2=" + row.marking2 + "&marking3=" + row.marking3 + "&marking4=" + row.marking4 + "&textId=" + row.textId + "&markingId=" + row.markingId + "&content=" + row.content + "'>导出</a>";
+        result += "<a class='btn btn-warning' href='/download?eventType=" + row.eventType + "&trigger=" + row.trigger + "&marking1=" + row.marking1 + "&marking2=" + row.marking2 + "&marking3=" + row.marking3 + "&marking4=" + row.marking4 + "&textId=" + row.textId + "&markingId=" + row.markingId + "&content=" + row.content + "&title=" + row.title + "'>导出</a>";
         result += "</div>"
         return result;
     }
