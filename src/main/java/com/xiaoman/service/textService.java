@@ -4,9 +4,11 @@ import com.xiaoman.dao.DoneWork;
 import com.xiaoman.dao.marking;
 import com.xiaoman.dao.text;
 import com.xiaoman.dto.DoneWorkResult;
+import com.xiaoman.dto.ResultText;
 import com.xiaoman.dto.ToDoMarking;
 import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.mapper.markingMapper;
+import com.xiaoman.mapper.textMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +72,7 @@ public class textService {
             doneWorkResult.setContent(doneWork.getContent());
             doneWorkResult.setLeader(doneWork.getLeader());
             doneWorkResult.setTextId(doneWork.getTextId());
+            doneWorkResult.setTitle(doneWork.getTitle());
             doneWorkResult.setMarkingId(doneWork.getMarking().getMarkingId());
             if(doneWork.getMarking().getEventType().equals("会见会谈")){
                 doneWorkResult.setMarking1(doneWork.getMarking().getParticipant1());
@@ -188,8 +191,17 @@ public class textService {
         return results;
     }
 
-    public List<text> selectLeaderText(String leader){
-        return textMapper.selectLeaderText(leader);
+    public List<ResultText> selectLeaderText(String leader){
+        List<text> texts=textMapper.selectLeaderText(leader);
+        ArrayList<ResultText> resultTexts = new ArrayList<>();
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        for(text text:texts){
+            ResultText resultText = new ResultText(text.getTextId(),text.getContent(),text.getMarkingId(),text.getLeader(),null,text.getAgreeRate(),text.getTitle());
+            String loadtime = format.format(text.getLoadTime());
+            resultText.setLoadTime(loadtime);
+            resultTexts.add(resultText);
+        }
+        return resultTexts;
     }
 
     public  List<text> selectByK(Double K){

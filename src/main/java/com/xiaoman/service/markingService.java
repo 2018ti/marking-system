@@ -36,6 +36,7 @@ public class markingService {
         text text = new text();
         text.setTextId(textId);
         if (role.equals("用户组长")) {
+            System.out.println("用户组长哈");
             if (markingMapper.selectByUserIdAndText(userId, textId) != null) {
                 result.put("msg", "该用户已经标记过该文章");
                 return result;
@@ -56,6 +57,7 @@ public class markingService {
             result.put("msg", "标记成功");
             return result;
         } else {
+            System.out.println("普通用户哈");
             marking marking = new marking();
             marking.setTrigger(trigger);
             marking.setParticipant1(participant1);
@@ -76,6 +78,7 @@ public class markingService {
             }
             //小组成员都完成标记时进行标注一致性判断(更新或者插入都需要判断)
             if (markingMapper.countMarkingRecordByTextId(textId) == userMapper.countGroupMember(userId) - 1) {
+                System.out.println("都完成标注了哈");
                 group group = groupMapper.selectByPrimaryKey(groupId);
                 User leader = userMapper.selectByname(group.getLeader());
 

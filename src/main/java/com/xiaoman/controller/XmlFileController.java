@@ -13,9 +13,9 @@ public class XmlFileController {
     @GetMapping("/download")
     public void downLoadText(@RequestParam(name="eventType")String eventType, @RequestParam(name="trigger",required = false)String trigger, @RequestParam(name="marking1",required = false)String makring1,
                              @RequestParam(name="marking2",required = false)String marking2, @RequestParam(name="marking3",required = false)String marking3
-                            , @RequestParam(name="marking4",required = false)String marking4, @RequestParam(name="textId",required = false)Integer textId, @RequestParam(name="markingId",required = false)Integer markingId, @RequestParam(name="content",required = false)String content, HttpServletResponse response)throws Exception{
+                            , @RequestParam(name="marking4",required = false)String marking4, @RequestParam(name="textId",required = false)Integer textId, @RequestParam(name="markingId",required = false)Integer markingId, @RequestParam(name="content",required = false)String content,@RequestParam("title")String title ,HttpServletResponse response)throws Exception{
         System.out.println(content+eventType+makring1);
-        String fileurl = xmlUtil.TextToXml(eventType, trigger, makring1, marking2, marking3, marking4, textId, markingId,content);
+        String fileurl = xmlUtil.TextToXml(eventType, trigger, makring1, marking2, marking3, marking4, textId, markingId,content,title);
         File file=new File(fileurl);
 
         if(file.exists()){ //判断文件父目录是否存在

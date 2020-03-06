@@ -13,11 +13,10 @@ import java.io.Writer;
 import java.util.Date;
 
 public class xmlUtil {
-    public static String TextToXml(String eventType,String trigger,String marking1,String marking2,String marking3,String marking4,Integer textId,Integer markingId,String content) throws IOException {
+    public static String TextToXml(String eventType,String trigger,String marking1,String marking2,String marking3,String marking4,Integer textId,Integer markingId,String content,String title) throws IOException {
         System.out.println(content);
         Date date = new Date();
-        String fileurl = String.valueOf(date.getTime());
-        String filename=fileurl+".xml";
+        String filename=title+".xml";
         if(marking1!=null){
             int marking1Start=content.indexOf(marking1)+1;
             int marking1End=marking1.length()-1+marking1Start;

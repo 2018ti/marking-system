@@ -3,6 +3,7 @@ package com.xiaoman.controller;
 import com.xiaoman.dao.apply;
 import com.xiaoman.dao.group;
 import com.xiaoman.dao.text;
+import com.xiaoman.dto.ResultText;
 import com.xiaoman.mapper.UserMapper;
 import com.xiaoman.service.UserService;
 import com.xiaoman.service.groupService;
@@ -86,7 +87,7 @@ public class UserController {
     }
 
     @GetMapping("/listText")
-    public List<text> getMyText(@RequestParam("leaderName")String leader){
+    public List<ResultText> getMyText(@RequestParam("leaderName")String leader){
         return textService.selectLeaderText(leader);
     }
 

@@ -38,7 +38,7 @@
   </select>
 
   <select id="selectDoneWorkTextTable" parameterType="java.lang.Integer" resultMap="DoneWork">
-    select text.content,text.leader,text.agree_rate,marking.*
+    select text.content,text.leader,text.agree_rate,text.title,marking.*
     from text left join marking
     on text.text_id = marking.text_id
     where user_id = #{userId}

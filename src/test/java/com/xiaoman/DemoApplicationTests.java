@@ -53,7 +53,7 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() throws IOException {
-		userMapper.joingroup("非凡",null);
+		System.out.println(textMapper.selectDoneWorkTextTable(21));
 	}
 
 	@Test
