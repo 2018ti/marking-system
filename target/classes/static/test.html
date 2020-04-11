@@ -72,31 +72,21 @@
     $("#btn-submit").click(function() {
         $.ajax({
             type: "GET",
-            url: "/login",
-            dataType: "JSON",
+            url: "http://101.37.23.218/user/login",
+            dataType: 'json',
             data: {
-                name: $("#name").val(),
+                username: $("#name").val(),
                 password: $("#password").val(),
             },
             success: function(data) {
-                if (data["msg"] != '登录失败') {
-                    Swal.fire({
-                        icon: "success",
-                        title: '登录成功!',
-                        text: '即将跳转到个人中心',
-                        timer: 1000,
-                    }).then(function() {
-                        if (data["msg"] == "普通用户") {
-                            window.location.href = "/index.html";
-                        } else if (data["msg"] == "用户组长") {
-                            window.location.href = "/leader.html";
-                        } else if (data['msg'] == '系统管理员') {
-                            window.location.href = '/admin.html'
-                        }
-                    })
-                } else
-                    Swal.fire("登录失败", "用户名或密码错误", "error")
+                if (data['msg'] == 1) {
+                    alert("登录成功")
+                }
             },
+            error: function(data) {
+                alert("请求失败")
+            }
+
         });
     })
     $("#btn-regist").click(function() {

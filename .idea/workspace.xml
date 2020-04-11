@@ -4,6 +4,7 @@
     <list default="true" id="efd1f590-3e81-469c-9d89-2fd78cf605aa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bin/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin" beforeDir="false" afterPath="$PROJECT_DIR$/bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.classpath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.factorypath" beforeDir="false" />
@@ -68,6 +69,16 @@
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/regist.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/regist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/classes/static/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/bin/target/classes/static/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/groupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xiaoman/mapper/groupMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xiaoman/utils/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xiaoman/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/groupMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xiaoman/mapper/groupMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xiaoman/utils/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xiaoman/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +129,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../StudentManager" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -261,10 +272,10 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="324" y="96" key="#Docker/0.0.1463.874@0.0.1463.874" timestamp="1582865268501" />
-    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583408475253">
+    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585040377887">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1463.874@0.0.1463.874" timestamp="1583408475253" />
+    <state x="187" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1463.874@0.0.1463.874" timestamp="1585040377887" />
     <state x="467" y="227" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582820001071">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
@@ -285,26 +296,30 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="471" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1463.874@0.0.1463.874" timestamp="1582445793705" />
-    <state x="946" y="145" key="FileChooserDialogImpl" timestamp="1582820292151">
+    <state x="370" y="0" key="CommitChangelistDialog2" timestamp="1586410401785">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1582820292151" />
-    <state width="1420" height="248" key="GridCell.Tab.0.bottom" timestamp="1583505789721">
+    <state x="370" y="0" key="CommitChangelistDialog2/0.0.1463.874@0.0.1463.874" timestamp="1586410401785" />
+    <state x="946" y="145" key="FileChooserDialogImpl" timestamp="1585800264324">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="248" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1583505789721" />
-    <state width="1420" height="248" key="GridCell.Tab.0.center" timestamp="1583505789720">
+    <state x="946" y="145" key="FileChooserDialogImpl/0.0.1463.874@0.0.1463.874" timestamp="1585800264324" />
+    <state width="1420" height="260" key="GridCell.Tab.0.bottom" timestamp="1586438823579">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="248" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1583505789720" />
-    <state width="1420" height="248" key="GridCell.Tab.0.left" timestamp="1583505789720">
+    <state width="1420" height="260" key="GridCell.Tab.0.bottom/0.0.1463.874@0.0.1463.874" timestamp="1586438823579" />
+    <state width="1420" height="260" key="GridCell.Tab.0.center" timestamp="1586438823579">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="248" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1583505789720" />
-    <state width="1420" height="248" key="GridCell.Tab.0.right" timestamp="1583505789720">
+    <state width="1420" height="260" key="GridCell.Tab.0.center/0.0.1463.874@0.0.1463.874" timestamp="1586438823579" />
+    <state width="1420" height="260" key="GridCell.Tab.0.left" timestamp="1586438823579">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state width="1420" height="248" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1583505789720" />
+    <state width="1420" height="260" key="GridCell.Tab.0.left/0.0.1463.874@0.0.1463.874" timestamp="1586438823579" />
+    <state width="1420" height="260" key="GridCell.Tab.0.right" timestamp="1586438823579">
+      <screen x="0" y="0" width="1463" height="874" />
+    </state>
+    <state width="1420" height="260" key="GridCell.Tab.0.right/0.0.1463.874@0.0.1463.874" timestamp="1586438823579" />
     <state width="1420" height="248" key="GridCell.Tab.1.bottom" timestamp="1583505789721">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
@@ -321,22 +336,22 @@
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state width="1420" height="248" key="GridCell.Tab.1.right/0.0.1463.874@0.0.1463.874" timestamp="1583505789721" />
-    <state x="299" y="24" key="SettingsEditor" timestamp="1583409250916">
+    <state x="299" y="24" key="SettingsEditor" timestamp="1585040359428">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="299" y="24" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1583409250916" />
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1583505235595">
+    <state x="299" y="24" key="SettingsEditor/0.0.1463.874@0.0.1463.874" timestamp="1585040359428" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1586595427225">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1583505235595" />
+    <state x="414" y="262" key="com.intellij.ide.util.TipDialog/0.0.1463.874@0.0.1463.874" timestamp="1586595427225" />
     <state x="75" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582275568116">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
     <state x="75" y="62" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1463.874@0.0.1463.874" timestamp="1582275568116" />
-    <state x="101" y="12" key="new project wizard" timestamp="1582183070425">
+    <state x="51" y="24" key="new project wizard" timestamp="1583660427732">
       <screen x="0" y="0" width="1463" height="874" />
     </state>
-    <state x="101" y="12" key="new project wizard/0.0.1463.874@0.0.1463.874" timestamp="1582183070425" />
+    <state x="51" y="24" key="new project wizard/0.0.1463.874@0.0.1463.874" timestamp="1583660427732" />
     <state x="389" y="199" key="run.anything.popup" timestamp="1583292767893">
       <screen x="0" y="0" width="1463" height="874" />
     </state>

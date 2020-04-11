@@ -18,6 +18,4 @@ public interface groupMapper {
     int updateByPrimaryKey(group record);
 
     List<group> listall();
-
-
 }

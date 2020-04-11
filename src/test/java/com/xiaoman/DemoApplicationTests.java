@@ -10,24 +10,12 @@ import com.xiaoman.service.UserService;
 import com.xiaoman.service.agreementService;
 import com.xiaoman.service.groupService;
 import com.xiaoman.service.textService;
-import org.apache.ibatis.transaction.Transaction;
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.sql.rowset.spi.XmlWriter;
-import javax.xml.crypto.Data;
-import java.awt.geom.FlatteningPathIterator;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 @SpringBootTest
